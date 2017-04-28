@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LiYuan</string>
+    <string name="username">用户名：</string>
+    <string name="username_hint">请输入戏票编号</string>
+    <string name="password">密码</string>
+    <string name="password_hint">请输入座位号</string>
+</resources>
