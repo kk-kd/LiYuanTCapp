@@ -24,15 +24,17 @@ public class Register extends AppCompatActivity {
         register_email = (EditText) findViewById(R.id.register_email);
         register_password = (EditText) findViewById(R.id.register_password);
 
-        submit.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                HttpUtils util = new HttpUtils();
-                util.StoreData(register_name.getText().toString(),
-                                register_email.getText().toString(),
-                                register_password.getText().toString());
-            }
-        });
+
+//        submit.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                HttpUtils util = new HttpUtils();
+//                util.StoreData(register_name.getText().toString(),
+//                                register_email.getText().toString(),
+//                                register_password.getText().toString());
+//            }
+//        });
+//
 
     }
 }
