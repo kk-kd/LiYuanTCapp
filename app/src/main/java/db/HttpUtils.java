@@ -15,15 +15,34 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class HttpUtils {
 
     //TODO:修改服务端地址
-    private static String PATH = "http://bdfngdg:8080/myhttp/servlet/LoginAction"; // 服务端地址
+    private static String PATH;
     private static URL url;
+    private static String typeState;
+    private static Calendar c = Calendar.getInstance();
 
+    //获取path
+    private static String getPath(String state){
+        String time = String.valueOf(c.get(Calendar.YEAR)+c.get(Calendar.MONTH)+c.get(Calendar.DAY_OF_MONTH));
+        switch (state){
+            case "REGISTER":
+                PATH = "http://api.webhack.cn/reg/token/liyuan" + time;
+                break;
+            case "LOGIN":
+                PATH = "http://api.webhack.cn/login/token/liyuan" + time;
+                break;
+            default:
+        }
+        return PATH;
+    }
     public HttpUtils() {
         super();
     }
@@ -31,7 +50,7 @@ public class HttpUtils {
     // 静态代码块实例化url
     static {
         try {
-            url = new URL(PATH);
+            url = new URL(getPath(typeState));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -128,7 +147,8 @@ public class HttpUtils {
      * @param umail
      * @param upwd
      */
-    public static void StoreData(String uname, String umail, String upwd){
+    public void AccessData(String uname, String umail, String upwd, String type){
+        typeState = type;
         Map<String, String> map = new HashMap<String, String>();
         map.put("uname", uname);
         map.put("umail", umail);
