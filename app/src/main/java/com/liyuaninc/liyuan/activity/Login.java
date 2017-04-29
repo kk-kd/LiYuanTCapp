@@ -1,29 +1,46 @@
 package com.liyuaninc.liyuan.activity;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
 import com.liyuaninc.liyuan.R;
+import com.liyuaninc.liyuan.usermain;
 
 public class Login extends AppCompatActivity {
 
     private ImageButton login;
+    private ImageButton register;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         login = (ImageButton)findViewById(R.id.tomain);
+        register = (ImageButton)findViewById(R.id.register) ;
 
         //进入注册界面
-        login.setOnClickListener(new View.OnClickListener() {
+       register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this,Register.class);
+                startActivity(intent);
+                finish();
             }
         });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(Login.this,usermain.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
 
 
 
