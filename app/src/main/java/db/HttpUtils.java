@@ -168,10 +168,9 @@ public class HttpUtils {
         map.put("uname", uname);
         map.put("umail", umail);
         map.put("upwd" , upwd);
-     // String result =
-              sendPostMessage(map, "UTF-8");
-      //  String result = sendPostMessage(map,"");
-       //    Log.d("HttpUtils",result);
+     // String result = sendPostMessage(map, "UTF-8");
+    //   String result = sendPostMessage(map,"");
+      //    Log.d("HttpUtils",result);
     }
 
 

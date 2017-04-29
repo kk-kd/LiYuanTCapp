@@ -2,6 +2,7 @@ package com.liyuaninc.liyuan;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,9 +50,12 @@ public class Register extends AppCompatActivity {
                 //                register_password.getText().toString(),"REGISTER");
                 new Thread(new Runnable(){ @Override public void run() {
                     finalnet finalnet = new finalnet();
-                    finalnet.sendGet("http://api.webhack.cn/connect/token/liyuan20170429");
+                    String result = finalnet.sendGet("http://api.webhack.cn/connect/token/liyuan20170429");
+                    Log.d("HttpUtils",result);
+
                 }
                 }).start();
+
             }
         });
 
