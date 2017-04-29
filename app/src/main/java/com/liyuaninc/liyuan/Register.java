@@ -50,7 +50,7 @@ public class Register extends AppCompatActivity {
                 //                register_password.getText().toString(),"REGISTER");
                 new Thread(new Runnable(){ @Override public void run() {
                     finalnet finalnet = new finalnet();
-                    String result = finalnet.sendGet("http://api.webhack.cn/connect/token/liyuan20170429");
+                    String result = finalnet.sendPost("http://api.webhack.cn/reg/token/liyuan20170429","UTF-8");
                     Log.d("HttpUtils",result);
 
                 }
