@@ -6,6 +6,8 @@ package db;
 
 import android.util.Log;
 
+import com.liyuaninc.liyuan.Register;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,7 +33,15 @@ public class HttpUtils {
 
     //获取path
     private static String getPath(String state){
-        String time = String.valueOf(c.get(Calendar.YEAR)+c.get(Calendar.MONTH)+c.get(Calendar.DAY_OF_MONTH));
+     //   String time = String.valueOf(c.get(Calendar.YEAR)+c.get(Calendar.MONTH)+c.get(Calendar.DAY_OF_MONTH));
+        int year=c.get(Calendar.YEAR);
+        int month=c.get(Calendar.MONTH);
+        int day=c.get(Calendar.DAY_OF_MONTH);
+        String year1=String.valueOf(year);
+        String month1=String.valueOf(month);
+        String day1=String.valueOf(day);
+        String time=year1+month1+day1;
+
         switch (state){
             case "REGISTER":
                 PATH = "http://api.webhack.cn/reg/token/liyuan" + time;
@@ -41,16 +51,31 @@ public class HttpUtils {
                 break;
             default:
         }
+
+
         return PATH;
     }
-  //  public HttpUtils() {
+
+    public void AccessData(String uname, String umail, String upwd, String type){
+        typeState = type;
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("uname", uname);
+        map.put("umail", umail);
+        map.put("upwd" , upwd);
+       // String result = sendPostMessage(map, "UTF-8");
+     //   Log.d("HttpUtils",result);
+    }
+
+
+
+    //  public HttpUtils() {
    //     super();
   //  }
 
     // 静态代码块实例化url
     static {
         try {
-            url = new URL(getPath(typeState));
+            url = new URL(getPath("REGISTER"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -147,14 +172,5 @@ public class HttpUtils {
      * @param umail
      * @param upwd
      */
-    public void AccessData(String uname, String umail, String upwd, String type){
-        typeState = type;
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("uname", uname);
-        map.put("umail", umail);
-        map.put("upwd" , upwd);
-        String result = sendPostMessage(map, "UTF-8");
-        Log.d("HttpUtils",result);
-    }
 
 }

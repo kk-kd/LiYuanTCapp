@@ -4,3 +4,7 @@
             //  Save(todaydate1);
             String day=load2();
             String yasterday;
+
+
+
+               String time = String.valueOf(c.get(Calendar.YEAR)+c.get(Calendar.MONTH)+c.get(Calendar.DAY_OF_MONTH));
