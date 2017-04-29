@@ -1,9 +1,7 @@
-package com.liyuaninc.liyuan.activity;
+package com.liyuaninc.liyuan;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import com.liyuaninc.liyuan.R;
+import android.support.v7.app.AppCompatActivity;
 
 public class Register extends AppCompatActivity {
 
