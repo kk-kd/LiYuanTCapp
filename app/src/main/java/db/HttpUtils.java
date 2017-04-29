@@ -44,7 +44,8 @@ public class HttpUtils {
 
         switch (state){
             case "REGISTER":
-                PATH = "http://api.webhack.cn/reg/token/liyuan" + time;
+           // PATH = "http://api.webhack.cn/reg/token/liyuan" + time;
+               PATH = "http://api.webhack.cn/connect/token/" + time;
                 break;
             case "LOGIN":
                 PATH = "http://api.webhack.cn/login/token/liyuan" + time;
@@ -55,17 +56,6 @@ public class HttpUtils {
 
         return PATH;
     }
-
-    public void AccessData(String uname, String umail, String upwd, String type){
-        typeState = type;
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("uname", uname);
-        map.put("umail", umail);
-        map.put("upwd" , upwd);
-       // String result = sendPostMessage(map, "UTF-8");
-     //   Log.d("HttpUtils",result);
-    }
-
 
 
     //  public HttpUtils() {
@@ -119,10 +109,10 @@ public class HttpUtils {
                 urlConnection.setRequestProperty("Content-Length",
                         String.valueOf(myData.length));
                 // 获得输出流，向服务器输出内容
-                OutputStream outputStream = urlConnection.getOutputStream();
-                // 写入数据
-                outputStream.write(myData, 0, myData.length);
-                outputStream.close();
+                    OutputStream outputStream = urlConnection.getOutputStream();
+                    // 写入数据
+                    outputStream.write(myData, 0, myData.length);
+                    outputStream.close();
                 // 获得服务器响应结果和状态码
                 int responseCode = urlConnection.getResponseCode();
                 if (responseCode == 200) {
@@ -172,5 +162,15 @@ public class HttpUtils {
      * @param umail
      * @param upwd
      */
-
+    public void AccessData(String uname, String umail, String upwd, String type){
+        typeState = type;
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("uname", uname);
+        map.put("umail", umail);
+        map.put("upwd" , upwd);
+     // String result =
+              sendPostMessage(map, "UTF-8");
+      //  String result = sendPostMessage(map,"");
+       //    Log.d("HttpUtils",result);
+    }
 }
