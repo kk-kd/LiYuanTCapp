@@ -43,9 +43,9 @@ public class HttpUtils {
         }
         return PATH;
     }
-    public HttpUtils() {
-        super();
-    }
+  //  public HttpUtils() {
+   //     super();
+  //  }
 
     // 静态代码块实例化url
     static {

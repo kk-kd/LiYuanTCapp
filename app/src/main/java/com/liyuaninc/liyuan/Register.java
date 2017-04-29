@@ -13,7 +13,6 @@ public class Register extends AppCompatActivity {
     public EditText register_name;
     public EditText register_email;
     public EditText register_password;
-
     public Button   submit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +22,7 @@ public class Register extends AppCompatActivity {
         register_name = (EditText) findViewById(R.id.register_name);
         register_email = (EditText) findViewById(R.id.register_email);
         register_password = (EditText) findViewById(R.id.register_password);
+        submit=(Button)findViewById(R.id.button_submit);
 
 
         submit.setOnClickListener(new View.OnClickListener(){
