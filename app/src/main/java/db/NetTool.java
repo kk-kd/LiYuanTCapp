@@ -31,11 +31,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
 import android.os.Environment;
-
+//没有使用！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
 /**
  * NetTool:封装一个类搞定90%安卓客户端与服务器端交互
  *
- * @author 李坤 五期信息技术提高班
  */
 public class NetTool {
     private static final int TIMEOUT = 10000;// 10秒
