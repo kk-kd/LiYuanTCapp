@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import db.HttpUtils;
 import db.NetTool;
+import db.finalnet;
 
 public class Register extends AppCompatActivity {
 
@@ -35,6 +36,7 @@ public class Register extends AppCompatActivity {
                 //                register_password.getText().toString(),"REGISTER");
 
 
+               finalnet finalnet =new finalnet();
 
             }
         });
