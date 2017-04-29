@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import db.HttpUtils;
+import db.NetTool;
 
 public class Register extends AppCompatActivity {
 
@@ -28,10 +29,13 @@ public class Register extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                HttpUtils util = new HttpUtils();
-                util.AccessData(register_name.getText().toString(),
-                                register_email.getText().toString(),
-                                register_password.getText().toString(),"REGISTER");
+              //  HttpUtils util = new HttpUtils();
+               // util.AccessData(register_name.getText().toString(),
+               //                 register_email.getText().toString(),
+                //                register_password.getText().toString(),"REGISTER");
+
+
+
             }
         });
 

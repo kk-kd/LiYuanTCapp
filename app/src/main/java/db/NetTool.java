@@ -4,6 +4,7 @@ package db;
  * Created by Administrator on 2017/4/29.
  */
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -378,4 +379,54 @@ public class NetTool {
         }
         return file;
     }
+
+   /* public UserDto execute(String... params) {
+        InputStream inputStream = null;
+        HttpURLConnection urlConnection = null;
+
+        try {
+            // read responseURLEncoder.encode(para, "GBK");
+            String urlWithParams = path;
+            URL url = new URL(urlWithParams);
+            urlConnection = (HttpURLConnection) url.openConnection();
+
+		/* optional request header */
+        //    urlConnection.setRequestProperty("Content-Type", "application/text; charset=UTF-8");
+
+		/* optional request header */
+     //       urlConnection.setRequestProperty("Accept", "application/text");
+
+		/* for Get request */
+     //       urlConnection.setRequestMethod("GET");
+      //      int statusCode = urlConnection.getResponseCode();
+
+		/* 200 represents HTTP OK */
+     /*       if (statusCode == 200) {
+                inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                String response = HttpUtil.convertInputStreamToString(inputStream);
+                //Gson gson = new Gson();
+                //UserDto dto = gson.fromJson(response, UserDto.class);
+                //if (dto != null && dto.getToken() != null) {
+                //Log.i("token", "find the token = " + dto.getToken());
+            }
+            return dto;
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        if (inputStream != null) {
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        if (urlConnection != null) {
+            urlConnection.disconnect();
+        }
+    }
+	return null;*/
+
+
 }
