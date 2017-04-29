@@ -4,6 +4,8 @@ package db;
  * Created by Administrator on 2017/4/29.
  */
 
+import android.util.Log;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,6 +19,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HttpUtils {
+
+    //TODO:修改服务端地址
     private static String PATH = "http://bdfngdg:8080/myhttp/servlet/LoginAction"; // 服务端地址
     private static URL url;
 
@@ -119,14 +123,18 @@ public class HttpUtils {
     }
 
     /**
-     * @param args
+     * 上传数据到服务器
+     * @param uname
+     * @param umail
+     * @param upwd
      */
-    public static void main(String[] args) {
+    public static void StoreData(String uname, String umail, String upwd){
         Map<String, String> map = new HashMap<String, String>();
-        map.put("username", "admin");
-        map.put("password", "123456");
+        map.put("uname", uname);
+        map.put("umail", umail);
+        map.put("upwd" , upwd);
         String result = sendPostMessage(map, "UTF-8");
-        System.out.println(">>>" + result);
+        Log.d("HttpUtils",result);
     }
 
 }

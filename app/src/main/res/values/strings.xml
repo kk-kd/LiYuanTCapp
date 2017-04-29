@@ -15,4 +15,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
+    <!--String names below will be used in activity_register.xml-->
+    <string name="register_name_hint">请输入用户名</string>
+    <string name="register_email_hint">请输入邮箱地址</string>
+    <string name="register_password_hint">请输入密码</string>
+    <string name="register_button">提交</string>
 </resources>
