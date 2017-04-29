@@ -45,8 +45,8 @@ public class finalnet {
             conn = realURL.openConnection();
             // 设置连接参数...conn.setRequestProperty("xx", "xx");
             conn.setConnectTimeout(10000); // 10s timeout
-            // conn.setRequestProperty("accept", "*/*");
-            // conn.setRequestProperty("", "");
+             conn.setRequestProperty("accept", "*/*");
+          //   conn.setRequestProperty("", "");
             conn.connect(); // 连接就把参数送出去了 get方法
         } catch (IOException e) {
             // TODO Auto-generated catch block
