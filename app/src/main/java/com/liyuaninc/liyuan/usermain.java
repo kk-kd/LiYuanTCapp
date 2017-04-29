@@ -1,13 +1,9 @@
 package com.liyuaninc.liyuan;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.DialogPreference;
-import android.preference.Preference;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,8 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import com.liyuaninc.liyuan.activity.Login;
 
 public class usermain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
