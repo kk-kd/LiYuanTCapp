@@ -1,3 +1,7 @@
+
+
+//更新UI的语法（防止崩溃）
+
 new Thread() {
             public void run() {
                 //这儿是耗时操作，完成之后更新UI；
@@ -18,9 +22,7 @@ new Thread() {
 
 
 
-
-
-
+//原来的线程启动（会崩溃）
          new Thread(new Runnable(){
                             @Override
                             public void run() {
@@ -50,3 +52,52 @@ new Thread() {
                                 }
                         }
                         }).start();
+
+
+
+
+
+
+
+
+
+      //现在的UI更新，不会崩溃
+       new Thread() {
+                       public void run() {
+                           //这儿是耗时操作，完成之后更新UI；
+                           finalnet finalnet = new finalnet();
+
+                           String username = register_name.getText().toString();
+                           String useremail = register_email.getText().toString();
+                           String userpassword = register_password.getText().toString();
+
+                           final String theparam="uname="+username+"&upwd="+userpassword+"&umail="+useremail;
+                           String result = finalnet.sendPost(API,theparam);
+                           Log.d("HttpUtils",result);
+                           Log.d("theparam",theparam);
+                           switch (result){
+                               case "ok":intentl=true;
+                                   break;
+                               default:intentl=false;
+                                   break;
+                           }
+                           runOnUiThread(new Runnable(){
+                               @Override
+                               public void run() {
+                                   //更新UI
+                                   if (intentl==true){
+                                       Intent intent =new Intent(Register.this,user.class);
+                                       startActivity(intent);
+                                       finish();}
+                                   else {
+                                       Toast.makeText(Register.this,"注册失败",Toast.LENGTH_SHORT).show();
+                                   }
+                               }
+
+                           });
+                       }
+                   }.start();
+
+
+
+
