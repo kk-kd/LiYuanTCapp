@@ -82,7 +82,8 @@ public class finalnet {
      *            查询参数 ,形式如 name=xx&age=xx&sex=xx
      * @return
      */
-    public static String sendGet(String url, String param) {
+    public static String sendGet(String url, String param)
+    {
         return sendGet(url + "?" + param);
     }
     /**

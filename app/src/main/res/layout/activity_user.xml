@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.liyuaninc.liyuan.user">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="72dp"
+        android:layout_marginEnd="17dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_disabled" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fab1"
+        android:layout_alignStart="@+id/fab1"
+        android:layout_marginBottom="15dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_light_focused" />
+</RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_disabled" />
+
+</FrameLayout>

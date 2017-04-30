@@ -16,12 +16,28 @@ public class user extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        final FloatingActionButton user = (FloatingActionButton) findViewById(R.id.user);
+        final FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab1);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                boolean visibility=false;
+                if (visibility==false) {
+                    user.setVisibility(View.VISIBLE);
+                    fab1.setVisibility(View.VISIBLE);
+                    visibility=true;
+                }
+                else if (visibility==true){
+                    user.setVisibility(View.GONE);
+                    fab1.setVisibility(View.GONE);
+                    visibility=false;
+                }
+
+
             }
         });
     }

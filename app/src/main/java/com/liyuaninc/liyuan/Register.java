@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -24,6 +25,9 @@ public class Register extends AppCompatActivity {
     public Button   submit;
    private final  String encoder="UTF-8";
     private static Calendar c = Calendar.getInstance();
+    String username="";
+    String useremail="";
+    String userpassword="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +42,11 @@ public class Register extends AppCompatActivity {
         String day1=String.valueOf(day);
         String time=year1+month1+day1;
         final String API="http://api.webhack.cn/reg/token/liyuan"+time;
-
         register_name = (EditText) findViewById(R.id.register_name);
         register_email = (EditText) findViewById(R.id.register_email);
         register_password = (EditText) findViewById(R.id.register_password);
         submit=(Button)findViewById(R.id.button_submit);
+
 
 
         submit.setOnClickListener(new View.OnClickListener(){
@@ -54,8 +58,14 @@ public class Register extends AppCompatActivity {
                 //                register_password.getText().toString(),"REGISTER");
                 new Thread(new Runnable(){ @Override public void run() {
                     finalnet finalnet = new finalnet();
-                    String result = finalnet.sendPost(API,encoder);
+                    username=register_name.getText().toString();
+                    useremail=register_email.getText().toString();
+                    userpassword=register_password.getText().toString();
+                    final String theparam="uname="+username+"&upwd="+userpassword+"&umail="+useremail;
+                    String result = finalnet.sendPost(API,theparam);
                     Log.d("HttpUtils",result);
+                    Log.d("theparam",theparam);
+
                 }
                 }).start();
 
