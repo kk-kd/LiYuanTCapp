@@ -8,7 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 public class user extends AppCompatActivity {
-    boolean visibility=false;
+    private boolean visibility=false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
