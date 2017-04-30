@@ -22,11 +22,14 @@ public class Register extends AppCompatActivity {
     public EditText register_email;
     public EditText register_password;
     public Button   submit;
+   private final  String encoder="UTF-8";
     private static Calendar c = Calendar.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        //API prepare
         int year=c.get(Calendar.YEAR);
         int month=c.get(Calendar.MONTH);
         int day=c.get(Calendar.DAY_OF_MONTH);
@@ -34,6 +37,7 @@ public class Register extends AppCompatActivity {
         String month1=String.valueOf(month);
         String day1=String.valueOf(day);
         String time=year1+month1+day1;
+        final String API="http://api.webhack.cn/reg/token/liyuan"+time;
 
         register_name = (EditText) findViewById(R.id.register_name);
         register_email = (EditText) findViewById(R.id.register_email);
@@ -50,9 +54,8 @@ public class Register extends AppCompatActivity {
                 //                register_password.getText().toString(),"REGISTER");
                 new Thread(new Runnable(){ @Override public void run() {
                     finalnet finalnet = new finalnet();
-                    String result = finalnet.sendPost("http://api.webhack.cn/reg/token/liyuan20170429","UTF-8");
+                    String result = finalnet.sendPost(API,encoder);
                     Log.d("HttpUtils",result);
-
                 }
                 }).start();
 
