@@ -48,6 +48,7 @@
         android:visibility="invisible"
         app:fabSize="mini"
         app:srcCompat="@drawable/common_google_signin_btn_icon_light_focused" />
+
 </RelativeLayout>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
