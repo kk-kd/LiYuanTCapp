@@ -30,7 +30,7 @@ public class Register extends AppCompatActivity {
     public EditText register_password;
     public Button   submit;
     private static Calendar c = Calendar.getInstance();
-    private boolean intentl;
+    private boolean intentl=true;
 
     public static final int UPDATE_TEXT = 1;
 
@@ -70,8 +70,6 @@ public class Register extends AppCompatActivity {
                         switch (result){
                             case "ok":intentl=true;
                                 break;
-                            default:intentl=false;
-                                break;
                         }
                         runOnUiThread(new Runnable(){
                             @Override
@@ -80,6 +78,8 @@ public class Register extends AppCompatActivity {
                                 if (intentl==true){
                                     Intent intent =new Intent(Register.this,user.class);
                                     startActivity(intent);
+                                    Toast.makeText(Register.this,"注册成功",Toast.LENGTH_SHORT).show();
+                                    intentl=false;
                                     finish();}
                                 else {
                                     Toast.makeText(Register.this,"注册失败",Toast.LENGTH_SHORT).show();
