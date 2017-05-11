@@ -1,13 +1,15 @@
-package com.liyuaninc.liyuan;
+package com.liyuaninc.liyuan.Login;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import com.liyuaninc.liyuan.R;
+import com.liyuaninc.liyuan.Register;
 
 import java.util.Calendar;
 
@@ -25,10 +27,11 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         login = (ImageButton)findViewById(R.id.tomain);
         register = (ImageButton)findViewById(R.id.register) ;
-        uname=(EditText)findViewById(R.id.username);
-        upass=(EditText)findViewById(R.id.userpassword);
+        uname =(EditText)findViewById(R.id.username);
+        upass =(EditText)findViewById(R.id.userpassword);
 
         String time = String.valueOf(c.get(Calendar.YEAR)) + String.valueOf(c.get(Calendar.MONTH)) + String.valueOf(c.get(Calendar.DAY_OF_MONTH));
         final String API="http://api.webhack.cn/login/token/liyuan"+time;

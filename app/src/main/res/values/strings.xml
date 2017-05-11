@@ -21,4 +21,9 @@
     <string name="register_password_hint">请输入密码</string>
     <string name="register_button">提交</string>
     <string name="title_activity_user">user</string>
+
+    <!--For Broadcast-->
+    <string name="password_invalid_error">你的密码不rarchern(*≧▽≦*)n</string>
+    <string name="username_invalid_error">你的用户名不rarcher(′⌒`)</string>
+    <string name="username_empty_error">你没输rarcher啊。。。</string>
 </resources>
