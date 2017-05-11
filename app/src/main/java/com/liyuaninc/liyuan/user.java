@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 public class user extends AppCompatActivity {
-    private boolean visibility=false;
+    private boolean visibility = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +27,15 @@ public class user extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
-                if (visibility==false) {
+                if (visibility == false) {
                     user.setVisibility(View.VISIBLE);
                     fab1.setVisibility(View.VISIBLE);
-                    visibility=true;
+                    visibility = true;
                 }
-                else if (visibility==true){
+                else if (visibility == true){
                     user.setVisibility(View.GONE);
                     fab1.setVisibility(View.GONE);
-                    visibility=false;
+                    visibility =  false;
                 }
 
 

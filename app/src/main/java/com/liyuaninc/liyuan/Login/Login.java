@@ -15,6 +15,7 @@ import java.util.Calendar;
 
 import db.finalnet;
 
+@Deprecated
 public class Login extends AppCompatActivity {
 
     private EditText uname;
@@ -26,7 +27,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+//        setContentView(R.layout.activity_login);
 
         login = (ImageButton)findViewById(R.id.tomain);
         register = (ImageButton)findViewById(R.id.register) ;
