@@ -2,13 +2,18 @@ package com.liyuaninc.liyuan.Login;
 
 import android.os.AsyncTask;
 
+import com.liyuaninc.liyuan.Login.Event.CancelledEvent;
+import com.liyuaninc.liyuan.Login.Event.PasswordErrorEvent;
+import com.liyuaninc.liyuan.Login.Event.SuccessEvent;
+
+import org.greenrobot.eventbus.EventBus;
+
 /**
  * Created by candy on 11/05/2017.
  */
 
 public class LoginModelImp implements LoginModel {
 
-    private OnLoginFinishedListener listener;
     /**
      * A fake rarcher login that needs to be modified later
      * TODO: remove after connecting to System
@@ -17,9 +22,7 @@ public class LoginModelImp implements LoginModel {
 
 
     @Override
-    public void login(String username, String password, OnLoginFinishedListener listener) {
-        this.listener = listener;
-
+    public void login(String username, String password) {
         //call login task
         new UserLoginTask(username, password).execute((Void) null);
     }
@@ -64,16 +67,16 @@ public class LoginModelImp implements LoginModel {
         @Override
         protected void onPostExecute(final Boolean success) {
             if (success){
-                listener.onSucess();
+                EventBus.getDefault().post(new SuccessEvent());
             }
             else{
-                listener.onPasswordError();
+                EventBus.getDefault().post(new PasswordErrorEvent());
             }
         }
 
         @Override
         protected void onCancelled() {
-            listener.onCancelded();
+            EventBus.getDefault().post(new CancelledEvent());
         }
     }
 }

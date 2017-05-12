@@ -6,14 +6,5 @@ package com.liyuaninc.liyuan.Login;
 
 public interface LoginModel {
 
-    interface OnLoginFinishedListener{
-
-        void onCancelded();
-
-        void onPasswordError();
-
-        void onSucess();
-    }
-
-    void login (String username, String password, OnLoginFinishedListener listener);
+    void login (String username, String password);
 }

@@ -8,7 +8,7 @@ import com.liyuaninc.liyuan.R;
  * Created by candy on 11/05/2017.
  */
 
-public class LoginPresenterImp implements LoginPresenter, LoginModel.OnLoginFinishedListener {
+public class LoginPresenterImp implements LoginPresenter{
 
     private LoginModel loginModel;
     private LoginView loginView;
@@ -18,6 +18,11 @@ public class LoginPresenterImp implements LoginPresenter, LoginModel.OnLoginFini
         this.loginModel = new LoginModelImp();
     }
 
+    /**
+     * Test if username and password is valid
+     * @param username
+     * @param password
+     */
     @Override
     public void validCredentials(String username, String password) {
         //check for password validation
@@ -37,27 +42,11 @@ public class LoginPresenterImp implements LoginPresenter, LoginModel.OnLoginFini
         }
 
         loginView.showProgress(true);
-        loginModel.login(username,password,this);
+        loginModel.login(username,password);
 
 
     }
 
-    @Override
-    public void onCancelded() {
-        loginView.showProgress(false);
-    }
-
-    @Override
-    public void onPasswordError() {
-        loginView.showProgress(false);
-        loginView.setPasswordError(R.string.password_incorrect_error);
-    }
-
-    @Override
-    public void onSucess() {
-        loginView.showProgress(false);
-        loginView.successAction();
-    }
 
     private boolean isUsernameValid(String username){
         //TODO: change the logic
