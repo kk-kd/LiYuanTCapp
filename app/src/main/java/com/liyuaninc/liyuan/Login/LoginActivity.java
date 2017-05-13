@@ -21,50 +21,42 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class LoginActivity extends AppCompatActivity implements LoginView{
 
     private LoginPresenter loginPresenter;
 
-    private EditText mUsernameView;
-    private EditText mPasswordView;
-    private ImageButton mLoginButton;
-    private ImageButton mRegisterButton;
-    private View mProgressView;
+    @BindView(R.id.username) EditText mUsernameView;
+    @BindView(R.id.userpassword) EditText mPasswordView;
+    @BindView(R.id.login_progress) View mProgressView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
-        mLoginButton = (ImageButton) findViewById(R.id.login);
-        mRegisterButton = (ImageButton) findViewById(R.id.register) ;
-        mUsernameView = (EditText) findViewById(R.id.username);
-        mPasswordView = (EditText) findViewById(R.id.userpassword);
-
-        mProgressView = findViewById(R.id.login_progress);
-
-        mLoginButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                attemptLogin();
-            }
-        });
-
-        mRegisterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, Register.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
+        loginPresenter = new LoginPresenterImp(this);
     }
 
     /**
-     * Attempt to login
+     * Go to RegisterActivity  when the register button is pressed
+     */
+    @OnClick(R.id.register)
+    private void goRegister(){
+        Intent intent = new Intent(LoginActivity.this, Register.class);
+        startActivity(intent);
+        finish();
+    }
+
+    /**
+     * Attempt to login when the login button is pressed
      * If there are errors, the errors are presented and no login will be made
      */
+    @OnClick(R.id.login)
     private void attemptLogin(){
         //Reset errors
         mUsernameView.setError(null);
