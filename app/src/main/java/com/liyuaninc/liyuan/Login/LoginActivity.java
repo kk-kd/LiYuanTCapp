@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.liyuaninc.liyuan.Login.Event.CancelledEvent;
@@ -46,7 +45,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
      * Go to RegisterActivity  when the register button is pressed
      */
     @OnClick(R.id.register)
-    private void goRegister(){
+    public void goRegister(){
         Intent intent = new Intent(LoginActivity.this, Register.class);
         startActivity(intent);
         finish();
@@ -57,7 +56,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
      * If there are errors, the errors are presented and no login will be made
      */
     @OnClick(R.id.login)
-    private void attemptLogin(){
+    public void attemptLogin(){
         //Reset errors
         mUsernameView.setError(null);
         mPasswordView.setError(null);

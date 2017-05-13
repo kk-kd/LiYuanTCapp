@@ -29,7 +29,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_login);
 
-        login = (ImageButton)findViewById(R.id.tomain);
+//        login = (ImageButton)findViewById(R.id.tomain);
         register = (ImageButton)findViewById(R.id.register) ;
         uname =(EditText)findViewById(R.id.username);
         upass =(EditText)findViewById(R.id.userpassword);
