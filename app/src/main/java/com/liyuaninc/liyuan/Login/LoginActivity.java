@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
      * Go to RegisterActivity  when the register button is pressed
      */
     @OnClick(R.id.register)
+    @Override
     public void goRegister(){
         Intent intent = new Intent(LoginActivity.this, Register.class);
         startActivity(intent);
@@ -118,10 +119,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onSuccessEvent(SuccessEvent successEvent) {
         showProgress(false);
-        Toast.makeText(this,"知道密码是rarcher你很棒棒哦",Toast.LENGTH_SHORT);
-        Intent intent = new Intent(LoginActivity.this, user.class);
-        startActivity(intent);
-        finish();
+        goUserActivity();
     }
 
     /**
@@ -140,6 +138,14 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onCancelledEvent(CancelledEvent cancelledEvent) {
         showProgress(false);
+    }
+
+    @Override
+    public void goUserActivity() {
+        Toast.makeText(this,"知道密码是rarcher你很棒棒哦",Toast.LENGTH_SHORT);
+        Intent intent = new Intent(LoginActivity.this, user.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
