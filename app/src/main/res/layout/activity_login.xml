@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,42 +10,65 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="190dp"
+        android:layout_height="0dp"
         app:srcCompat="@drawable/login1"
-        android:layout_weight="0.57" />
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription=""
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="19dp"
-        android:orientation="horizontal">
-    </LinearLayout>
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout10"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout12"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"></LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_height="200dp"
-        android:layout_width="match_parent"
-        android:weightSum="1">
+        android:layout_width="0dp"
+        android:weightSum="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout11"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout10"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout10"
+        android:id="@+id/linearLayout12">
 
         <LinearLayout
-             android:layout_width="match_parent"
-             android:layout_height="60dp"
-             android:orientation="horizontal">
-              <TextView
-                  android:layout_width="90dp"
-                  android:layout_height="wrap_content"
-                  android:layout_gravity="center_vertical"
-                  android:text="@string/username"
-                  android:textColor="@color/colorPrimary"
-                  android:textSize="18sp" />
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
-             <EditText
-                 android:id="@+id/username"
-                 android:layout_width="292dp"
-                 android:layout_height="wrap_content"
-                 android:layout_gravity="center_vertical"
-                 android:hint="@string/username_hint"
-                 android:textColor="@color/colorPrimaryDark" />
-         </LinearLayout>
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/username"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:hint="@string/username_hint"
+                android:textColor="@color/colorPrimaryDark" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,7 +90,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:hint="@string/password_hint"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/colorPrimaryDark"
+                tools:ignore="TextFields" />
         </LinearLayout>
 
         <ProgressBar
@@ -80,25 +105,49 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="75dp"
         android:orientation="horizontal"
-        android:weightSum="1">
-
-        <ImageButton
-            android:id="@+id/login"
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/testlogin" />
-
-        <ImageButton
-            android:id="@+id/register"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/common_google_signin_btn_icon_dark_focused"
-            android:layout_weight="0.44" />
+        android:weightSum="1"
+        android:id="@+id/linearLayout11"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout12"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout12">
 
     </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/register"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.44"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout11"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_dark_focused"
+        android:layout_marginRight="50dp"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout11"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout11"
+        android:layout_marginBottom="5dp"
+        tools:ignore="ContentDescription,RtlHardcoded" />
 
-</LinearLayout>
+    <ImageButton
+        android:id="@+id/login"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout11"
+        app:srcCompat="@drawable/testlogin"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout11"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout11"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintVertical_bias="0.625"
+        android:contentDescription=""
+        tools:ignore="ContentDescription,RtlHardcoded" />
+
+
+</android.support.constraint.ConstraintLayout>
