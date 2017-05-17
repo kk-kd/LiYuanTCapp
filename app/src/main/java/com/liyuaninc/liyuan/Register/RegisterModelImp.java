@@ -47,7 +47,7 @@ public class RegisterModelImp implements RegisterModel {
             public void run(){
                 Finalnet finalnet = new Finalnet();
 
-                String theparam="uname="+username+"&upwd="+password+"&umail="+email;
+                final String theparam="uname="+username+"&upwd="+password+"&umail="+email;
                 String result = finalnet.sendPost(API,theparam);
                 switch (result){
                     case "ok":
