@@ -9,11 +9,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.liyuaninc.liyuan.R;
-import com.liyuaninc.liyuan.Register;
+import com.liyuaninc.liyuan.Register.Register;
 
 import java.util.Calendar;
 
-import db.finalnet;
+import db.Finalnet;
 
 @Deprecated
 public class Login extends AppCompatActivity {
@@ -53,12 +53,12 @@ public class Login extends AppCompatActivity {
               new Thread(new Runnable() {
                   @Override
                   public void run() {
-                      finalnet finalnet = new finalnet();
+                      Finalnet Finalnet = new Finalnet();
 
                       String username = uname.getText().toString();
                       String userpassword = upass.getText().toString();
                       final String theparam="uname="+username+"&upwd="+userpassword+"&umail="+"2553263392@qq.com";
-                      String result = finalnet.sendGet(API,theparam);
+                      String result = Finalnet.sendGet(API,theparam);
                       Log.d("HttpUtils",result);
                       Log.d("theparam",theparam);
                   }

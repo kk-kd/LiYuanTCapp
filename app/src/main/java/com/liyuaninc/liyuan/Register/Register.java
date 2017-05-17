@@ -1,28 +1,24 @@
-package com.liyuaninc.liyuan;
+package com.liyuaninc.liyuan.Register;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.Toast;
 
+import com.liyuaninc.liyuan.R;
+import com.liyuaninc.liyuan.user;
+
 import java.util.Calendar;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
-import db.HttpUtils;
-import db.NetTool;
-import db.finalnet;
+import db.Finalnet;
 
-import static com.liyuaninc.liyuan.R.id.cancel_action;
-import static com.liyuaninc.liyuan.R.id.imageView;
-import static db.finalnet.sendGet;
+import static db.Finalnet.sendGet;
 
+@Deprecated
 public class Register extends AppCompatActivity {
 
     public EditText register_name;
@@ -30,7 +26,7 @@ public class Register extends AppCompatActivity {
     public EditText register_password;
     public Button   submit;
     private static Calendar c = Calendar.getInstance();
-    private boolean intentl=true;
+    private boolean ifIntent;
 
     public static final int UPDATE_TEXT = 1;
 
@@ -57,7 +53,7 @@ public class Register extends AppCompatActivity {
                 new Thread() {
                     public void run() {
                         //这儿是耗时操作，完成之后更新UI；
-                        finalnet finalnet = new finalnet();
+                        Finalnet finalnet = new Finalnet();
 
                         String username = register_name.getText().toString();
                         String useremail = register_email.getText().toString();
@@ -68,18 +64,22 @@ public class Register extends AppCompatActivity {
                         Log.d("HttpUtils",result);
                         Log.d("theparam",theparam);
                         switch (result){
-                            case "ok":intentl=true;
+                            case "ok":
+                                ifIntent =true;
+                                break;
+                            default:
+                                ifIntent = false;
                                 break;
                         }
                         runOnUiThread(new Runnable(){
                             @Override
                             public void run() {
                                 //更新UI
-                                if (intentl==true){
+                                if (ifIntent ==true){
                                     Intent intent =new Intent(Register.this,user.class);
                                     startActivity(intent);
                                     Toast.makeText(Register.this,"注册成功",Toast.LENGTH_SHORT).show();
-                                    intentl=false;
+                                    ifIntent =false;
                                     finish();}
                                 else {
                                     Toast.makeText(Register.this,"注册失败",Toast.LENGTH_SHORT).show();

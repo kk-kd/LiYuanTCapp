@@ -13,7 +13,8 @@ import com.liyuaninc.liyuan.Login.Event.CancelledEvent;
 import com.liyuaninc.liyuan.Login.Event.PasswordErrorEvent;
 import com.liyuaninc.liyuan.Login.Event.SuccessEvent;
 import com.liyuaninc.liyuan.R;
-import com.liyuaninc.liyuan.Register;
+import com.liyuaninc.liyuan.Register.Register;
+import com.liyuaninc.liyuan.Register.RegisterActivity;
 import com.liyuaninc.liyuan.user;
 
 import org.greenrobot.eventbus.EventBus;
@@ -47,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @OnClick(R.id.register)
     @Override
     public void goRegister(){
-        Intent intent = new Intent(LoginActivity.this, Register.class);
+        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(intent);
         finish();
     }
@@ -117,6 +118,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
      */
     //TODO: connect to mainActivity
     @Subscribe(threadMode = ThreadMode.MAIN)
+    @Override
     public void onSuccessEvent(SuccessEvent successEvent) {
         showProgress(false);
         goUserActivity();
@@ -127,6 +129,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
      * @param passwordErrorEvent eventbus:Event.PasswordErrorEvent
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
+    @Override
     public void onPasswrodErrorEvent(PasswordErrorEvent passwordErrorEvent) {
         showProgress(false);
         setPasswordError(R.string.password_incorrect_error);
@@ -136,6 +139,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
      * @param cancelledEvent eventbus:Event.CancelledEvent
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
+    @Override
     public void onCancelledEvent(CancelledEvent cancelledEvent) {
         showProgress(false);
     }

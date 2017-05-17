@@ -11,29 +11,21 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:srcCompat="@drawable/login1"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintBottom_creator="1"
+        android:contentDescription=""
         app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription=""
-        tools:ignore="ContentDescription" />
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="19dp"
-        android:orientation="horizontal"
-        android:id="@+id/linearLayout10"
-        tools:layout_constraintRight_creator="1"
+        app:srcCompat="@drawable/rarcher_2"
+        tools:ignore="ContentDescription"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout12"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"></LinearLayout>
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginRight="40dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -99,7 +91,7 @@
             style="?android:attr/progressBarStyle"
             android:layout_width="371dp"
             android:layout_height="wrap_content"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
     </LinearLayout>
 
@@ -148,6 +140,21 @@
         app:layout_constraintVertical_bias="0.625"
         android:contentDescription=""
         tools:ignore="ContentDescription,RtlHardcoded" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_marginBottom="-8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout12"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"></LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>

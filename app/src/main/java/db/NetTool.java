@@ -36,6 +36,7 @@ import android.os.Environment;
  * NetTool:封装一个类搞定90%安卓客户端与服务器端交互
  *
  */
+@Deprecated
 public class NetTool {
     private static final int TIMEOUT = 10000;// 10秒
 

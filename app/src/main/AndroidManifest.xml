@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         -->
-        <activity android:name=".Register" />
+        <activity android:name=".Register.Register" />
         <activity
             android:name=".user"
             android:label="@string/title_activity_user"

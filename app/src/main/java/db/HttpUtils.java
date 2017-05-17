@@ -4,10 +4,6 @@ package db;
  * Created by Administrator on 2017/4/29.
  */
 
-import android.util.Log;
-
-import com.liyuaninc.liyuan.Register;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,12 +13,11 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 //没有使用！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+@Deprecated
 public class HttpUtils {
 
     //TODO:修改服务端地址

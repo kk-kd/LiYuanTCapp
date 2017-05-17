@@ -20,7 +20,7 @@ import android.util.PrintStreamPrinter;
 /**
  * 用于get或者post数据
  */
-public class finalnet {
+public class Finalnet {
     public static final String TAG = "GetPostUtil Debug";
     /**
      * @param url
