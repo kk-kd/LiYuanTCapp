@@ -6,9 +6,6 @@
     <string name="password_hint">请输入座位号</string>
     <string name="title_activity_usermain"> </string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
     <string name="gotologin">离开梨园</string>
     <string name="title_home">看戏区</string>

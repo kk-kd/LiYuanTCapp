@@ -6,46 +6,46 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/Login6" />
+        android:background="@drawable/login6" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/Login1" />
+        android:background="@drawable/login1" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/Login2" />
+        android:background="@drawable/login2" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/Login3" />
+        android:background="@drawable/login3" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/Login4" />
+        android:background="@drawable/login1" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/Login5" />
+        android:background="@drawable/login5" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/Login7" />
+        android:background="@drawable/login7" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/Login8" />
+        android:background="@drawable/login8" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/Login9" />
+        android:background="@drawable/login9" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/Login10" />
+        android:background="@drawable/login10" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/Login11" />
+        android:background="@drawable/login11" />
 </FrameLayout>
