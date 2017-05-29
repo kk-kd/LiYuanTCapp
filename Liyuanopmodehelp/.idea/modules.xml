@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LiYuanTCapp.iml" filepath="$PROJECT_DIR$/LiYuanTCapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Liyuanopmodehelp.iml" filepath="$PROJECT_DIR$/Liyuanopmodehelp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

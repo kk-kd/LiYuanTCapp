@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liyuaninc.liyuanopmodehelp.help"
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="551dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="576dp"
+        android:layout_height="319dp"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="9dp">
+
+        <LinearLayout
+            android:layout_width="189dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="159dp"
+                android:layout_height="53dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="40dp"
+                    android:layout_height="43dp"
+                    android:layout_weight="0.26"
+                    app:srcCompat="@drawable/white" />
+
+                <Button
+                    android:id="@+id/up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pad_up" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="644dp"
+                android:layout_height="51dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pad_left"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="154dp" />
+
+                <Button
+                    android:id="@+id/right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pad_right"
+                    tools:layout_editor_absoluteX="-152dp"
+                    tools:layout_editor_absoluteY="393dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="174dp"
+                android:layout_height="46dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="31dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.19"
+                    app:srcCompat="@drawable/white" />
+
+                <Button
+                    android:id="@+id/down"
+                    android:layout_width="105dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="0.09"
+                    android:text="pad_down" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="171dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/change"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="代码模式" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="205dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="123dp"
+                android:layout_weight="1.11"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/nowway"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:text="点击按钮开始你的编辑" />
+
+                <LinearLayout
+                    android:layout_width="193dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/motoraname"
+                        android:layout_width="107dp"
+                        android:layout_height="match_parent"
+                        android:text="Motor a" />
+
+                    <EditText
+                        android:id="@+id/motora"
+                        android:layout_width="74dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="182dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/motorb"
+                        android:layout_width="107dp"
+                        android:layout_height="match_parent"
+                        android:text="Motor b" />
+
+                    <EditText
+                        android:id="@+id/bvalue"
+                        android:layout_width="440dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="183dp"
+                    android:layout_height="49dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/motorc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.08"
+                        android:text="Motor c" />
+
+                    <EditText
+                        android:id="@+id/cvalue"
+                        android:layout_width="76dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="184dp"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/motord"
+                        android:layout_width="107dp"
+                        android:layout_height="match_parent"
+                        android:text="Motor d" />
+
+                    <EditText
+                        android:id="@+id/dvalue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/finish"
+                android:layout_width="196dp"
+                android:layout_height="wrap_content"
+                android:text="完成修改" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="189dp"
+            android:layout_height="233dp"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="159dp"
+                android:layout_height="53dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="43dp"
+                    app:srcCompat="@drawable/white" />
+
+                <Button
+                    android:id="@+id/X"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="644dp"
+                android:layout_height="51dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/Y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Y"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="154dp" />
+
+                <Button
+                    android:id="@+id/B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B"
+                    tools:layout_editor_absoluteX="-152dp"
+                    tools:layout_editor_absoluteY="393dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="174dp"
+                android:layout_height="46dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="31dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.19"
+                    app:srcCompat="@drawable/white" />
+
+                <Button
+                    android:id="@+id/A"
+                    android:layout_width="105dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="0.09"
+                    android:text="A" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
