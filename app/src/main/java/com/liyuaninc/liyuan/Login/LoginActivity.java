@@ -13,7 +13,6 @@ import com.liyuaninc.liyuan.Login.Event.CancelledEvent;
 import com.liyuaninc.liyuan.Login.Event.PasswordErrorEvent;
 import com.liyuaninc.liyuan.Login.Event.SuccessEvent;
 import com.liyuaninc.liyuan.R;
-import com.liyuaninc.liyuan.Register.Register;
 import com.liyuaninc.liyuan.Register.RegisterActivity;
 import com.liyuaninc.liyuan.user;
 
@@ -31,7 +30,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
     @BindView(R.id.username) EditText mUsernameView;
     @BindView(R.id.userpassword) EditText mPasswordView;
-    @BindView(R.id.login_progress) View mProgressView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,18 +73,18 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
      * @param show whether the progress bar should be showed
      */
 
-    @Override
-    public void showProgress(final boolean show) {
-        int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
-
-        mProgressView.setVisibility(show? View.VISIBLE: View.GONE);
-        mProgressView.animate().setDuration(shortAnimTime).alpha(show? 1:0).setListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                mProgressView.setVisibility(show? View.VISIBLE: View.GONE);
-            }
-        });
-    }
+//    @Override
+//    public void showProgress(final boolean show) {
+//        int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
+//
+//        mProgressView.setVisibility(show? View.VISIBLE: View.GONE);
+//        mProgressView.animate().setDuration(shortAnimTime).alpha(show? 1:0).setListener(new AnimatorListenerAdapter() {
+//            @Override
+//            public void onAnimationEnd(Animator animation) {
+//                mProgressView.setVisibility(show? View.VISIBLE: View.GONE);
+//            }
+//        });
+//    }
 
     /**
      * Set error message if username is invalid
@@ -120,7 +118,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onSuccessEvent(SuccessEvent successEvent) {
-        showProgress(false);
+//        showProgress(false);
         goUserActivity();
     }
 
@@ -131,7 +129,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onPasswrodErrorEvent(PasswordErrorEvent passwordErrorEvent) {
-        showProgress(false);
+//        showProgress(false);
         setPasswordError(R.string.password_incorrect_error);
     }
 
@@ -141,7 +139,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onCancelledEvent(CancelledEvent cancelledEvent) {
-        showProgress(false);
+//        showProgress(false);
     }
 
     @Override

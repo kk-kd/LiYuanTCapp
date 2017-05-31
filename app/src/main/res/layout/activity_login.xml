@@ -1,160 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <!-- background -->
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:contentDescription=""
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rarcher"
-        tools:ignore="ContentDescription"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginLeft="40dp"
-        app:layout_constraintVertical_bias="1.0"
-        android:layout_marginRight="40dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login6" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_height="200dp"
-        android:layout_width="0dp"
-        android:weightSum="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout11"
-        app:layout_constraintRight_toRightOf="@+id/linearLayout10"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/linearLayout10"
-        android:id="@+id/linearLayout12">
+    <!-- 使我保持登录 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login1" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
+    <!-- 登录按钮 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login3" />
 
-            <TextView
-                android:layout_width="90dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="@string/username"
-                android:textColor="@color/colorPrimary"
-                android:textSize="18sp" />
+    <!-- 开始你的表演！ -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login1" />
 
-            <EditText
-                android:id="@+id/username"
-                android:layout_width="292dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:hint="@string/username_hint"
-                android:textColor="@color/colorPrimaryDark" />
-        </LinearLayout>
+    <!-- 梨园 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login5" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
+    <!-- 点 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login7" />
 
+    <!-- 忘记密码？ -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login8" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login9" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login10" />
 
-            <TextView
-                android:layout_width="90dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="@string/password"
-                android:textColor="@color/colorPrimary"
-                android:textSize="18sp" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/userpassword"
-                android:layout_width="292dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:hint="@string/password_hint"
-                android:textColor="@color/colorPrimaryDark"
-                tools:ignore="TextFields" />
-        </LinearLayout>
-
-        <ProgressBar
-            android:id="@+id/login_progress"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="371dp"
+        <Button
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="visible" />
+            android:text="register"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="653dp"
+            app:layout_constraintHorizontal_bias="0.74"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="700dp"
+            app:layout_constraintVertical_bias="0.16000003" />
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/forgetPassword"
+            android:layout_width="85dp"
+            android:layout_height="18dp"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintHorizontal_bias="0.798"
+            app:layout_constraintVertical_bias="0.608" />
 
+        <CheckBox
+            android:id="@+id/remainLogin"
+            android:layout_width="33dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.119"
+            app:layout_constraintVertical_bias="0.609" />
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="75dp"
-        android:orientation="horizontal"
-        android:weightSum="1"
-        android:id="@+id/linearLayout11"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="@+id/linearLayout12"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="36dp"
-        app:layout_constraintLeft_toLeftOf="@+id/linearLayout12">
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="298dp"
+            android:layout_height="37dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.43"
+            android:hint="戏票编号"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@android:color/white"/>
 
-    </LinearLayout>
+        <EditText
+            android:id="@+id/userpassword"
+            android:layout_width="302dp"
+            android:layout_height="39dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.528"
+            android:hint="座位号"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@android:color/white"/>
 
-    <ImageButton
-        android:id="@+id/register"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="5dp"
-        android:layout_weight="0.44"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout11"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark_focused"
-        android:layout_marginRight="50dp"
-        app:layout_constraintRight_toRightOf="@+id/linearLayout11"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout11"
-        android:layout_marginBottom="5dp"
-        tools:ignore="ContentDescription,RtlHardcoded" />
+        <Button
+            android:id="@+id/login"
+            android:layout_width="298dp"
+            android:layout_height="46dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintVertical_bias="0.71"
+            android:background="@android:color/transparent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
 
-    <ImageButton
-        android:id="@+id/login"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout11"
-        app:srcCompat="@drawable/testlogin"
-        android:layout_marginLeft="50dp"
-        app:layout_constraintLeft_toLeftOf="@+id/linearLayout11"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout11"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintVertical_bias="0.625"
-        android:contentDescription=""
-        tools:ignore="ContentDescription,RtlHardcoded" />
+    </android.support.constraint.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout10"
-        android:layout_width="0dp"
-        android:layout_height="19dp"
-        android:layout_marginBottom="-8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout12"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"></LinearLayout>
-
-
-</android.support.constraint.ConstraintLayout>
+</FrameLayout>

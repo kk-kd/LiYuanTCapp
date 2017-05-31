@@ -10,7 +10,7 @@ import com.liyuaninc.liyuan.Login.Event.SuccessEvent;
 
 public interface LoginView {
 
-    void showProgress(boolean showProgress);
+//    void showProgress(boolean showProgress);
 
     void setUsernameError(int messageResId);
     void setPasswordError(int messageResId);

@@ -57,7 +57,7 @@ public class LoginModelImp implements LoginModel {
                 String[] pieces = credential.split(":");
                 if (pieces[0].equals(mUsername)){
                     //return if password matches
-                    return pieces[1].equals(mPassword);
+                   return pieces[1].equals(mPassword);
                 }
             }
 

@@ -41,7 +41,7 @@ public class LoginPresenterImp implements LoginPresenter{
             return;
         }
 
-        loginView.showProgress(true);
+//        loginView.showProgress(true);
         loginModel.login(username,password);
 
 
