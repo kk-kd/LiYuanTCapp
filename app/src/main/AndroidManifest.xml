@@ -25,17 +25,23 @@
             </intent-filter>
         </activity>
         -->
-        <activity android:name=".Register.RegisterActivity" />
+        <activity
+            android:name=".Register.RegisterActivity"
+            />
         <activity
             android:name=".user"
             android:label="@string/title_activity_user" />
+        <!--android:name=".Login.LoginActivity">
+               -->
+        <activity
 
-        <activity android:name=".Login.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".Login.LoginActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER"
+                />
+        </intent-filter>
+    </activity>
 
 
     </application>
