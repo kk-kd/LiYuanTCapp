@@ -28,7 +28,7 @@
         -->
         <activity android:name=".Register.RegisterActivity" />
         <activity
-            android:name=".user"
+            android:name=".User.user"
             android:label="@string/title_activity_user" />
         <!-- android:name=".Login.LoginActivity"> -->
         <activity android:name=".Login.LoginActivity">

@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.liyuaninc.liyuan.R;
-import com.liyuaninc.liyuan.user;
+import com.liyuaninc.liyuan.User.user;
 
 import java.util.Calendar;
 

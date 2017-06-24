@@ -1,12 +1,8 @@
 package com.liyuaninc.liyuan.Login;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -15,7 +11,7 @@ import com.liyuaninc.liyuan.Login.Event.PasswordErrorEvent;
 import com.liyuaninc.liyuan.Login.Event.SuccessEvent;
 import com.liyuaninc.liyuan.R;
 import com.liyuaninc.liyuan.Register.RegisterActivity;
-import com.liyuaninc.liyuan.user;
+import com.liyuaninc.liyuan.User.user;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
