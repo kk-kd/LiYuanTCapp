@@ -3,7 +3,7 @@ package com.liyuaninc.liyuan.SplashActivity;
 
 
  import android.app.Activity;
-import android.content.Intent;
+ import android.content.Intent;
  import android.net.Uri;
  import android.os.Bundle;
  import android.os.Environment;
@@ -18,7 +18,7 @@ import android.content.Intent;
 
 public class Splash extends Activity {
 private VideoView videoView;
-    private final int SPLASH_DISPLAY_LENGHT = 3000;
+    private final int SPLASH_DISPLAY_LENGHT = 5000;
    private Handler handler;
 
    @Override
@@ -26,12 +26,12 @@ private VideoView videoView;
         super.onCreate(savedInstanceState);
                getWindow().requestFeature(Window.FEATURE_NO_TITLE);
                setContentView(R.layout.activity_splash);
-       Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()+"/splash.mp4");
        VideoView videoView = (VideoView)this.findViewById(R.id.splashview);
-       videoView.setMediaController(new MediaController(this));
-       videoView.setVideoURI(uri);
+       String uri = "android.resource://" +getPackageName() + "/" + R.raw.splash;
+       videoView.setVideoURI(Uri.parse(uri));
        videoView.start();
-       videoView.requestFocus();
+
+
 
        handler = new Handler();
              // 延迟SPLASH_DISPLAY_LENGHT时间然后跳转到MainActivity
