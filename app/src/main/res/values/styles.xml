@@ -11,7 +11,6 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <!-- notice :test style here.
     ThemeOverlay.AppCompat.Light       this is under the notice
-
     -->
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
