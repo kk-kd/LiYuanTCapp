@@ -41,13 +41,13 @@ public class RegisterPresenterImp implements RegisterPresenter {
 
 
     private boolean isEmailValid(String email){
-        if (!email.contains("@")) return false;
-        return true;
+        if (!email.contains("@")){ return false;}
+        else {return true;}
     }
 
     private boolean isPasswordValid(String password){
         //TODO: change the logic
-        return password.length() >= 6;
+        return password.length() >= 9;
     }
 
     private boolean isUsernameValid(String username){

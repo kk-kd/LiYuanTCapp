@@ -55,6 +55,6 @@ public class LoginPresenterImp implements LoginPresenter{
 
     private boolean isPasswordValid(String password){
         //TODO: change the logic
-        return password.length() >= 6;
+        return password.length() >=9;
     }
 }
