@@ -141,7 +141,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
     @Override
     public void goUserActivity() {
-        Toast.makeText(this,"知道密码是rarcher你很棒棒哦",Toast.LENGTH_SHORT);
+        Toast.makeText(this,"知道密码是rarcher你很棒棒哦",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(LoginActivity.this, user.class);
         startActivity(intent);
         finish();

@@ -26,7 +26,7 @@ public class LoginPresenterImp implements LoginPresenter{
     @Override
     public void validCredentials(String username, String password) {
         //check for password validation
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)){
+        if (!TextUtils.isEmpty(password) /* && !isPasswordValid(password) */){
             loginView.setPasswordError(R.string.password_invalid_error);
             return;
         }

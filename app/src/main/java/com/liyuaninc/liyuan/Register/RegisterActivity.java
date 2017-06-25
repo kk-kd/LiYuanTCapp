@@ -90,7 +90,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
     @OnClick(R.id.goLogin)
     @Override
     public void goLogin() {
-        Toast.makeText(this,"注册成功！",Toast.LENGTH_SHORT);
+        Toast.makeText(this,"注册成功！",Toast.LENGTH_SHORT).show();
         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         finish();
     }
