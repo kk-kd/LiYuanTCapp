@@ -36,7 +36,7 @@ public class LoginPresenterImp implements LoginPresenter{
             loginView.setUsernameError(R.string.username_empty_error);
             return;
         }
-        else if (isUsernameValid(username)){
+        else if (!isUsernameValid(username)){
             loginView.setUsernameError(R.string.username_invalid_error);
             return;
         }
