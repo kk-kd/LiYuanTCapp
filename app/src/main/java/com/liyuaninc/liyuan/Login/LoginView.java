@@ -21,4 +21,6 @@ public interface LoginView {
     void onPasswrodErrorEvent(PasswordErrorEvent passwordErrorEvent);
     void onCancelledEvent(CancelledEvent cancelledEvent);
     void onSuccessEvent(SuccessEvent successEvent);
+
+    void forgetPassword();
 }

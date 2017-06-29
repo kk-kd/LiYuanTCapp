@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -14,6 +17,7 @@ import com.liyuaninc.liyuan.Login.Event.PasswordErrorEvent;
 import com.liyuaninc.liyuan.Login.Event.SuccessEvent;
 import com.liyuaninc.liyuan.R;
 import com.liyuaninc.liyuan.Register.RegisterActivity;
+import com.liyuaninc.liyuan.RetrivePassword.RetrivePasswordActivity;
 import com.liyuaninc.liyuan.user;
 
 import org.greenrobot.eventbus.EventBus;
@@ -30,6 +34,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
     @BindView(R.id.username) EditText mUsernameView;
     @BindView(R.id.userpassword) EditText mPasswordView;
+    public CheckBox mCheckBox;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,17 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         loginPresenter = new LoginPresenterImp(this);
     }
 
+    private void rememberPassword() {
+        mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    //TODO: record the password in system storage
+                }
+            }
+        });
+
+    }
     /**
      * Go to RegisterActivity  when the register button is pressed
      */
@@ -47,6 +64,15 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Override
     public void goRegister(){
         Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    //TODO: Write the activity
+    @OnClick(R.id.forgetPassword)
+    @Override
+    public void forgetPassword() {
+        Intent intent = new Intent(LoginActivity.this, RetrivePasswordActivity.class);
         startActivity(intent);
         finish();
     }

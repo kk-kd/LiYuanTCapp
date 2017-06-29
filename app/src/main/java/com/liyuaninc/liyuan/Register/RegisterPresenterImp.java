@@ -23,13 +23,12 @@ public class RegisterPresenterImp implements RegisterPresenter {
             registerView.setEmailError(R.string.username_empty_error);
             return;
         }
-
-        if (!isEmailValid(email)){
+        else if (!isEmailValid(email)){
             registerView.setEmailError(R.string.username_invalid_error);
             return;
         }
 
-        if (!TextUtils.isEmpty(password) && isPasswordValid(password)){
+        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)){
             registerView.setPasswordError(R.string.password_invalid_error);
             return;
         }
