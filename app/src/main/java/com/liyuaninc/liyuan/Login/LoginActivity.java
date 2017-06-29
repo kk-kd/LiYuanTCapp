@@ -18,7 +18,7 @@ import com.liyuaninc.liyuan.Login.Event.SuccessEvent;
 import com.liyuaninc.liyuan.R;
 import com.liyuaninc.liyuan.Register.RegisterActivity;
 import com.liyuaninc.liyuan.RetrivePassword.RetrivePasswordActivity;
-import com.liyuaninc.liyuan.user;
+import com.liyuaninc.liyuan.User.user;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
