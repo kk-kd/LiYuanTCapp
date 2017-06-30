@@ -93,23 +93,24 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         String username = mUsernameView.getText().toString();
         String password = mPasswordView.getText().toString();
 
-
-
-         progressDialog =new ProgressDialog(LoginActivity.this);
-        progressDialog.setTitle("正在检票...");
-        progressDialog.setIcon(R.drawable.rarcher);
-        progressDialog.setMessage("Loading...");
-        progressDialog.setCancelable(false);
-        progressDialog.show();
-
-
-
-
-//Toast.makeText(LoginActivity.this,"loading...",Toast.LENGTH_SHORT).show();
+        showLoginAnimation(true);
 
         loginPresenter.validCredentials(username,password);
     }
 
+    public void showLoginAnimation(boolean show){
+        if(show) {
+            progressDialog = new ProgressDialog(LoginActivity.this);
+            progressDialog.setTitle("正在检票...");
+            progressDialog.setIcon(R.drawable.rarcher);
+            progressDialog.setMessage("Loading...");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+        }
+        else{
+            progressDialog.dismiss();
+        }
+    }
     /**
      * The animation that shows the progress bar when attempt to login
      * @param show whether the progress bar should be showed
@@ -160,7 +161,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onSuccessEvent(SuccessEvent successEvent) {
-//        showProgress(false);
+        showLoginAnimation(false);
         Toast.makeText(LoginActivity.this,"welcome back ",Toast.LENGTH_SHORT).show();
         goUserActivity();
     }
@@ -172,7 +173,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onPasswrodErrorEvent(PasswordErrorEvent passwordErrorEvent) {
-//        showProgress(false);
+        showLoginAnimation(false);
         setPasswordError(R.string.password_incorrect_error);
     }
 
@@ -182,9 +183,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onCancelledEvent(CancelledEvent cancelledEvent) {
-//        showProgress(false);
-
-        progressDialog.dismiss();
+        showLoginAnimation(false);
     }
 
     @Override
