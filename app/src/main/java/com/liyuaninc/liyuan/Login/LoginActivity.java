@@ -3,7 +3,9 @@ package com.liyuaninc.liyuan.Login;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -109,6 +111,18 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         }
         else{
             progressDialog.dismiss();
+            AlertDialog.Builder progressDialog1=new AlertDialog.Builder(LoginActivity.this);
+            progressDialog1.setTitle("唔，你的戏票有问题呐");
+            progressDialog1.setIcon(R.drawable.rarcher);
+            progressDialog1.setMessage("仔细检查一下你的戏票吧");
+            progressDialog1.setCancelable(false);
+            progressDialog1.setPositiveButton("我再看看", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                }}
+            );
+            progressDialog1.show();
+
         }
     }
     /**
