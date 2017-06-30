@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @BindView(R.id.username) EditText mUsernameView;
     @BindView(R.id.userpassword) EditText mPasswordView;
     public CheckBox mCheckBox;
-
+    public ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +94,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         String password = mPasswordView.getText().toString();
 
 
-        ProgressDialog progressDialog =new ProgressDialog(LoginActivity.this);
+
+         progressDialog =new ProgressDialog(LoginActivity.this);
         progressDialog.setTitle("正在检票...");
         progressDialog.setIcon(R.drawable.rarcher);
         progressDialog.setMessage("Loading...");
@@ -104,7 +105,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
 
 
-Toast.makeText(LoginActivity.this,"loading...",Toast.LENGTH_SHORT).show();
+//Toast.makeText(LoginActivity.this,"loading...",Toast.LENGTH_SHORT).show();
 
         loginPresenter.validCredentials(username,password);
     }
@@ -182,6 +183,8 @@ Toast.makeText(LoginActivity.this,"loading...",Toast.LENGTH_SHORT).show();
     @Override
     public void onCancelledEvent(CancelledEvent cancelledEvent) {
 //        showProgress(false);
+
+        progressDialog.dismiss();
     }
 
     @Override
