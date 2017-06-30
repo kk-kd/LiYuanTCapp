@@ -18,7 +18,8 @@ import com.liyuaninc.liyuan.Login.Event.SuccessEvent;
 import com.liyuaninc.liyuan.R;
 import com.liyuaninc.liyuan.Register.RegisterActivity;
 import com.liyuaninc.liyuan.RetrivePassword.RetrivePasswordActivity;
-import com.liyuaninc.liyuan.User.user;
+
+import com.liyuaninc.liyuan.spinmenu.MainActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -171,7 +172,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Override
     public void goUserActivity() {
         Toast.makeText(this,"知道密码是rarcher你很棒棒哦",Toast.LENGTH_SHORT);
-        Intent intent = new Intent(LoginActivity.this, user.class);
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
     }

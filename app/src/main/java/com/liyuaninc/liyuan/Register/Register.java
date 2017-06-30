@@ -10,7 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.liyuaninc.liyuan.R;
-import com.liyuaninc.liyuan.User.user;
+import com.liyuaninc.liyuan.spinmenu.MainActivity;
+
 
 import java.util.Calendar;
 
@@ -76,7 +77,7 @@ public class Register extends AppCompatActivity {
                             public void run() {
                                 //更新UI
                                 if (ifIntent ==true){
-                                    Intent intent =new Intent(Register.this,user.class);
+                                    Intent intent =new Intent(Register.this,MainActivity.class);
                                     startActivity(intent);
                                     Toast.makeText(Register.this,"注册成功",Toast.LENGTH_SHORT).show();
                                     ifIntent =false;
