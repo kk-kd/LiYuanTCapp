@@ -2,6 +2,7 @@ package com.liyuaninc.liyuan.Login;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -91,7 +92,20 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         //store values
         String username = mUsernameView.getText().toString();
         String password = mPasswordView.getText().toString();
+
+
+        ProgressDialog progressDialog =new ProgressDialog(LoginActivity.this);
+        progressDialog.setTitle("正在检票...");
+        progressDialog.setIcon(R.drawable.rarcher);
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+
+
+
+
 Toast.makeText(LoginActivity.this,"loading...",Toast.LENGTH_SHORT).show();
+
         loginPresenter.validCredentials(username,password);
     }
 
@@ -189,4 +203,8 @@ Toast.makeText(LoginActivity.this,"loading...",Toast.LENGTH_SHORT).show();
         super.onStop();
         EventBus.getDefault().unregister(this);
     }
+
+
+
+
 }

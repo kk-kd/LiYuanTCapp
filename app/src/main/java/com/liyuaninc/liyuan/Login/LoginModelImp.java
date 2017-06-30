@@ -1,10 +1,12 @@
 package com.liyuaninc.liyuan.Login;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 
 import com.liyuaninc.liyuan.Login.Event.CancelledEvent;
 import com.liyuaninc.liyuan.Login.Event.PasswordErrorEvent;
 import com.liyuaninc.liyuan.Login.Event.SuccessEvent;
+import com.liyuaninc.liyuan.R;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -63,6 +65,11 @@ public class LoginModelImp implements LoginModel {
 
             return false;
         }
+        @Override
+        protected void onPreExecute(){
+        }
+
+
 
         @Override
         protected void onPostExecute(final Boolean success) {
