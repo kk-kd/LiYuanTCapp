@@ -91,25 +91,31 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         mUsernameView.setError(null);
         mPasswordView.setError(null);
 
+        boolean showloginanimation=true;
         //store values
         String username = mUsernameView.getText().toString();
         String password = mPasswordView.getText().toString();
+        progressDialog = new ProgressDialog(LoginActivity.this);
+        progressDialog.setTitle("正在检票...");
+        progressDialog.setIcon(R.drawable.rarcher);
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+       if (password.length()<=6){
+           showloginanimation=false;
+       }
 
-        showLoginAnimation(true);
+        showLoginAnimation(showloginanimation);
 
         loginPresenter.validCredentials(username,password);
     }
 
     public void showLoginAnimation(boolean show){
+
         if(show) {
-            progressDialog = new ProgressDialog(LoginActivity.this);
-            progressDialog.setTitle("正在检票...");
-            progressDialog.setIcon(R.drawable.rarcher);
-            progressDialog.setMessage("Loading...");
-            progressDialog.setCancelable(false);
-            progressDialog.show();
+
         }
-        else{
+        else {
             progressDialog.dismiss();
             AlertDialog.Builder progressDialog1=new AlertDialog.Builder(LoginActivity.this);
             progressDialog1.setTitle("唔，你的戏票有问题呐");
