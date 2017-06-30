@@ -17,8 +17,8 @@ import android.app.Activity;
 
 
 public class Splash extends Activity {
-    private VideoView videoView;
-    private final int SPLASH_DISPLAY_LENGHT = 5000;
+   // private VideoView videoView;
+    private final int SPLASH_DISPLAY_LENGHT = 3000;
     private Handler handler;
 
     @Override
@@ -26,10 +26,10 @@ public class Splash extends Activity {
         super.onCreate(savedInstanceState);
                getWindow().requestFeature(Window.FEATURE_NO_TITLE);
                setContentView(R.layout.activity_splash);
-        VideoView videoView = (VideoView)this.findViewById(R.id.splashview);
+     /*   VideoView videoView = (VideoView)this.findViewById(R.id.splashview);
         String uri = "android.resource://" +getPackageName() + "/" + R.raw.splash;
         videoView.setVideoURI(Uri.parse(uri));
-        videoView.start();
+        videoView.start();*/
 
         handler = new Handler();
              // 延迟SPLASH_DISPLAY_LENGHT时间然后跳转到MainActivity

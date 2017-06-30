@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         //store values
         String username = mUsernameView.getText().toString();
         String password = mPasswordView.getText().toString();
-
+Toast.makeText(LoginActivity.this,"loading...",Toast.LENGTH_SHORT).show();
         loginPresenter.validCredentials(username,password);
     }
 
@@ -146,6 +146,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Override
     public void onSuccessEvent(SuccessEvent successEvent) {
 //        showProgress(false);
+        Toast.makeText(LoginActivity.this,"welcome back ",Toast.LENGTH_SHORT).show();
         goUserActivity();
     }
 
