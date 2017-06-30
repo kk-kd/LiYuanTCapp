@@ -46,7 +46,7 @@ public class RegisterPresenterImp implements RegisterPresenter {
 
     private boolean isPasswordValid(String password){
         //TODO: change the logic
-        return password.length() >= 9;
+        return password.length() >= 6;
     }
 
     private boolean isUsernameValid(String username){
