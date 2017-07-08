@@ -182,7 +182,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Override
     public void onSuccessEvent(SuccessEvent successEvent) {
         showLoginAnimation(false);
-        Toast.makeText(LoginActivity.this,"welcome back ",Toast.LENGTH_SHORT).show();
         goUserActivity();
     }
 
