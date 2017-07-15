@@ -15,7 +15,7 @@
         android:text="Motor A：" />
 
     <EditText
-        android:id="@+id/avalue"
+        android:id="@+id/valuea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number|numberSigned|numberDecimal"
