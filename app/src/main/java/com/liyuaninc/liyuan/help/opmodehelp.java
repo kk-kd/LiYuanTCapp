@@ -148,13 +148,37 @@ public class opmodehelp extends AppCompatActivity {
 
 
     }
+    private void dialog(final String way) {
 
-    private void dialog (final String way){
+        LayoutInflater inflater=getLayoutInflater();
+        final View layout=inflater.inflate(R.layout.helpdialog, (ViewGroup)findViewById(R.id.dialog));
+
+        new AlertDialog.Builder(this).
+                setTitle(R.string.title).
+                setView(layout).
+                setPositiveButton(R.string.yes,
+                        new DialogInterface.OnClickListener(){
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                EditText et1 = (EditText)layout.findViewById(R.id.valuea);
+                                avalue = et1.getText().toString();
+                                if (avalue!=""){
+                                    Save(avalue,way);
+                                }
+                                else ;
+                            }})
+
+
+                .setNegativeButton(R.string.no, null).show();
+
+
+    }
+  /*  private void dialog (final String way){
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.helpdialog, (ViewGroup) findViewById(R.id.dialog));
 
-       final EditText motora=(EditText) getWindow().findViewById(R.id.valuea);
 
+        final EditText motora = new EditText(this);
 
 
         new AlertDialog.Builder(this).setTitle(R.string.title).setView(layout)
@@ -178,7 +202,7 @@ public class opmodehelp extends AppCompatActivity {
 
                 .show();
 
-    }
+    }*/
     public void Save (String input, String theway){
         FileOutputStream out=null;
         BufferedWriter writer=null;
