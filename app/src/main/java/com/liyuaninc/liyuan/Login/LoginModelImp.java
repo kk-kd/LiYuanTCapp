@@ -51,7 +51,7 @@ public class LoginModelImp implements LoginModel {
             try{
                 //Simulate network access
 
-                Thread.sleep(2000);
+                Thread.sleep(0);
             } catch (InterruptedException e) {
                 return false;
             }

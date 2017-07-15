@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         hintStrList.add("ricky看戏");
         hintStrList.add("杏儿看戏");
         hintStrList.add("李白白看戏");
-        hintStrList.add("梨园开发组集体看戏");
-        hintStrList.add("这堆界面就是user界面");
+        hintStrList.add("help");
+        hintStrList.add("setting" );
 
         spinMenu.setHintTextStrList(hintStrList);
         spinMenu.setHintTextColor(Color.parseColor("#FFFFFF"));

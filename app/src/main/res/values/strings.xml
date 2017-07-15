@@ -25,4 +25,8 @@
     <string name="username_empty_error">你用户名没输 糖果 啊。。。</string>
     <string name="password_incorrect_error">你密码没输 糖果 啊。。。</string>
     <string name="username_existed_error">你的用户名 糖果 注册过了：）</string>
+    <!--For help-->
+    <string name="yes">确定</string>
+    <string name="no">取消</string>
+    <string name="title">请开始你的表演</string>
 </resources>
