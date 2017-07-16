@@ -108,6 +108,7 @@ public class opmodehelp extends AppCompatActivity {
     String infoway=" ";
 
     String avalue="";
+    String bvalue="";
     private Button X;
     private Button Y;
     private Button A;
@@ -161,11 +162,20 @@ public class opmodehelp extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 EditText et1 = (EditText)layout.findViewById(R.id.valuea);
+                                EditText et2 = (EditText)layout.findViewById(R.id.valueb);
+                                bvalue = et2.getText().toString();
                                 avalue = et1.getText().toString();
                                 if (avalue!=""){
                                     Save(avalue,way);
                                 }
                                 else ;
+                                if (bvalue!=""){
+                                    Save(avalue,way);
+                                }
+                                else {
+                                    Toast.makeText(opmodehelp.this,"null",LENGTH_SHORT).show();
+                                }
+
                             }})
 
 
