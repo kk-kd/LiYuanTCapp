@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.RandomAccessFile;
 
 public class view extends AppCompatActivity {
     final static String head="package org.firstinspires.ftc.teamcode;\n" +
@@ -94,21 +95,42 @@ public class view extends AppCompatActivity {
     final static String dinfogamepad1left="dgamepad1.dpad_left";
     final static String dinfogamepad1right="dgamepad1.dpad_right";
 
-    String infomotoravalue=" ";
-    String infomotorbvalue=" ";
-    String infomotorcvalue=" ";
-    String infomotordvalue=" ";
-    String infomotoraname=" ";
-    String infomotorbname=" ";
-    String infomotorcname=" ";
-    String infomotordname=" ";
-    String infoway=" ";
-
-
-
+    String avaluea="";
+    String avalueb="";
+    String avaluec="";
+    String avalued="";
+    String bvaluea="";
+    String bvalueb="";
+    String bvaluec="";
+    String bvalued="";
+    String xvaluea="";
+    String xvalueb="";
+    String xvaluec="";
+    String xvalued="";
+    String yvaluea="";
+    String yvalueb="";
+    String yvaluec="";
+    String yvalued="";
+    String upvaluea="";
+    String upvalueb="";
+    String upvaluec="";
+    String upvalued="";
+    String downvaluea="";
+    String downvalueb="";
+    String downvaluec="";
+    String downvalued="";
+    String leftvaluea="";
+    String leftvalueb="";
+    String leftvaluec="";
+    String leftvalued="";
+    String rightvaluea="";
+    String rightvalueb="";
+    String rightvaluec="";
+    String rightvalued="";
 
 
     private Button back;
+    private Button robotcontroller;
     private Button savetosd;
     private TextView view;
 
@@ -117,7 +139,15 @@ public class view extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
 
-        String avalue=load(infogamepad1a);
+        initsettinga("A");
+        initsettingb("B");
+        initsettingx("X");
+        initsettingy("Y");
+        initsettingup("up");
+        initsettingdown("down");
+        initsettingleft("left");
+        initsettingright("right");
+       /* String avalue=load(infogamepad1a);
         String bvalue=load(infogamepad1b);
         String xvalue=load(infogamepad1x);
         String yvalue=load(infogamepad1y);
@@ -151,16 +181,16 @@ public class view extends AppCompatActivity {
         String upvaluec=load(cinfogamepad1up);
         String downvaluec=load(cinfogamepad1down);
         String leftvaluec=load(cinfogamepad1left);
-        String rightvaluec=load(cinfogamepad1right);
+        String rightvaluec=load(cinfogamepad1right);*/
 
-        String afinal=gamepad1a+"\n"+Motor+"a="+avalue+";\n"+Motor+"b="+avalueb+";\n"+ Motor+"c="+avaluec+";\n"+Motor+"d="+avalued+";\n"+ "}\n";
-        String bfinal=gamepad1b+"\n"+Motor+"a="+bvalue+";\n"+Motor+"b="+bvalueb+";\n"+ Motor+"c="+bvaluec+";\n"+Motor+"d="+bvalued+";\n"+ "}\n";
-        String xfinal=gamepad1x+"\n"+Motor+"a="+xvalue+";\n"+Motor+"b="+xvalueb+";\n"+ Motor+"c="+xvaluec+";\n"+Motor+"d="+xvalued+";\n"+ "}\n";
-        String yfinal=gamepad1y+"\n"+Motor+"a="+yvalue+";\n"+Motor+"b="+yvalueb+";\n"+Motor+"c="+yvaluec+";\n"+Motor+"d="+yvalued+";\n"+  "}\n";
-        String upfinal=gamepad1up+"\n"+Motor+"a="+upvalue+";\n"+Motor+"b="+upvalueb+";\n"+Motor+"c="+upvaluec+";\n"+Motor+"d="+upvalued+";\n"+ "}\n";
-        String downfinal=gamepad1down+"\n"+Motor+"a="+downvalue+";\n"+Motor+"b="+downvalueb+ ";\n"+Motor+"c="+downvaluec+";\n"+Motor+"d="+downvalued+";\n"+ "}\n";
-        String leftfinal=gamepad1left+"\n"+Motor+"a="+leftvalue+";\n"+Motor+"b="+leftvalueb+ ";\n"+ Motor+"c="+leftvaluec+";\n"+Motor+"d="+leftvalued+";\n"+"}\n";
-        String rightfinal=gamepad1right+"\n"+Motor+"a="+rightvalue+";\n"+Motor+"b="+rightvalueb+";\n"+Motor+"c="+rightvaluec+";\n"+Motor+"d="+rightvalued+";\n"+ "}\n";
+        String afinal=gamepad1a+"\n"+Motor+"a="+avaluea+";\n"+Motor+"b="+avalueb+";\n"+ Motor+"c="+avaluec+";\n"+Motor+"d="+avalued+";\n"+ "}\n";
+        String bfinal=gamepad1b+"\n"+Motor+"a="+bvaluea+";\n"+Motor+"b="+bvalueb+";\n"+ Motor+"c="+bvaluec+";\n"+Motor+"d="+bvalued+";\n"+ "}\n";
+        String xfinal=gamepad1x+"\n"+Motor+"a="+xvaluea+";\n"+Motor+"b="+xvalueb+";\n"+ Motor+"c="+xvaluec+";\n"+Motor+"d="+xvalued+";\n"+ "}\n";
+        String yfinal=gamepad1y+"\n"+Motor+"a="+yvaluea+";\n"+Motor+"b="+yvalueb+";\n"+Motor+"c="+yvaluec+";\n"+Motor+"d="+yvalued+";\n"+  "}\n";
+        String upfinal=gamepad1up+"\n"+Motor+"a="+upvaluea+";\n"+Motor+"b="+upvalueb+";\n"+Motor+"c="+upvaluec+";\n"+Motor+"d="+upvalued+";\n"+ "}\n";
+        String downfinal=gamepad1down+"\n"+Motor+"a="+downvaluea+";\n"+Motor+"b="+downvalueb+ ";\n"+Motor+"c="+downvaluec+";\n"+Motor+"d="+downvalued+";\n"+ "}\n";
+        String leftfinal=gamepad1left+"\n"+Motor+"a="+leftvaluea+";\n"+Motor+"b="+leftvalueb+ ";\n"+ Motor+"c="+leftvaluec+";\n"+Motor+"d="+leftvalued+";\n"+"}\n";
+        String rightfinal=gamepad1right+"\n"+Motor+"a="+rightvaluea+";\n"+Motor+"b="+rightvalueb+";\n"+Motor+"c="+rightvaluec+";\n"+Motor+"d="+rightvalued+";\n"+ "}\n";
 
 
 
@@ -173,6 +203,14 @@ public class view extends AppCompatActivity {
         back=(Button)findViewById(R.id.back);
         view=(TextView)findViewById(R.id.viewprogramtext);
         savetosd=(Button)findViewById(R.id.savetosd);
+        robotcontroller=(Button)findViewById(R.id.controller) ;
+
+        robotcontroller.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(view.this,"唔，这个功能梨园开发组还在开发呐",Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -195,7 +233,8 @@ public class view extends AppCompatActivity {
                 //获取SDCard状态,如果SDCard插入了手机且为非写保护状态
                 if(en.equals(Environment.MEDIA_MOUNTED)){
                     try {
-                        saveToSDCard("FTCopmodehelp",finalprogram);
+                       // saveToSDCard("FTCopmodehelp",finalprogram);
+                        initData(finalprogram);
                         Toast.makeText(getApplicationContext(), "保存成功",Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
                         Toast.makeText(getApplicationContext(), "保存失败",Toast.LENGTH_SHORT).show();
@@ -237,6 +276,54 @@ public class view extends AppCompatActivity {
 
 
 
+    public void initsettinga(String way){
+        avaluea= load("a"+way);
+        avalueb=load("b"+way);
+        avaluec= load("c"+way);
+        avalued=load("d"+way);
+    }
+    public void initsettingb(String way){
+        bvaluea= load("a"+way);
+        bvalueb=load("b"+way);
+        bvaluec= load("c"+way);
+        bvalued=load("d"+way);
+    }
+    public void initsettingx(String way){
+        xvaluea= load("a"+way);
+        xvalueb=load("b"+way);
+        xvaluec= load("c"+way);
+        xvalued=load("d"+way);
+    }
+    public void initsettingy(String way){
+        yvaluea= load("a"+way);
+        yvalueb=load("b"+way);
+        yvaluec= load("c"+way);
+        yvalued=load("d"+way);
+    }
+    public void initsettingup(String way){
+        upvaluea= load("a"+way);
+        upvalueb=load("b"+way);
+        upvaluec= load("c"+way);
+        upvalued=load("d"+way);
+    }
+    public void initsettingdown(String way){
+        downvaluea= load("a"+way);
+        downvalueb=load("b"+way);
+        downvaluec= load("c"+way);
+        downvalued=load("d"+way);
+    }
+    public void initsettingleft(String way){
+        leftvaluea= load("a"+way);
+        leftvalueb=load("b"+way);
+        leftvaluec= load("c"+way);
+        leftvalued=load("d"+way);
+    }
+    public void initsettingright(String way){
+        rightvaluea= load("a"+way);
+        rightvalueb=load("b"+way);
+        rightvaluec= load("c"+way);
+        rightvalued=load("d"+way);
+    }
     public void Save (String input, String theway){
         FileOutputStream out=null;
         BufferedWriter writer=null;
@@ -289,7 +376,6 @@ public class view extends AppCompatActivity {
         }
         return content.toString();
     }
-
     /**
      * 向sdcard中写入文件
      * @param filename 文件名
@@ -328,4 +414,69 @@ public class view extends AppCompatActivity {
 
         Log.d("文件写入", "成功");
     }
-}
+
+
+
+    private void initData(String content) {
+        String filePath = "/sdcard/LiYuan/";
+        String fileName ="FTCopmodehelp" ;
+        writeTxtToFile(content, filePath, fileName);
+    }
+
+    // 将字符串写入到文本文件中
+    public void writeTxtToFile(String strcontent, String filePath, String fileName) {
+        //生成文件夹之后，再生成文件，不然会出错
+        makeFilePath(filePath, fileName);
+
+        String strFilePath = filePath+fileName;
+        // 每次写入时，都换行写
+        String strContent = strcontent + "\r\n";
+        try {
+            File file = new File(strFilePath);
+            if (!file.exists()) {
+                Log.d("TestFile", "Create the file:" + strFilePath);
+                file.getParentFile().mkdirs();
+                file.createNewFile();
+            }
+            RandomAccessFile raf = new RandomAccessFile(file, "rwd");
+            raf.seek(file.length());
+            raf.write(strContent.getBytes());
+            raf.close();
+        } catch (Exception e) {
+            Log.e("TestFile", "Error on write File:" + e);
+        }
+    }
+
+    // 生成文件
+    public File makeFilePath(String filePath, String fileName) {
+        File file = null;
+        makeRootDirectory(filePath);
+        try {
+            file = new File(filePath + fileName);
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return file;
+    }
+
+    // 生成文件夹
+    public static void makeRootDirectory(String filePath) {
+        File file = null;
+        try {
+            file = new File(filePath);
+            if (!file.exists()) {
+                file.mkdir();
+            }
+        } catch (Exception e) {
+            Log.i("error:", e+"");
+        }
+
+
+
+
+
+
+}}
