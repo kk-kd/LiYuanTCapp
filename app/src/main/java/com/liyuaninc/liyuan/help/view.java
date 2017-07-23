@@ -33,7 +33,7 @@ public class view extends AppCompatActivity {
             "import com.qualcomm.robotcore.util.Range;\n";
 
     final static String head2="@TeleOp (name = \"TELEOP\")\n" +
-            "public class FLYT_Teleop extends OpMode {\n" +
+            "public class LiYuan_Teleop extends OpMode {\n" +
             "    DcMotor a;\n" +
             "    DcMotor b;\n" +
             "    DcMotor c;\n" +
@@ -147,43 +147,8 @@ public class view extends AppCompatActivity {
         initsettingdown("down");
         initsettingleft("left");
         initsettingright("right");
-       /* String avalue=load(infogamepad1a);
-        String bvalue=load(infogamepad1b);
-        String xvalue=load(infogamepad1x);
-        String yvalue=load(infogamepad1y);
-        String upvalue=load(infogamepad1up);
-        String downvalue=load(infogamepad1down);
-        String leftvalue=load(infogamepad1left);
-        String rightvalue=load(infogamepad1right);
 
-        String avalueb=load(binfogamepad1a);
-        String bvalueb=load(binfogamepad1b);
-        String xvalueb=load(binfogamepad1x);
-        String yvalueb=load(binfogamepad1y);
-        String upvalueb=load(binfogamepad1up);
-        String downvalueb=load(binfogamepad1down);
-        String leftvalueb=load(binfogamepad1left);
-        String rightvalueb=load(binfogamepad1right);
-
-        String avalued=load(dinfogamepad1a);
-        String bvalued=load(dinfogamepad1b);
-        String xvalued=load(dinfogamepad1x);
-        String yvalued=load(dinfogamepad1y);
-        String upvalued=load(dinfogamepad1up);
-        String downvalued=load(dinfogamepad1down);
-        String leftvalued=load(dinfogamepad1left);
-        String rightvalued=load(dinfogamepad1right);
-
-        String avaluec=load(cinfogamepad1a);
-        String bvaluec=load(cinfogamepad1b);
-        String xvaluec=load(cinfogamepad1x);
-        String yvaluec=load(cinfogamepad1y);
-        String upvaluec=load(cinfogamepad1up);
-        String downvaluec=load(cinfogamepad1down);
-        String leftvaluec=load(cinfogamepad1left);
-        String rightvaluec=load(cinfogamepad1right);*/
-
-        String afinal=gamepad1a+"\n"+Motor+"a="+avaluea+";\n"+Motor+"b="+avalueb+";\n"+ Motor+"c="+avaluec+";\n"+Motor+"d="+avalued+";\n"+ "}\n";
+       /* String afinal=gamepad1a+"\n"+Motor+"a="+avaluea+";\n"+Motor+"b="+avalueb+";\n"+ Motor+"c="+avaluec+";\n"+Motor+"d="+avalued+";\n"+ "}\n";
         String bfinal=gamepad1b+"\n"+Motor+"a="+bvaluea+";\n"+Motor+"b="+bvalueb+";\n"+ Motor+"c="+bvaluec+";\n"+Motor+"d="+bvalued+";\n"+ "}\n";
         String xfinal=gamepad1x+"\n"+Motor+"a="+xvaluea+";\n"+Motor+"b="+xvalueb+";\n"+ Motor+"c="+xvaluec+";\n"+Motor+"d="+xvalued+";\n"+ "}\n";
         String yfinal=gamepad1y+"\n"+Motor+"a="+yvaluea+";\n"+Motor+"b="+yvalueb+";\n"+Motor+"c="+yvaluec+";\n"+Motor+"d="+yvalued+";\n"+  "}\n";
@@ -191,12 +156,18 @@ public class view extends AppCompatActivity {
         String downfinal=gamepad1down+"\n"+Motor+"a="+downvaluea+";\n"+Motor+"b="+downvalueb+ ";\n"+Motor+"c="+downvaluec+";\n"+Motor+"d="+downvalued+";\n"+ "}\n";
         String leftfinal=gamepad1left+"\n"+Motor+"a="+leftvaluea+";\n"+Motor+"b="+leftvalueb+ ";\n"+ Motor+"c="+leftvaluec+";\n"+Motor+"d="+leftvalued+";\n"+"}\n";
         String rightfinal=gamepad1right+"\n"+Motor+"a="+rightvaluea+";\n"+Motor+"b="+rightvalueb+";\n"+Motor+"c="+rightvaluec+";\n"+Motor+"d="+rightvalued+";\n"+ "}\n";
+*/
 
-
-
+        String afinal=checka();
+        String bfinal=checkb();
+        String xfinal=checkx();
+        String yfinal=checky();
+        String upfinal=checku();
+        String downfinal=checkd();
+        String leftfinal=checkl();
+        String rightfinal=checkr();
 
         final String finalprogram=head+head2+init+loop+afinal+bfinal+xfinal+yfinal+upfinal+downfinal+leftfinal+rightfinal+"\n}}";
-
 
 
 
@@ -226,9 +197,7 @@ public class view extends AppCompatActivity {
         savetosd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              /*大封印术！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
-              继续封印！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
-              */
+
                 String en=Environment.getExternalStorageState();
                 //获取SDCard状态,如果SDCard插入了手机且为非写保护状态
                 if(en.equals(Environment.MEDIA_MOUNTED)){
@@ -244,7 +213,9 @@ public class view extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "SDCard不存在或者为写保护状态",Toast.LENGTH_SHORT).show();
                 }
 
-
+             /*大封印术！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+              继续封印！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+              */
                 //第二种储存方式
                /* boolean isMounted = Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
 
@@ -261,20 +232,325 @@ public class view extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "SDCard不存在或者为写保护状态",Toast.LENGTH_SHORT).show();
                 }*/
 
-
-
             }
         });
+    }
+
+    public String checka()
+    {
+        String afinal=gamepad1a;
+        String aa="";
+        String ab="";
+        String ac;
+        String ad;
+        String back="\n"+ "}\n";
+
+
+        if (avaluea!=""){
+            aa="\n"+Motor+"a="+avaluea+";";
+            afinal=afinal+aa;
+        }
+        else ;
+        if (avalueb!=""){
+            ab="\n"+Motor+"b="+avalueb+";";
+            afinal=afinal+ab;
+        }
+        else ;
+
+        if (avaluec!=""){
+            ac="\n"+Motor+"c="+avaluec+";";
+            afinal=afinal+ac;
+        }
+        else ;
+        if (avalued!=""){
+            ad="\n"+Motor+"d="+avalued+";";
+            afinal=afinal+ad;
+        }
+        else ;
+        afinal=afinal+back;
+
+
+        return afinal;
 
 
 
+    }
+    public String checkb()
+    {
+        String bfinal=gamepad1b;
+        String a="";
+        String b="";
+        String c;
+        String d;
+        String back="\n"+ "}\n";
+
+
+        if (bvaluea!=""){
+            a="\n"+Motor+"a="+bvaluea+";";
+            bfinal=bfinal+a;
+        }
+        else ;
+        if (bvalueb!=""){
+            b="\n"+Motor+"b="+bvalueb+";";
+            bfinal=bfinal+b;
+        }
+        else ;
+
+        if (bvaluec!=""){
+            c="\n"+Motor+"c="+bvaluec+";";
+            bfinal=bfinal+c;
+        }
+        else ;
+        if (bvalued!=""){
+            d="\n"+Motor+"d="+bvalued+";";
+            bfinal=bfinal+d;
+        }
+        else ;
+        bfinal=bfinal+back;
+
+
+        return bfinal;
+
+
+
+    }
+    public String checkx()
+    {
+        String afinal=gamepad1x;
+        String aa="";
+        String ab="";
+        String ac;
+        String ad;
+        String back="\n"+ "}\n";
+
+
+        if (xvaluea!=""){
+            aa="\n"+Motor+"a="+xvaluea+";";
+            afinal=afinal+aa;
+        }
+        else ;
+        if (xvalueb!=""){
+            ab="\n"+Motor+"b="+xvalueb+";";
+            afinal=afinal+ab;
+        }
+        else ;
+
+        if (xvaluec!=""){
+            ac="\n"+Motor+"c="+xvaluec+";";
+            afinal=afinal+ac;
+        }
+        else ;
+        if (xvalued!=""){
+            ad="\n"+Motor+"d="+xvalued+";";
+            afinal=afinal+ad;
+        }
+        else ;
+        afinal=afinal+back;
+
+
+        return afinal;
 
 
 
     }
 
+    public String checky()
+    {
+        String afinal=gamepad1y;
+        String aa="";
+        String ab="";
+        String ac;
+        String ad;
+        String back="\n"+ "}\n";
 
 
+        if (yvaluea!=""){
+            aa="\n"+Motor+"a="+yvaluea+";";
+            afinal=afinal+aa;
+        }
+        else ;
+        if (yvalueb!=""){
+            ab="\n"+Motor+"b="+yvalueb+";";
+            afinal=afinal+ab;
+        }
+        else ;
+
+        if (yvaluec!=""){
+            ac="\n"+Motor+"c="+yvaluec+";";
+            afinal=afinal+ac;
+        }
+        else ;
+        if (yvalued!=""){
+            ad="\n"+Motor+"d="+yvalued+";";
+            afinal=afinal+ad;
+        }
+        else ;
+        afinal=afinal+back;
+
+
+        return afinal;
+
+
+
+    }
+
+    public String checku()
+    {
+        String afinal=gamepad1up;
+        String aa="";
+        String ab="";
+        String ac;
+        String ad;
+        String back="\n"+ "}\n";
+
+
+        if (upvaluea!=""){
+            aa="\n"+Motor+"a="+upvaluea+";";
+            afinal=afinal+aa;
+        }
+        else ;
+        if (upvalueb!=""){
+            ab="\n"+Motor+"b="+upvalueb+";";
+            afinal=afinal+ab;
+        }
+        else ;
+
+        if (upvaluec!=""){
+            ac="\n"+Motor+"c="+upvaluec+";";
+            afinal=afinal+ac;
+        }
+        else ;
+        if (upvalued!=""){
+            ad="\n"+Motor+"d="+upvalued+";";
+            afinal=afinal+ad;
+        }
+        else ;
+        afinal=afinal+back;
+
+
+        return afinal;
+
+
+
+    }
+
+    public String checkd()
+    {
+        String afinal=gamepad1down;
+        String aa="";
+        String ab="";
+        String ac;
+        String ad;
+        String back="\n"+ "}\n";
+
+
+        if (downvaluea!=""){
+            aa="\n"+Motor+"a="+downvaluea+";";
+            afinal=afinal+aa;
+        }
+        else ;
+        if (downvalueb!=""){
+            ab="\n"+Motor+"b="+downvalueb+";";
+            afinal=afinal+ab;
+        }
+        else ;
+
+        if (downvaluec!=""){
+            ac="\n"+Motor+"c="+downvaluec+";";
+            afinal=afinal+ac;
+        }
+        else ;
+        if (downvalued!=""){
+            ad="\n"+Motor+"d="+downvalued+";";
+            afinal=afinal+ad;
+        }
+        else ;
+        afinal=afinal+back;
+
+
+        return afinal;
+
+
+
+    }
+    public String checkl()
+    {
+        String afinal=gamepad1left;
+        String aa="";
+        String ab="";
+        String ac;
+        String ad;
+        String back="\n"+ "}\n";
+
+
+        if (leftvaluea!=""){
+            aa="\n"+Motor+"a="+leftvaluea+";";
+            afinal=afinal+aa;
+        }
+        else ;
+        if (leftvalueb!=""){
+            ab="\n"+Motor+"b="+leftvalueb+";";
+            afinal=afinal+ab;
+        }
+        else ;
+
+        if (leftvaluec!=""){
+            ac="\n"+Motor+"c="+leftvaluec+";";
+            afinal=afinal+ac;
+        }
+        else ;
+        if (leftvalued!=""){
+            ad="\n"+Motor+"d="+leftvalued+";";
+            afinal=afinal+ad;
+        }
+        else ;
+        afinal=afinal+back;
+
+
+        return afinal;
+
+
+
+    }
+    public String checkr()
+    {
+        String afinal=gamepad1right;
+        String aa="";
+        String ab="";
+        String ac;
+        String ad;
+        String back="\n"+ "}\n";
+
+
+        if (rightvaluea!=""){
+            aa="\n"+Motor+"a="+rightvaluea+";";
+            afinal=afinal+aa;
+        }
+        else ;
+        if (rightvalueb!=""){
+            ab="\n"+Motor+"b="+rightvalueb+";";
+            afinal=afinal+ab;
+        }
+        else ;
+
+        if (rightvaluec!=""){
+            ac="\n"+Motor+"c="+rightvaluec+";";
+            afinal=afinal+ac;
+        }
+        else ;
+        if (rightvalued!=""){
+            ad="\n"+Motor+"d="+rightvalued+";";
+            afinal=afinal+ad;
+        }
+        else ;
+        afinal=afinal+back;
+
+
+        return afinal;
+
+
+
+    }
 
     public void initsettinga(String way){
         avaluea= load("a"+way);
@@ -414,15 +690,11 @@ public class view extends AppCompatActivity {
 
         Log.d("文件写入", "成功");
     }
-
-
-
     private void initData(String content) {
-        String filePath = "/sdcard/LiYuan/";
+        String filePath = "/sdcard/LiYuan/Help/";
         String fileName ="FTCopmodehelp" ;
         writeTxtToFile(content, filePath, fileName);
     }
-
     // 将字符串写入到文本文件中
     public void writeTxtToFile(String strcontent, String filePath, String fileName) {
         //生成文件夹之后，再生成文件，不然会出错
@@ -446,7 +718,6 @@ public class view extends AppCompatActivity {
             Log.e("TestFile", "Error on write File:" + e);
         }
     }
-
     // 生成文件
     public File makeFilePath(String filePath, String fileName) {
         File file = null;
@@ -461,7 +732,6 @@ public class view extends AppCompatActivity {
         }
         return file;
     }
-
     // 生成文件夹
     public static void makeRootDirectory(String filePath) {
         File file = null;

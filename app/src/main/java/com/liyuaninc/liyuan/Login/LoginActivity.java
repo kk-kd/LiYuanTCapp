@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         mUsernameView.setError(null);
         mPasswordView.setError(null);
 
-        boolean showloginanimation=true;
+        boolean showloginanimation=false;
         //store values
         String username = mUsernameView.getText().toString();
         String password = mPasswordView.getText().toString();
@@ -103,21 +103,22 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         progressDialog.show();
        if (password.length()<=6){
            showloginanimation=false;
+           showLoginAnimation(showloginanimation,"lenghlow");
        }
 
-        showLoginAnimation(showloginanimation);
 
         loginPresenter.validCredentials(username,password);
     }
 
-    public void showLoginAnimation(boolean show){
+    public void showLoginAnimation(boolean show,String a){
 
         if(show) {
-
+           // Toast.makeText(LoginActivity.this,"well"+a,Toast.LENGTH_SHORT).show();
+            progressDialog.dismiss();
         }
         else {
             progressDialog.dismiss();
-            AlertDialog.Builder progressDialog1=new AlertDialog.Builder(LoginActivity.this);
+            final AlertDialog.Builder progressDialog1=new AlertDialog.Builder(LoginActivity.this);
             progressDialog1.setTitle("唔，你的戏票有问题呐");
             progressDialog1.setIcon(R.drawable.rarcher);
             progressDialog1.setMessage("仔细检查一下你的戏票吧");
@@ -126,8 +127,9 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                 }}
-            );
-            progressDialog1.show();
+            ); progressDialog1.show();
+            Toast.makeText(LoginActivity.this,"bad"+a,Toast.LENGTH_SHORT).show();
+
 
         }
     }
@@ -181,7 +183,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onSuccessEvent(SuccessEvent successEvent) {
-        showLoginAnimation(false);
+        showLoginAnimation(true,"success");
         goUserActivity();
     }
 
@@ -192,7 +194,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onPasswrodErrorEvent(PasswordErrorEvent passwordErrorEvent) {
-        showLoginAnimation(false);
+        showLoginAnimation(false,"password wrong");
         setPasswordError(R.string.password_incorrect_error);
     }
 
@@ -202,12 +204,12 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onCancelledEvent(CancelledEvent cancelledEvent) {
-        showLoginAnimation(false);
+        showLoginAnimation(false,"cancleedevent");
     }
 
     @Override
     public void goUserActivity() {
-        Toast.makeText(this,"知道密码是rarcher你很棒棒哦",Toast.LENGTH_SHORT);
+        Toast.makeText(this,"知道密码是rarcher你很棒棒哦",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
         finish();

@@ -147,6 +147,7 @@ public class opmodehelp extends AppCompatActivity {
         init(way);
         new AlertDialog.Builder(this).
                 setTitle(R.string.title).
+                setCancelable(false).
                 setView(layout).
                 setPositiveButton(R.string.yes,
                         new DialogInterface.OnClickListener(){
