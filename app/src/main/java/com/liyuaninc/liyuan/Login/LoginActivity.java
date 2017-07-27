@@ -1,15 +1,12 @@
 package com.liyuaninc.liyuan.Login;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -44,7 +41,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login2);
         ButterKnife.bind(this);
 
         loginPresenter = new LoginPresenterImp(this);
@@ -121,6 +118,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
             final AlertDialog.Builder progressDialog1=new AlertDialog.Builder(LoginActivity.this);
             progressDialog1.setTitle("唔，你的戏票有问题呐");
             progressDialog1.setIcon(R.drawable.rarcher);
+           /* progressDialog1.setView(getDrawable(R.raw.splash))*/
             progressDialog1.setMessage("仔细检查一下你的戏票吧");
             progressDialog1.setCancelable(false);
             progressDialog1.setPositiveButton("我再看看", new DialogInterface.OnClickListener() {

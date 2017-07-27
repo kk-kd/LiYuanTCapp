@@ -54,6 +54,7 @@
             android:name=".help.opmodehelp"
             android:screenOrientation="landscape"></activity>
         <activity android:name=".help.view"></activity>
+        <activity android:name=".RetrivePassword.RetrivePasswordActivity"/>
     </application>
 
 </manifest>
