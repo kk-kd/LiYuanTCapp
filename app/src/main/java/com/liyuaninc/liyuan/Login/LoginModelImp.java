@@ -49,9 +49,10 @@ public class LoginModelImp implements LoginModel {
 
                     final String theparam = "&umail=" + username + "&upwd=" + password;
                     String result = finalnet.sendPost(API, theparam);
-                    Log.d("!!!!!!!!!!!!!!!!!!!!!!", result);
+                    Log.d("!!!!!!!!!!!!!!!!!!!!!!",result);
+
                     switch (result) {
-                        case "0":
+                        case "0\n":
                             EventBus.getDefault().post(new SuccessEvent());
                             Log.d("Result State:", "Success");
                             break;

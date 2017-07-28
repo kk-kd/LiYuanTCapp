@@ -1,48 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ProgressBar
-        android:id="@+id/register_progress"
-        style="?android:attr/progressBarStyleHorizontal"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:orientation="horizontal"></LinearLayout>
+        <EditText
+            android:id="@+id/register_name"
+            android:layout_width="344dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/register_name_hint"
+            tools:layout_editor_absoluteX="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="322dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/register_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/register_name_hint" />
+        <EditText
+            android:id="@+id/register_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/register_email_hint"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="365dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent" />
 
-    <EditText
-        android:id="@+id/register_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/register_email_hint"/>
+        <EditText
+            android:id="@+id/register_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/register_password_hint"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="408dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/register_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/register_password_hint"
-        android:inputType="textPassword"/>
+        <Button
+            android:id="@+id/button_submit"
+            android:layout_width="88dp"
+            android:layout_height="wrap_content"
+            android:text="@string/register_button"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="451dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-    <Button
-        android:id="@+id/button_submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/register_button"/>
+        <Button
+            android:id="@+id/goLogin"
+            android:layout_width="88dp"
+            android:layout_height="wrap_content"
+            android:text="goLogin"
+            android:layout_marginRight="136dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="0.984" />
 
-    <Button
-        android:id="@+id/goLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="goLogin"/>
+        <ProgressBar
+            android:id="@+id/register_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="344dp"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="175dp"
+            tools:layout_editor_absoluteX="8dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
 </LinearLayout>

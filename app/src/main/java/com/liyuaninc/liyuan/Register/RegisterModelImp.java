@@ -1,5 +1,7 @@
 package com.liyuaninc.liyuan.Register;
 
+import android.util.Log;
+
 import com.liyuaninc.liyuan.Login.Event.CancelledEvent;
 import com.liyuaninc.liyuan.Login.Event.SuccessEvent;
 import com.liyuaninc.liyuan.Register.Event.UsernameExistedEvent;
@@ -52,6 +54,7 @@ public class RegisterModelImp implements RegisterModel {
                 switch (result){
                     case "ok":
                         EventBus.getDefault().post(new SuccessEvent());
+                        Log.d("@@@@@@@@@!",result);
                         break;
                     //TODO: add UsernameExistedEvent
 //                    case ??:

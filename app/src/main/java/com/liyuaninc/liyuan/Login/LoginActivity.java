@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     private void loadRemeberedPassword(){
         String stored = load("stored");
 
-        if (stored.equals("ture"))
+        if (stored.equals("true"))
         {
             String account = load("account");
             String password = load("password");
@@ -176,24 +176,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
         Toast.makeText(LoginActivity.this,"bad"+a,Toast.LENGTH_SHORT).show();
     }
-    /**
-     * The animation that shows the progress bar when attempt to login
-     * @param show whether the progress bar should be showed
-     */
-
-//    @Override
-//    public void showProgress(final boolean show) {
-//        int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
-//
-//        mProgressView.setVisibility(show? View.VISIBLE: View.GONE);
-//        mProgressView.animate().setDuration(shortAnimTime).alpha(show? 1:0).setListener(new AnimatorListenerAdapter() {
-//            @Override
-//            public void onAnimationEnd(Animator animation) {
-//                mProgressView.setVisibility(show? View.VISIBLE: View.GONE);
-//            }
-//        });
-//    }
-
     /**
      * Set error message if username is invalid
      * TODO: change the displaly message before beta testing
