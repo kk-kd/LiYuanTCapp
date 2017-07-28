@@ -51,39 +51,54 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
         ButterKnife.bind(this);
+
         mCheckBox=(CheckBox)findViewById(R.id.remainLogin);
-        Boolean ischeck=false;
-        String checkable=load("checkable");
-        if (checkable.equals("ok"))
-        {ischeck=true;}
-        else ischeck=false;
-        String account = load("account");
-        String password = load("password");
-        if (ischeck){
-            //remember all
+
+        loadRemeberedPassword();
+
+        loginPresenter = new LoginPresenterImp(this);
+    }
+
+    /**
+     * Display remembered username and password
+     */
+
+    private void loadRemeberedPassword(){
+        String stored = load("stored");
+
+        if (stored.equals("ture"))
+        {
+            String account = load("account");
+            String password = load("password");
             mUsernameView.setText(account);
             mPasswordView.setText(password);
             mCheckBox.setChecked(true);
         }
 
-
-        loginPresenter = new LoginPresenterImp(this);
     }
 
+
+
+    /**
+     * This method will automatically record the username and password in the system storage if mCheckBox is checked
+     *
+     * In system storage:
+     * "stored" will be "true" if contents are stored, "false" otherwise
+     * "username" and "password" will be the stored username and password
+     */
     private void rememberPassword() {
 
         if (mCheckBox.isChecked()){
-            //TODO: record the password in system storage
-            Save("ok","checkable");
+            //Record the password in system storage
             String username = mUsernameView.getText().toString();
             String password = mPasswordView.getText().toString();
+
+            Save("true","stored");
             Save(username,"account");
             Save(password,"password");
         }
         else {
-            Save("f","checkable");
-            Save("","account");
-            Save("","password");
+            Save("false","stored");
         }
 
 }
