@@ -90,7 +90,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
     @OnClick(R.id.goLogin)
     @Override
     public void goLogin() {
-        Toast.makeText(this,"注册成功！",Toast.LENGTH_SHORT).show();
         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         finish();
     }
@@ -98,6 +97,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onSuccessEvent(SuccessEvent successEvent) {
+        Toast.makeText(this,"注册成功！",Toast.LENGTH_SHORT).show();
         showProgress(false);
         goLogin();
     }

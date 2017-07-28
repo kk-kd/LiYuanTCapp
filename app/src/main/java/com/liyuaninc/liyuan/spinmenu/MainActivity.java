@@ -70,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
         spinMenu.setOnSpinMenuStateChangeListener(new OnSpinMenuStateChangeListener() {
             @Override
             public void onMenuOpened() {
-                Toast.makeText(MainActivity.this, "乖乖站好！！♂", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(MainActivity.this, "乖乖站好！！♂", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onMenuClosed() {
-                Toast.makeText(MainActivity.this, "唔，来畏吾皇？", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(MainActivity.this, "唔，来畏吾皇？", Toast.LENGTH_SHORT).show();
             }
         });
 

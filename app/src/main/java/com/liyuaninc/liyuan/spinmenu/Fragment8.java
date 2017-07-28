@@ -1,6 +1,7 @@
 package com.liyuaninc.liyuan.spinmenu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,7 +14,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.liyuaninc.liyuan.Login.LoginActivity;
 import com.liyuaninc.liyuan.R;
+import com.liyuaninc.liyuan.help.opmodehelp;
 
 /**
  *
@@ -55,6 +58,9 @@ switchclock=(Switch)getView().findViewById(R.id.lockon);
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
 text.setText("on");
+                    Intent intent = new Intent(getActivity(),LoginActivity.class);
+                    startActivity(intent);
+
                 }
                 else {
                     text.setText("off");

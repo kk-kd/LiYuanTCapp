@@ -10,11 +10,17 @@ import com.liyuaninc.liyuan.R;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.util.Calendar;
+
+import db.Finalnet;
+
 /**
  * Created by candy on 11/05/2017.
  */
 
 public class LoginModelImp implements LoginModel {
+    Calendar c;
+    String API;
 
     /**
      * A fake rarcher login that needs to be modified later
@@ -49,6 +55,31 @@ public class LoginModelImp implements LoginModel {
             //TODO: attempt authentition against a network service
 
             try{
+                c = Calendar.getInstance();
+                API = APIPrep(c);
+
+                //start new thread and begin register
+                new Thread(){
+                    public void run(){
+                        Finalnet finalnet = new Finalnet();
+
+                        final String theparam="&umail="+mUsername+"&upwd="+mPassword;
+                        String result = finalnet.sendPost(API,theparam);
+                        switch (result){
+                            case "ok":
+                                EventBus.getDefault().post(new SuccessEvent());
+                                break;
+                            //TODO: add UsernameExistedEvent
+//                    case ??:
+//                        EventBus.getDefault().post(new UsernameExistedEvent());
+//                        break;
+                            default:
+                                EventBus.getDefault().post(new CancelledEvent());
+                                break;
+                        }
+                    }
+
+                }.start();
                 //Simulate network access
 
                 Thread.sleep(200);
@@ -88,4 +119,10 @@ public class LoginModelImp implements LoginModel {
             EventBus.getDefault().post(new CancelledEvent());
         }
     }
+    private String APIPrep(Calendar calendar){
+        String time = String.valueOf(calendar.get(Calendar.YEAR)) + String.valueOf(calendar.get(Calendar.MONTH)) + String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+        final String API="http://api.webhack.cn/login/token/liyuan"+time;
+        return API;
+    }
+
 }

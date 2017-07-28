@@ -4,6 +4,8 @@ package com.liyuaninc.liyuan.Login;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +27,14 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -38,26 +48,49 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     public CheckBox mCheckBox;
     public ProgressDialog progressDialog;
 
+    String usernamestring;
+    String passwordstring;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
         ButterKnife.bind(this);
+        mCheckBox=(CheckBox)findViewById(R.id.remainLogin);
+        Boolean ischeck=false;
+        String checkable=load("checkable");
+        if (checkable.equals("ok"))
+        {ischeck=true;}
+        else ischeck=false;
+        String account = load("account");
+        String password = load("password");
+        if (ischeck){
+            //remember all
+            mUsernameView.setText(account);
+            mPasswordView.setText(password);
+            mCheckBox.setChecked(true);
+        }
+
 
         loginPresenter = new LoginPresenterImp(this);
     }
 
     private void rememberPassword() {
-        mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    //TODO: record the password in system storage
-                }
-            }
-        });
 
-    }
+        if (mCheckBox.isChecked()){
+            //TODO: record the password in system storage
+            Save("ok","checkable");
+            String username = mUsernameView.getText().toString();
+            String password = mPasswordView.getText().toString();
+            Save(username,"account");
+            Save(password,"password");
+        }
+        else {
+            Save("f","checkable");
+            Save("","account");
+            Save("","password");
+        }
+
+}
     /**
      * Go to RegisterActivity  when the register button is pressed
      */
@@ -202,11 +235,12 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onCancelledEvent(CancelledEvent cancelledEvent) {
-        showLoginAnimation(false,"cancleedevent");
+        showLoginAnimation(true,"cancleedevent");
     }
 
     @Override
     public void goUserActivity() {
+        rememberPassword();
         Toast.makeText(this,"知道密码是rarcher你很棒棒哦",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
@@ -226,6 +260,56 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     }
 
 
+    public void Save (String input, String theway){
+        FileOutputStream out=null;
+        BufferedWriter writer=null;
+        try{out=openFileOutput(theway,MODE_PRIVATE);
+            writer=new BufferedWriter(new OutputStreamWriter(out));
+            writer.write(input);
+            // Toast.makeText(this,theway+"设置成功",Toast.LENGTH_LONG).show();
 
 
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        finally {
+            try{
+                if (writer!=null){
+                    writer.close();
+                }
+
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+    }
+    public String load(String theway){
+        FileInputStream in =null;
+        BufferedReader reader =null;
+        StringBuilder content =new StringBuilder();
+        try {
+            in = openFileInput(theway);
+            reader = new BufferedReader(new InputStreamReader(in));
+            String line = "";
+            while ((line=reader.readLine())!=null){
+                content.append(line);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        finally {
+            if (reader!=null){
+                try {
+                    reader.close();
+                }
+                catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return content.toString();
+    }
 }
