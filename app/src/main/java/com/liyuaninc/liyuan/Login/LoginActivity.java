@@ -169,13 +169,12 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
             progressDialog1.setPositiveButton("我再看看", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                }}
-            ); progressDialog1.show();
-            Toast.makeText(LoginActivity.this,"bad"+a,Toast.LENGTH_SHORT).show();
-
-
-
+                }
+            });
+            progressDialog1.show();
         }
+
+        Toast.makeText(LoginActivity.this,"bad"+a,Toast.LENGTH_SHORT).show();
     }
     /**
      * The animation that shows the progress bar when attempt to login
