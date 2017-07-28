@@ -2,6 +2,8 @@ package com.liyuaninc.liyuan.Login;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.liyuaninc.liyuan.Login.Event.CancelledEvent;
 import com.liyuaninc.liyuan.Login.Event.PasswordErrorEvent;
@@ -65,8 +67,9 @@ public class LoginModelImp implements LoginModel {
 
                         final String theparam="&umail="+mUsername+"&upwd="+mPassword;
                         String result = finalnet.sendPost(API,theparam);
+                        Log.d("!!!!!!!!!!!!!!!!!!!!!!",result);
                         switch (result){
-                            case "ok":
+                            case " 0":
                                 EventBus.getDefault().post(new SuccessEvent());
                                 break;
                             //TODO: add UsernameExistedEvent
@@ -83,20 +86,21 @@ public class LoginModelImp implements LoginModel {
                 //Simulate network access
 
                 Thread.sleep(200);
-            } catch (InterruptedException e) {
+            } catch (InterruptedException e)
+            {
                 return false;
             }
 
-            for (String credential: FAKE_CREDENTIAL)
+          /*  for (String credential: FAKE_CREDENTIAL)
             {
                 String[] pieces = credential.split(":");
                 if (pieces[0].equals(mUsername)){
                     //return if password matches
                    return pieces[1].equals(mPassword);
                 }
-            }
+            }*/
 
-            return false;
+      return false;
         }
         @Override
         protected void onPreExecute(){

@@ -4,13 +4,11 @@ package com.liyuaninc.liyuan.Login;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -48,8 +46,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     public CheckBox mCheckBox;
     public ProgressDialog progressDialog;
 
-    String usernamestring;
-    String passwordstring;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,7 +117,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         mUsernameView.setError(null);
         mPasswordView.setError(null);
 
-        boolean showloginanimation=false;
+        boolean showloginanimation;
         //store values
         String username = mUsernameView.getText().toString();
         String password = mPasswordView.getText().toString();
@@ -131,11 +127,13 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(false);
         progressDialog.show();
-       if (password.length()<=6){
+     /*  if (password.length()<=6){
            showloginanimation=false;
            showLoginAnimation(showloginanimation,"lenghlow");
-       }
+           Log.d("LoginActivity","lenghlow");
 
+       }
+*/
 
         loginPresenter.validCredentials(username,password);
     }
@@ -160,6 +158,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
                 }}
             ); progressDialog1.show();
             Toast.makeText(LoginActivity.this,"bad"+a,Toast.LENGTH_SHORT).show();
+
 
 
         }
