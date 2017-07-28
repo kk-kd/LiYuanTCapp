@@ -51,8 +51,9 @@ public class LoginModelImp implements LoginModel {
                     String result = finalnet.sendPost(API, theparam);
                     Log.d("!!!!!!!!!!!!!!!!!!!!!!", result);
                     switch (result) {
-                        case " 0":
+                        case "0":
                             EventBus.getDefault().post(new SuccessEvent());
+                            Log.d("Result State:", "Success");
                             break;
                         //TODO: add UsernameExistedEvent
 //                    case ??:
@@ -60,6 +61,7 @@ public class LoginModelImp implements LoginModel {
 //                        break;
                         default:
                             EventBus.getDefault().post(new CancelledEvent());
+                            Log.d("Result State:", "Cancelled");
                             break;
                     }
                 }
