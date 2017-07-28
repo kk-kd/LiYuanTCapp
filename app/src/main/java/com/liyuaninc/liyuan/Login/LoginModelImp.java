@@ -66,6 +66,7 @@ public class LoginModelImp implements LoginModel {
             }.start();
 
         } catch (Exception e){
+            EventBus.getDefault().post(new CancelledEvent());
 
         }
     }

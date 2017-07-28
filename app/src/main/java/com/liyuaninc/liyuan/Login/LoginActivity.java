@@ -132,10 +132,10 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         mUsernameView.setError(null);
         mPasswordView.setError(null);
 
-        boolean showloginanimation;
         //store values
         String username = mUsernameView.getText().toString();
         String password = mPasswordView.getText().toString();
+
         progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setTitle("正在检票...");
         progressDialog.setIcon(R.drawable.rarcher);
@@ -148,8 +148,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
            Log.d("LoginActivity","lenghlow");
 
        }
-*/
-
+    */
         loginPresenter.validCredentials(username,password);
     }
 
@@ -249,7 +248,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onCancelledEvent(CancelledEvent cancelledEvent) {
-        showLoginAnimation(true,"cancleedevent");
+        showLoginAnimation(false,"canceledevent");
     }
 
     @Override
