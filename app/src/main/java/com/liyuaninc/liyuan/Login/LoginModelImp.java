@@ -12,7 +12,6 @@ import com.liyuaninc.liyuan.R;
 
 import org.greenrobot.eventbus.EventBus;
 
-import java.net.ConnectException;
 import java.util.Calendar;
 
 import db.Finalnet;
@@ -25,51 +24,106 @@ public class LoginModelImp implements LoginModel {
     Calendar c;
     String API;
 
+    /**
+     * A fake rarcher login that needs to be modified later
+     * TODO: remove after connecting to System
+     */
+    private static final String[] FAKE_CREDENTIAL = new String[] {"rarcher:rarcher"};
+
+
     @Override
     public void login(String username, String password) {
         //call login task
-        Userlogin(username,password);
+        new UserLoginTask(username, password).execute((Void) null);
     }
 
+
     /**
-     * User login
-     * Connect to the server
-     * @param username
-     * @param password
+     * user login
+     * TODO: contact Ricky to change the content
      */
+    public class UserLoginTask extends AsyncTask<Void, Void, Boolean>{
 
-    private void Userlogin(final String username, final String password) {
-        try {
-            c = Calendar.getInstance();
-            API = APIPrep(c);
+        private final String mUsername;
+        private final String mPassword;
 
-            new Thread() {
-                public void run() {
-                    Finalnet finalnet = new Finalnet();
+        UserLoginTask(String username, String password){
+            mUsername = username;
+            mPassword = password;
+        }
 
-                    final String theparam = "&umail=" + username + "&upwd=" + password;
-                    String result = finalnet.sendPost(API, theparam);
-                    Log.d("!!!!!!!!!!!!!!!!!!!!!!", result);
-                    switch (result) {
-                        case " 0":
-                            EventBus.getDefault().post(new SuccessEvent());
-                            break;
-                        //TODO: add UsernameExistedEvent
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            //TODO: attempt authentition against a network service
+
+            try{
+                c = Calendar.getInstance();
+                API = APIPrep(c);
+
+                //start new thread and begin register
+                new Thread(){
+                    public void run(){
+                        Finalnet finalnet = new Finalnet();
+
+                        final String theparam="&umail="+mUsername+"&upwd="+mPassword;
+                        String result = finalnet.sendPost(API,theparam);
+                        Log.d("!!!!!!!!!!!!!!!!!!!!!!",result);
+                        switch (result){
+                            case "ok":
+                              //  EventBus.getDefault().post(new SuccessEvent());
+                                onPostExecute(true);
+                                break;
+                            //TODO: add UsernameExistedEvent
 //                    case ??:
 //                        EventBus.getDefault().post(new UsernameExistedEvent());
 //                        break;
-                        default:
-                            EventBus.getDefault().post(new CancelledEvent());
-                            break;
+                            default:
+                                EventBus.getDefault().post(new CancelledEvent());
+                                break;
+                        }
                     }
+
+                }.start();
+                //Simulate network access
+
+                Thread.sleep(200);
+            } catch (InterruptedException e)
+            {
+                return false;
+            }
+
+            for (String credential: FAKE_CREDENTIAL)
+            {
+                String[] pieces = credential.split(":");
+                if (pieces[0].equals(mUsername)){
+                    //return if password matches
+                   return pieces[1].equals(mPassword);
                 }
-            }.start();
+            }
 
-        } catch (Exception e){
+      return false;
+        }
+        @Override
+        protected void onPreExecute(){
+        }
 
+
+
+        @Override
+        protected void onPostExecute(final Boolean success) {
+            if (success){
+                EventBus.getDefault().post(new SuccessEvent());
+            }
+            else{
+                EventBus.getDefault().post(new PasswordErrorEvent());
+            }
+        }
+
+        @Override
+        protected void onCancelled() {
+            EventBus.getDefault().post(new CancelledEvent());
         }
     }
-
     private String APIPrep(Calendar calendar){
         String time = String.valueOf(calendar.get(Calendar.YEAR)) + String.valueOf(calendar.get(Calendar.MONTH)) + String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
         final String API="http://api.webhack.cn/login/token/liyuan"+time;
