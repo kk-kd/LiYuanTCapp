@@ -99,6 +99,10 @@ public class view extends AppCompatActivity {
     String avalueb="";
     String avaluec="";
     String avalued="";
+    String avaluee="";
+    String avaluef="";
+    String avalueg="";
+    String avalueh="";
     String bvaluea="";
     String bvalueb="";
     String bvaluec="";
@@ -239,10 +243,14 @@ public class view extends AppCompatActivity {
     public String checka()
     {
         String afinal=gamepad1a;
-        String aa="";
-        String ab="";
+        String aa;
+        String ab;
         String ac;
         String ad;
+        String ae;
+        String af;
+        String ag;
+        String ah;
         String back="\n"+ "}\n";
 
 
@@ -268,8 +276,26 @@ public class view extends AppCompatActivity {
         }
         else ;
         afinal=afinal+back;
-
-
+        if (avaluee!=""){
+            ae="\n"+Motor+"e="+avaluee+";";
+            afinal=afinal+ae;
+        }
+        else ;
+        if (avaluef!=""){
+            af="\n"+Motor+"f="+avaluef+";";
+            afinal=afinal+af;
+        }
+        else ;
+        if (avalueg!=""){
+            ag="\n"+Motor+"g="+avalueg+";";
+            afinal=afinal+ag;
+        }
+        else ;
+        if (avalueh!=""){
+            ah="\n"+Motor+"h="+avalueh+";";
+            afinal=afinal+ah;
+        }
+        else ;
         return afinal;
 
 
@@ -557,6 +583,10 @@ public class view extends AppCompatActivity {
         avalueb=load("b"+way);
         avaluec= load("c"+way);
         avalued=load("d"+way);
+        avaluee=load("e"+way);
+        avaluef= load("f"+way);
+        avalueg=load("g"+way);
+        avalueh= load("h"+way);
     }
     public void initsettingb(String way){
         bvaluea= load("a"+way);

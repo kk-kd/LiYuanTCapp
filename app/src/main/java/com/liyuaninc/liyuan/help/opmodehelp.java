@@ -2,8 +2,6 @@ package com.liyuaninc.liyuan.help;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.service.voice.AlwaysOnHotwordDetector;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.liyuaninc.liyuan.R;
@@ -34,6 +31,11 @@ public class opmodehelp extends AppCompatActivity {
     String bvalue="";
     String cvalue="";
     String dvalue="";
+    String evalue="";
+    String fvalue="";
+    String gvalue="";
+    String hvalue="";
+
     private Button X;
     private Button Y;
     private Button A;
@@ -47,6 +49,10 @@ public class opmodehelp extends AppCompatActivity {
     private EditText et2;
     private EditText et3;
     private EditText et4;
+    private EditText et5;
+    private EditText et6;
+    private EditText et7;
+    private EditText et8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
        // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -144,6 +150,14 @@ public class opmodehelp extends AppCompatActivity {
         et2 = (EditText)layout.findViewById(R.id.valueb);
         et3 = (EditText)layout.findViewById(R.id.valuec);
         et4 = (EditText)layout.findViewById(R.id.valued);
+        et5 = (EditText)layout.findViewById(R.id.valuee);
+        et6 = (EditText)layout.findViewById(R.id.valuef);
+        et7 = (EditText)layout.findViewById(R.id.valueg);
+        et8 = (EditText)layout.findViewById(R.id.valueh);
+
+
+
+
         init(way);
         new AlertDialog.Builder(this).
                 setTitle(R.string.title).
@@ -158,6 +172,10 @@ public class opmodehelp extends AppCompatActivity {
                                 dvalue = et4.getText().toString();
                                 bvalue = et2.getText().toString();
                                 avalue = et1.getText().toString();
+                                evalue = et5.getText().toString();
+                                fvalue = et6.getText().toString();
+                                gvalue = et7.getText().toString();
+                                hvalue = et8.getText().toString();
                                 if (avalue!=""){
                                     Save(avalue,"a"+way);
                                 }
@@ -177,6 +195,22 @@ public class opmodehelp extends AppCompatActivity {
                                     Save(dvalue,"d"+way);
                                 }
                                 else  Toast.makeText(opmodehelp.this,"dnull",LENGTH_SHORT).show();
+                                if (evalue!=""){
+                                    Save(evalue,"e"+way);
+                                }
+                                else  Toast.makeText(opmodehelp.this,"enull",LENGTH_SHORT).show();
+                                if (fvalue!=""){
+                                    Save(fvalue,"f"+way);
+                                }
+                                else  Toast.makeText(opmodehelp.this,"fnull",LENGTH_SHORT).show();
+                                if (gvalue!=""){
+                                    Save(gvalue,"g"+way);
+                                }
+                                else  Toast.makeText(opmodehelp.this,"gnull",LENGTH_SHORT).show();
+                                if (hvalue!=""){
+                                    Save(hvalue,"h"+way);
+                                }
+                                else  Toast.makeText(opmodehelp.this,"hnull",LENGTH_SHORT).show();
                             }})
 
 

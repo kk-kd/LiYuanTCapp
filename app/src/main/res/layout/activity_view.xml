@@ -11,7 +11,7 @@
         android:layout_height="560dp"
         android:orientation="vertical"
         android:weightSum="1"
-        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteX="4dp"
         tools:layout_editor_absoluteY="3dp">
 
         <LinearLayout

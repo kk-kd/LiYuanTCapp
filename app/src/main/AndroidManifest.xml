@@ -52,9 +52,10 @@
         <activity android:name=".Screanlock.Screanlock" />
         <activity
             android:name=".help.opmodehelp"
-            android:screenOrientation="landscape"></activity>
-        <activity android:name=".help.view"></activity>
-        <activity android:name=".RetrivePassword.RetrivePasswordActivity"/>
+            android:screenOrientation="landscape" />
+        <activity android:name=".help.view" />
+        <activity android:name=".RetrivePassword.RetrivePasswordActivity" />
+        <activity android:name=".userviewprogram.seedb"></activity>
     </application>
 
 </manifest>

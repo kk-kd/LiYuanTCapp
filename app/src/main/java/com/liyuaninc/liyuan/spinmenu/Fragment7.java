@@ -45,6 +45,7 @@ public class Fragment7 extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),opmodehelp.class);
                 startActivity(intent);
+                onDestroyView();
             }
         });
 

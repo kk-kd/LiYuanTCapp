@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.liyuaninc.liyuan.R;
 
@@ -14,6 +15,7 @@ import com.liyuaninc.liyuan.R;
  *
  */
 public class Fragment6 extends Fragment {
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
