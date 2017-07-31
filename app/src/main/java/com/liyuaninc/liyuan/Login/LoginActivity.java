@@ -4,10 +4,13 @@ package com.liyuaninc.liyuan.Login;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -38,7 +41,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LoginActivity extends AppCompatActivity implements LoginView{
-
+    boolean isExit;
     private LoginPresenter loginPresenter;
 
     @BindView(R.id.username) EditText mUsernameView;
@@ -174,7 +177,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
             progressDialog1.show();
         }
 
-        Toast.makeText(LoginActivity.this,"bad"+a,Toast.LENGTH_SHORT).show();
+        Log.d("login statue",a);
+        //Toast.makeText(LoginActivity.this,"bad"+a,Toast.LENGTH_SHORT).show();
     }
     /**
      * Set error message if username is invalid
@@ -253,6 +257,38 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         EventBus.getDefault().unregister(this);
     }
 
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exit();
+            return false;
+        } else {
+            return super.onKeyDown(keyCode, event);
+        }
+    }
+    public void exit(){
+        if (!isExit) {
+            isExit = true;
+            Toast.makeText(getApplicationContext(), "再按一次就要和梨园说再见咯", Toast.LENGTH_SHORT).show();
+            mHandler.sendEmptyMessageDelayed(0, 2000);
+        } else {
+            Toast.makeText(getApplicationContext(),"下次再来玩啊：）",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            startActivity(intent);
+            System.exit(0);
+
+        }
+    }
+    Handler mHandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            // TODO Auto-generated method stub
+            super.handleMessage(msg);
+            isExit = false;
+        }
+
+    };
 
     public void Save (String input, String theway){
         FileOutputStream out=null;

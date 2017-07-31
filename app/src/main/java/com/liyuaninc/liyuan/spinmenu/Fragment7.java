@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.liyuaninc.liyuan.R;
 import com.liyuaninc.liyuan.help.opmodehelp;
@@ -17,7 +18,7 @@ import com.liyuaninc.liyuan.help.opmodehelp;
  */
 public class Fragment7 extends Fragment {
     private Button goopmodehelp;
-
+    MainActivity activity = (MainActivity) getActivity();
 
 
     @Override
@@ -45,7 +46,7 @@ public class Fragment7 extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),opmodehelp.class);
                 startActivity(intent);
-                onDestroyView();
+
             }
         });
 
