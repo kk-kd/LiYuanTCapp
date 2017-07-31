@@ -39,7 +39,7 @@ public class Fragment7 extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-      goopmodehelp=(Button) getView().findViewById(R.id.opmodehelp);
+        goopmodehelp=(Button) getView().findViewById(R.id.opmodehelp);
         goopmodehelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

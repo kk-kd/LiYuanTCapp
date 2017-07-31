@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.liyuaninc.smlibrary.OnSpinMenuStateChangeListener;
@@ -12,16 +15,18 @@ import com.liyuaninc.smlibrary.SpinMenu;
 import com.liyuaninc.liyuan.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     private SpinMenu spinMenu;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         spinMenu = (SpinMenu) findViewById(R.id.spin_menu);
 
@@ -32,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         hintStrList.add("Rarcher看戏");
         hintStrList.add("ricky看戏");
         hintStrList.add("杏儿看戏");
-        hintStrList.add("李白白看戏");
+        hintStrList.add("hello");
         hintStrList.add("help");
         hintStrList.add("setting" );
 
@@ -40,9 +45,10 @@ public class MainActivity extends AppCompatActivity {
         spinMenu.setHintTextColor(Color.parseColor("#FFFFFF"));
         spinMenu.setHintTextSize(14);
 
+
+
         // 设置启动手势开启菜单
         spinMenu.setEnableGesture(true);
-
         // 设置页面适配器
         final List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(Fragment1.newInstance());
@@ -66,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         };
         spinMenu.setFragmentAdapter(fragmentPagerAdapter);
 
+
         // 设置菜单状态改变时的监听器
         spinMenu.setOnSpinMenuStateChangeListener(new OnSpinMenuStateChangeListener() {
             @Override
@@ -80,4 +87,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 }
