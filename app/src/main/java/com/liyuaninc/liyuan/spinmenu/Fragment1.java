@@ -31,20 +31,21 @@ public class Fragment1 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.frament_1, container, false);
-
+       View view= inflater.inflate(R.layout.frament_1, container, false);
+        return  view;
     }
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         update=(TextView)getView().findViewById(R.id.update);
         update.setText(updatenews);
+
     }
 
 
 
-    public static Fragment2 newInstance() {
-        Fragment2 fragment1 = new Fragment2();
+    public static Fragment1 newInstance() {
+        Fragment1 fragment1 = new Fragment1();
         return fragment1;
     }
 }

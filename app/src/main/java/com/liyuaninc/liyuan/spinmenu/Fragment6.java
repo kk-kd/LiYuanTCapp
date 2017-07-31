@@ -41,9 +41,8 @@ public class Fragment6 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        listvie=(ListView)getView().findViewById(R.id.listview);
-        adapter = new ArrayAdapter<>(getContext(),R.layout.frament_6,datalist);
-        listvie.setAdapter(adapter);
+
+
         return inflater.inflate(R.layout.frament_6, container, false);
 
     }
@@ -51,6 +50,9 @@ public class Fragment6 extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        listvie=(ListView)getView().findViewById(R.id.listview);
+        adapter = new ArrayAdapter<>(getContext(),R.layout.frament_6,datalist);
+        listvie.setAdapter(adapter);
 listvie.setOnItemClickListener(new AdapterView.OnItemClickListener() {
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -60,8 +62,8 @@ listvie.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 });
     }
 
-    public static Fragment4 newInstance() {
-        Fragment4 fragment6 = new Fragment4();
+    public static Fragment6 newInstance() {
+        Fragment6 fragment6 = new Fragment6();
         return fragment6;
     }
 
