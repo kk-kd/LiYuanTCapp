@@ -55,7 +55,6 @@
             android:screenOrientation="landscape" />
         <activity android:name=".help.view" />
         <activity android:name=".RetrivePassword.RetrivePasswordActivity" />
-        <activity android:name=".userviewprogram.seedb"></activity>
     </application>
 
 </manifest>
