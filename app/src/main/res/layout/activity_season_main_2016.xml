@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="416dp"
         android:orientation="vertical"
-        android:layout_weight="0.82">
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/viewtest"

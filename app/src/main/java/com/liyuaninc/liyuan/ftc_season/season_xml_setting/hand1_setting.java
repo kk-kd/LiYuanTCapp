@@ -36,7 +36,7 @@ public class hand1_setting extends LinearLayout {
     public hand1_setting(Context context,  AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.season_head,this);
-        final ImageButton data = (ImageButton)findViewById(R.id.data);
+      /*  final ImageButton data = (ImageButton)findViewById(R.id.data);
         final ImageButton search = (ImageButton)findViewById(R.id.search);
         final ImageButton hanhua = (ImageButton)findViewById(R.id.hanhua);
         data.setOnClickListener(new OnClickListener() {
@@ -47,6 +47,22 @@ public class hand1_setting extends LinearLayout {
                 hanhua.setImageResource(R.drawable.rb_bbs);
             }
         });
+        search.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                data.setImageResource(R.drawable.rb_home);
+                search.setImageResource(R.drawable.rb_discovery_click);
+                hanhua.setImageResource(R.drawable.rb_bbs);
+            }
+        });
+        hanhua.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                data.setImageResource(R.drawable.rb_home);
+                search.setImageResource(R.drawable.rb_discovery);
+                hanhua.setImageResource(R.drawable.rb_bbs_click);
+            }
+        });*/
 
     }
 }
