@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.liyuaninc.liyuan.ftc_season.season2016.season_main_2016"
+    android:weightSum="1">
+
+    <com.liyuaninc.liyuan.ftc_season.season_xml_setting.hand2_setting
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.liyuaninc.liyuan.ftc_season.season_xml_setting.hand2_setting>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="416dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+
+        <ListView
+            android:id="@+id/hanhualist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <com.liyuaninc.liyuan.ftc_season.season_xml_setting.hand1_setting
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.liyuaninc.liyuan.ftc_season.season_xml_setting.hand1_setting>
+</LinearLayout>

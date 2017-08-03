@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,57 +15,52 @@ import com.liyuaninc.liyuan.ftc_season.season_xml_setting.datalist;
 import java.util.ArrayList;
 import java.util.List;
 
-public class season_data extends AppCompatActivity {
-    private List<datalist> datalists = new ArrayList<>();
+public class SDK extends AppCompatActivity {
+    private List<datalist> sdklist = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_season_data);
-
+        setContentView(R.layout.activity_sdk);
+        final TextView view = (TextView)findViewById(R.id.viewtest);
         final ImageButton data = (ImageButton)findViewById(R.id.data);
         final ImageButton search = (ImageButton)findViewById(R.id.search);
         final ImageButton hanhua = (ImageButton)findViewById(R.id.hanhua);
-        TextView nowway = (TextView)findViewById(R.id.nowway);
-        nowway.setText("赛季数据");
-        initdata();
-        dataadapter dataadapter = new dataadapter(season_data.this,R.layout.datalist,datalists);
-        ListView listView = (ListView)findViewById(R.id.datalist);
-        listView.setAdapter(dataadapter);
-
-
-        data.setImageResource(R.drawable.rb_home_click);
+        data.setImageResource(R.drawable.rb_home);
         search.setImageResource(R.drawable.rb_discovery);
-        hanhua.setImageResource(R.drawable.rb_bbs);
-
+        hanhua.setImageResource(R.drawable.rb_bbs_click);
+        TextView nowway = (TextView)findViewById(R.id.nowway);
+        nowway.setText("SDK汉化发布");
+        initdata();
+        dataadapter dataadapter = new dataadapter(SDK.this,R.layout.datalist,sdklist);
+        ListView listView = (ListView)findViewById(R.id.hanhualist);
+        listView.setAdapter(dataadapter);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(season_data.this,season_main_2016.class);
+                Intent intent = new Intent(SDK.this,season_main_2016.class);
                 startActivity(intent);
                 finish();
             }
         });
-        hanhua.setOnClickListener(new View.OnClickListener() {
+        data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(season_data.this,SDK.class);
+                /*data.setImageResource(R.drawable.rb_home_click);
+                search.setImageResource(R.drawable.rb_discovery);
+                hanhua.setImageResource(R.drawable.rb_bbs);
+                view.setText("data");*/
+                Intent intent = new Intent(SDK.this,season_data.class);
                 startActivity(intent);
                 finish();
-
             }
         });
-
-
     }
-
     private void initdata()
     {
-        datalist news = new datalist("赛季通知",R.drawable.rarcher);
-        datalists.add(news);
-        datalist guize = new datalist("赛季规则",R.drawable.rarcher);
-        datalists.add(guize);
-        datalist paiming = new datalist("得分排名",R.drawable.rarcher);
-        datalists.add(paiming);
+        datalist news = new datalist("SDK 2.x版本【2016——2017】",R.drawable.rarcher);
+        sdklist.add(news);
+        datalist guize = new datalist("SDK 3.x版本【2017——2018】",R.drawable.rarcher);
+        sdklist.add(guize);
+
     }
 }

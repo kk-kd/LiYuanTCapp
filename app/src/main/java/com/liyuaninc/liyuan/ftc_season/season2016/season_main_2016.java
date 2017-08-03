@@ -19,7 +19,11 @@ public class season_main_2016 extends AppCompatActivity {
        final ImageButton data = (ImageButton)findViewById(R.id.data);
        final ImageButton search = (ImageButton)findViewById(R.id.search);
        final ImageButton hanhua = (ImageButton)findViewById(R.id.hanhua);
-
+        TextView nowway = (TextView)findViewById(R.id.nowway);
+        nowway.setText("发现");
+        data.setImageResource(R.drawable.rb_home);
+        search.setImageResource(R.drawable.rb_discovery_click);
+        hanhua.setImageResource(R.drawable.rb_bbs);
         data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,10 +48,9 @@ public class season_main_2016 extends AppCompatActivity {
         hanhua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                data.setImageResource(R.drawable.rb_home);
-                search.setImageResource(R.drawable.rb_discovery);
-                hanhua.setImageResource(R.drawable.rb_bbs_click);
-                view.setText("hanhua");
+                Intent intent = new Intent(season_main_2016.this,SDK.class);
+                startActivity(intent);
+                finish();
             }
         });
 
