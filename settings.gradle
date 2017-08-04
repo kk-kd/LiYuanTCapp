@@ -1,1 +1,1 @@
-include ':app', ':smlibrary', ':scviewpager'
+include ':app', ':smlibrary'
