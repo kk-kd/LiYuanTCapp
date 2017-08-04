@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.liyuaninc.liyuan.R;
 import com.liyuaninc.liyuan.ftc_season.season_xml_setting.dataadapter;
@@ -52,6 +55,22 @@ public class SDK extends AppCompatActivity {
                 Intent intent = new Intent(SDK.this,season_data.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                datalist datalist = sdklist.get(position);
+                String nowposition = datalist.getname();
+                switch (nowposition) {
+                    case ("SDK 2.x版本【2016——2017】"):Toast.makeText(SDK.this,"2016",Toast.LENGTH_SHORT).show();
+                        break;
+                    case ("SDK 3.x版本【2017——2018】"):Toast.makeText(SDK.this,"2017",Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        break;
+                }
             }
         });
     }

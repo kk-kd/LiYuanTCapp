@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.liyuaninc.liyuan.R;
 import com.liyuaninc.liyuan.ftc_season.season_xml_setting.dataadapter;
@@ -57,7 +59,24 @@ public class season_data extends AppCompatActivity {
 
             }
         });
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                datalist datalist = datalists.get(position);
+                String nowposition = datalist.getname();
+                switch (nowposition) {
+                    case ("赛季通知"):
+                        Toast.makeText(season_data.this,"通知",Toast.LENGTH_SHORT).show();
+                        break;
+                    case ("赛季规则"):Toast.makeText(season_data.this,"规则",Toast.LENGTH_SHORT).show();
+                        break;
+                    case ("得分排名"):Toast.makeText(season_data.this,"排名",Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
 
     }
 

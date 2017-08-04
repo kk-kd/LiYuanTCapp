@@ -16,7 +16,6 @@ import com.liyuaninc.liyuan.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import db.file;
 
 /**
  */
@@ -25,8 +24,6 @@ public class Fragment6 extends Fragment {
     private ListView listvie;
     private ArrayAdapter<String> adapter;
     private List<String> datalist=new ArrayList<>();
-    private List<file> data;
-    private file selected;
 
     @Override
     public void onAttach(Context context) {
@@ -53,25 +50,14 @@ public class Fragment6 extends Fragment {
         listvie=(ListView)getView().findViewById(R.id.listview);
         adapter = new ArrayAdapter<>(getContext(),R.layout.frament_6,datalist);
         listvie.setAdapter(adapter);
-listvie.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        selected = data.get(position);
 
-    }
-});
-    }
+
+
+}
 
     public static Fragment6 newInstance() {
         Fragment6 fragment6 = new Fragment6();
         return fragment6;
     }
-
-    private void querydata(){
-
-    }
-
-
-
 }
 

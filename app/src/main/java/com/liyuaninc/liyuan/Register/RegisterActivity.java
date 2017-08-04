@@ -4,8 +4,11 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -31,7 +34,7 @@ import butterknife.OnClick;
 public class RegisterActivity extends AppCompatActivity implements RegisterView {
 
     private RegisterPresenter registerPresenter;
-
+    boolean isExit;
     @BindView(R.id.register_email) EditText mEmailView;
     @BindView(R.id.register_name) EditText mUsernameView;
     @BindView(R.id.register_password) EditText mPasswordView;
@@ -127,4 +130,31 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
         super.onStop();
         EventBus.getDefault().unregister(this);
     }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exit();
+            return false;
+        } else {
+            return super.onKeyDown(keyCode, event);
+        }
+    }
+    public void exit(){
+        if (!isExit) {
+            Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+    Handler mHandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            // TODO Auto-generated method stub
+            super.handleMessage(msg);
+            isExit = false;
+        }
+
+    };
+
 }
