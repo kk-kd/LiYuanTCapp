@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:text="更新提示"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@+id/title" />
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/content"
+        android:textColor="@color/colorAccent"
+        android:theme="@style/Theme.AppCompat.Light"
+        android:text="@string/app_updater_download_now" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ok"
+        android:layout_alignBottom="@+id/ok"
+        android:layout_toLeftOf="@+id/ok"
+        android:layout_toStartOf="@+id/ok"
+        android:textColor="@color/colorAccent"
+        android:theme="@style/Theme.AppCompat.Light"
+        android:text="@string/app_updater_download_later" />
+
+    <Button
+        android:id="@+id/market"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/content"
+        android:layout_toLeftOf="@id/cancel"
+        android:layout_toStartOf="@id/cancel"
+        android:textColor="@color/colorAccent"
+        android:theme="@style/Theme.AppCompat.Light"
+        android:text="@string/app_updater_app_market" />
+</RelativeLayout>

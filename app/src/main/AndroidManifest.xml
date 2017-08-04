@@ -57,7 +57,8 @@
         <activity android:name=".RetrivePassword.RetrivePasswordActivity" />
         <activity android:name=".ftc_season.season2016.season_main_2016" />
         <activity android:name=".ftc_season.season2016.season_data" />
-        <activity android:name=".ftc_season.season2016.SDK"></activity>
+        <activity android:name=".ftc_season.season2016.SDK" />
+        <activity android:name=".alltest"></activity>
     </application>
 
 </manifest>

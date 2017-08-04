@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.liyuaninc.liyuan.Login.LoginActivity;
 import com.liyuaninc.liyuan.R;
+import com.liyuaninc.liyuan.alltest;
+import com.liyuaninc.liyuan.apkupdate.UpdateVersionController;
 import com.liyuaninc.liyuan.help.opmodehelp;
 
 /**
@@ -50,17 +52,16 @@ private Switch switchclock;
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-text=(TextView)getView().findViewById(R.id.startlock) ;
-switchclock=(Switch)getView().findViewById(R.id.lockon);
+       text=(TextView)getView().findViewById(R.id.startlock) ;
+       switchclock=(Switch)getView().findViewById(R.id.lockon);
         switchclock.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-                    text.setText("on");
-                    Intent intent = new Intent(getActivity(),LoginActivity.class);
+                   text.setText("on");
+                    Intent intent = new Intent(getActivity(),alltest.class);
                     startActivity(intent);
-                    onStop();
-                    //Log.d("sfsfaf","stop");
+
                 }
                 else {
                     text.setText("off");

@@ -25,6 +25,7 @@ import com.liyuaninc.liyuan.R;
 import com.liyuaninc.liyuan.Register.RegisterActivity;
 import com.liyuaninc.liyuan.RetrivePassword.RetrivePasswordActivity;
 
+import com.liyuaninc.liyuan.apkupdate.UpdateVersionController;
 import com.liyuaninc.liyuan.spinmenu.MainActivity;
 
 import org.greenrobot.eventbus.EventBus;
@@ -46,7 +47,7 @@ import butterknife.OnClick;
 public class LoginActivity extends AppCompatActivity implements LoginView{
     boolean isExit;
     private LoginPresenter loginPresenter;
-
+    private UpdateVersionController controller = null;
     @BindView(R.id.username) EditText mUsernameView;
     @BindView(R.id.userpassword) EditText mPasswordView;
     public CheckBox mCheckBox;
@@ -57,6 +58,9 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         if (Build.VERSION.SDK_INT >=21){
             View decorView = getWindow().getDecorView();
             decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            if (null == controller) {
+                controller = UpdateVersionController.getInstance(this);
+            }
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
