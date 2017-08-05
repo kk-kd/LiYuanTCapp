@@ -27,6 +27,7 @@ import com.liyuaninc.liyuan.RetrivePassword.RetrivePasswordActivity;
 
 import com.liyuaninc.liyuan.apkupdate.UpdateVersionController;
 import com.liyuaninc.liyuan.spinmenu.MainActivity;
+import com.liyuaninc.liyuan.toast_styles.TabToast;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -249,7 +250,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Override
     public void goUserActivity() {
         rememberPassword();
-        Toast.makeText(this,"知道密码是rarcher你很棒棒哦",Toast.LENGTH_SHORT).show();
+        TabToast.makeText(LoginActivity.this,"知道密码是rarcher那你很棒棒哦");
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
         finish();

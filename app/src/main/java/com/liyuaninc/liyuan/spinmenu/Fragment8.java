@@ -26,6 +26,7 @@ import com.liyuaninc.liyuan.help.opmodehelp;
  */
 public class Fragment8 extends Fragment {
 private Switch switchclock;
+    private Switch toasttest;
     private TextView text;
     @Override
     public void onAttach(Context context) {
@@ -54,6 +55,7 @@ private Switch switchclock;
         super.onActivityCreated(savedInstanceState);
        text=(TextView)getView().findViewById(R.id.startlock) ;
        switchclock=(Switch)getView().findViewById(R.id.lockon);
+        toasttest = (Switch)getView().findViewById(R.id.toast_test);
         switchclock.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -66,6 +68,19 @@ private Switch switchclock;
                 else {
                     text.setText("off");
                 }
+            }
+        });
+
+       toasttest.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    Intent intent = new Intent(getActivity(),com.liyuaninc.liyuan.test.toast_test.class);
+                    startActivity(intent);
+
+                }
+                else {
+            }
             }
         });
 
