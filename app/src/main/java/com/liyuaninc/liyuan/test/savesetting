@@ -1,0 +1,35 @@
+ <TextView
+        android:id="@+id/startlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="62dp"
+        android:text="测试自动更新"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Switch
+        android:id="@+id/lockon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="61dp"
+        android:layout_alignTop="@+id/startlock"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/startlock"
+        android:layout_alignStart="@+id/startlock"
+        android:layout_below="@+id/lockon"
+        android:layout_marginTop="22dp"
+        android:text="toast测试" />
+
+    <Switch
+        android:id="@+id/toast_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView7"
+        android:layout_alignBottom="@+id/textView7"
+        android:layout_alignStart="@+id/lockon" />

@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity  {
         List<String> hintStrList = new ArrayList<>();
         hintStrList.add("糖果看戏");
         hintStrList.add("海牛看戏");
-        hintStrList.add("Rarcher看戏");
-        hintStrList.add("ricky看戏");
+       // hintStrList.add("Rarcher看戏");
+      //  hintStrList.add("ricky看戏");
         hintStrList.add("杏儿看戏");
         hintStrList.add("hello");
         hintStrList.add("help");
@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity  {
         final List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(Fragment1.newInstance());
         fragmentList.add(Fragment2.newInstance());
-        fragmentList.add(Fragment3.newInstance());
-        fragmentList.add(Fragment4.newInstance());
+       // fragmentList.add(Fragment3.newInstance());
+      //  fragmentList.add(Fragment4.newInstance());
         fragmentList.add(Fragment5.newInstance());
         fragmentList.add(Fragment6.newInstance());
         fragmentList.add(Fragment7.newInstance());
@@ -88,7 +88,9 @@ public class MainActivity extends AppCompatActivity  {
         });
 
     }
-    @Override
+
+
+  /*  @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             exit();
@@ -118,8 +120,15 @@ public class MainActivity extends AppCompatActivity  {
             isExit = false;
         }
 
-    };
-
+    };*/
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK){
+            moveTaskToBack(true);
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
 
 

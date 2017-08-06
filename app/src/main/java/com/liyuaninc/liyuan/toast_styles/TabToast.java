@@ -44,7 +44,7 @@ public class TabToast {
     /**
      * Toast背景颜色
      */
-    private static final int DEFAULT_BG_COLOR = 0xE6f5695a;
+    private static final int DEFAULT_BG_COLOR = 0xff000000;
     /**
      * Toast的高度(单位dp)
      */

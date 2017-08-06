@@ -1,22 +1,12 @@
 package com.liyuaninc.liyuan.SplashActivity;
 
-
-
 import android.app.Activity;
  import android.content.Intent;
- import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
- import android.os.Environment;
  import android.os.Handler;
-import android.view.View;
 import android.view.Window;
- import android.widget.MediaController;
- import android.widget.VideoView;
-
  import com.liyuaninc.liyuan.Login.LoginActivity;
  import com.liyuaninc.liyuan.R;
-
 
 public class Splash extends Activity {
    // private VideoView videoView;

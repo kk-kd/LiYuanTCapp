@@ -56,6 +56,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // hide title
+
         if (Build.VERSION.SDK_INT >=21){
             View decorView = getWindow().getDecorView();
             decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
@@ -107,12 +109,14 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
             String username = mUsernameView.getText().toString();
             String password = mPasswordView.getText().toString();
 
+            Save("true","autologin");
             Save("true","stored");
             Save(username,"account");
             Save(password,"password");
         }
         else {
             Save("false","stored");
+            Save("false","autologin");
         }
 
 }
@@ -177,7 +181,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
             final AlertDialog.Builder progressDialog1=new AlertDialog.Builder(LoginActivity.this);
             progressDialog1.setTitle("唔，你的戏票有问题呐");
             progressDialog1.setIcon(R.drawable.rarcher);
-           /* progressDialog1.setView(getDrawable(R.raw.splash))*/
             progressDialog1.setMessage("仔细检查一下你的戏票吧");
             progressDialog1.setCancelable(false);
             progressDialog1.setPositiveButton("我再看看", new DialogInterface.OnClickListener() {
@@ -279,10 +282,9 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     public void exit(){
         if (!isExit) {
             isExit = true;
-            Toast.makeText(getApplicationContext(), "再按一次就要和梨园说再见咯", Toast.LENGTH_SHORT).show();
+            TabToast.makeText(getApplicationContext(), "再按一次就要和梨园说再见咯");
             mHandler.sendEmptyMessageDelayed(0, 2000);
         } else {
-            Toast.makeText(getApplicationContext(),"下次再来玩啊：）",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_HOME);
             startActivity(intent);
