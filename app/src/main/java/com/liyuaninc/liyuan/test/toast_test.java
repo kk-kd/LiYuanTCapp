@@ -30,7 +30,7 @@ public class toast_test extends AppCompatActivity {
         if (firstTime + 2000 > System.currentTimeMillis()) {
             finish();
         } else {
-            TabToast.makeText(toast_test.this, "再按一次退出app");
+            TabToast.makeText(toast_test.this, "再按一次退出测试");
         }
         firstTime = System.currentTimeMillis();
     }

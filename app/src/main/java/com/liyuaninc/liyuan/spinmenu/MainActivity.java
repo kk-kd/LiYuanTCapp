@@ -33,14 +33,14 @@ public class MainActivity extends AppCompatActivity  {
 
         // 设置页面标题
         List<String> hintStrList = new ArrayList<>();
-        hintStrList.add("糖果看戏");
-        hintStrList.add("海牛看戏");
+        hintStrList.add("更新说明");
+        hintStrList.add("FTC赛季");
        // hintStrList.add("Rarcher看戏");
       //  hintStrList.add("ricky看戏");
-        hintStrList.add("杏儿看戏");
-        hintStrList.add("hello");
-        hintStrList.add("help");
-        hintStrList.add("setting" );
+        hintStrList.add("设置");
+        hintStrList.add("分享代码");
+        hintStrList.add("编程辅助");
+      //  hintStrList.add("setting" );
 
         spinMenu.setHintTextStrList(hintStrList);
         spinMenu.setHintTextColor(Color.parseColor("#FFFFFF"));
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity  {
         fragmentList.add(Fragment5.newInstance());
         fragmentList.add(Fragment6.newInstance());
         fragmentList.add(Fragment7.newInstance());
-        fragmentList.add(Fragment8.newInstance());
+       // fragmentList.add(Fragment8.newInstance());
         FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
