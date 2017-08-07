@@ -11,4 +11,22 @@ import java.util.List;
  */
 
 public class viewadapter {
+    private String name;
+    private int imageid;
+
+    public viewadapter(String name, int imageID)
+    {
+        this.name = name;
+        this.imageid = imageID;
+    }
+    public String getname()
+    {
+        return name;
+    }
+    public int getImageid()
+    {
+        return imageid;
+    }
 }
+
+

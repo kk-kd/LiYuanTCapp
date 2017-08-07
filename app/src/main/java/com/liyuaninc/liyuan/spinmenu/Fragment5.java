@@ -65,7 +65,7 @@ public class Fragment5 extends Fragment {
         clean.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TabToast.makeText(getContext(),"清除成功");
+                TabToast.makeText(getContext(),"成功");
             }
         });
 

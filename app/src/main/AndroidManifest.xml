@@ -18,7 +18,7 @@
         android:theme="@style/AppTheme">
 
         <!--
-        Deprecated 
+        Deprecated
         <activity android:name=".Login.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,7 +59,9 @@
         <activity android:name=".ftc_season.season2016.season_data" />
         <activity android:name=".ftc_season.season2016.SDK" />
         <activity android:name=".alltest" />
-        <activity android:name=".test.toast_test"></activity>
+        <activity android:name=".test.toast_test" />
+        <activity android:name=".ftc_season.season2017.season_data" />
+        <activity android:name=".ftc_season.season2017.season_main_2017"></activity>
     </application>
 
 </manifest>

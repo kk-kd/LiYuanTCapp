@@ -1,5 +1,6 @@
 package com.liyuaninc.liyuan.spinmenu;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,22 +9,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.liyuaninc.liyuan.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import com.liyuaninc.liyuan.ftc_season.season2016.season_data;
+import com.liyuaninc.liyuan.ftc_season.season_xml_setting.datalist;
+import com.liyuaninc.liyuan.program.viewadapter;
+import com.liyuaninc.liyuan.program.programadapter;
 
 /**
  */
 public class Fragment6 extends Fragment {
 
-    private ListView listvie;
-    private ArrayAdapter<String> adapter;
-    private List<String> datalist=new ArrayList<>();
+    private ListView listView;
+    private List<viewadapter> datalists = new ArrayList<>();
 
     @Override
     public void onAttach(Context context) {
@@ -38,20 +41,37 @@ public class Fragment6 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.frament_6, container, false);
+        initdata();
+        programadapter programadapter = new programadapter(getContext(),R.layout.programlist,datalists);
+        listView = (ListView)view.findViewById(R.id.listview);
+        listView.setAdapter(programadapter);
 
-
-        return inflater.inflate(R.layout.frament_6, container, false);
+        return view;
 
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        listvie=(ListView)getView().findViewById(R.id.listview);
-        adapter = new ArrayAdapter<>(getContext(),R.layout.frament_6,datalist);
-        listvie.setAdapter(adapter);
-
-
+        listView .setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                viewadapter viewadapter = datalists.get(position);
+                String nowposition = viewadapter.getname();
+                switch (nowposition) {
+                    case ("手动——脉轮"):
+                        Toast.makeText(getContext(),"手动——脉轮",Toast.LENGTH_SHORT).show();
+                        break;
+                    case ("自动代码2.0"):Toast.makeText(getContext(),"自动代码2.0",Toast.LENGTH_SHORT).show();
+                        break;
+                    case ("自动代码1.0"):Toast.makeText(getContext(),"自动代码1.0",Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
 
 }
 
@@ -59,5 +79,15 @@ public class Fragment6 extends Fragment {
         Fragment6 fragment6 = new Fragment6();
         return fragment6;
     }
+    private void initdata()
+    {
+        viewadapter news = new viewadapter("手动——脉轮",R.drawable.ic_app_set_background_1);
+        datalists.add(news);
+        viewadapter guize = new viewadapter("自动代码2.0",R.drawable.ic_app_set_background_1);
+        datalists.add(guize);
+        viewadapter paiming = new viewadapter("自动代码1.0",R.drawable.ic_app_set_background_1);
+        datalists.add(paiming);
+    }
+
 }
 
