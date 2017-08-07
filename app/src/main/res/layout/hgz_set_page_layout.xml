@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/settingbg2"
@@ -25,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:text="幕后"
+            android:text="搞个大新闻？"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20sp" />
     </LinearLayout>
@@ -38,30 +39,38 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+
                 <TextView
-                    android:id="@+id/tv1"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textView19"
+                    android:layout_width="381dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="基本信息"
-                    android:textColor="?attr/actionMenuTextColor"
-                    android:textSize="15dp" />
+                    android:layout_marginLeft="22dp"
+                    android:layout_weight="0.22"
+                    android:gravity="bottom"
+                    android:text="基本设置"
+                    android:textColor="@color/colorPrimaryDark" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/white" />
 
             <LinearLayout
                 android:id="@+id/personal_set"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv2"
@@ -75,27 +84,52 @@
 
                 <TextView
                     android:id="@+id/email"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@+id/tv2"
                     android:layout_gravity="center_vertical"
                     android:layout_toRightOf="@+id/tv2"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:text="   啧， 设置什么设置哦勇敢面对人生哦" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView12"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="10dp"
-                android:background="@color/white" />
+                android:layout_height="42dp"
+                android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="22dp"
-                android:gravity="bottom"
-                android:text="系统设置" />
+                <Button
+                    android:id="@+id/logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="22dp"
+                    android:text="注销登录"
+                    android:textColor="?attr/actionMenuTextColor"
+                    android:textSize="18sp"
+                    android:id="@+id/textView23"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="确定要走？确定不看戏了？"
+                    android:textAlignment="center"
+                    android:layout_marginStart="24dp"
+                    android:layout_below="@+id/textView23"
+                    android:layout_alignParentStart="true" />
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/clean"
@@ -107,23 +141,32 @@
                     android:id="@+id/cleanphone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
                     android:layout_alignBaseline="@+id/textView10"
                     android:layout_alignBottom="@+id/textView10"
-                    android:layout_alignParentStart="true"
-                    android:background="@android:color/transparent" />
+                    android:layout_alignParentStart="true" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginStart="17dp"
+                    android:layout_marginStart="18dp"
                     android:text="手机清理缓存"
                     android:textColor="@color/text_content"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:layout_alignBaseline="@+id/huancun"
+                    android:layout_alignBottom="@+id/huancun"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="清吧，你能把整个应用清理死算我输"
+                    android:layout_below="@+id/textView10"
+                    android:layout_alignStart="@+id/textView10" />
 
                 <TextView
                     android:id="@+id/huancun"
@@ -145,17 +188,19 @@
             </RelativeLayout>
 
             <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:gravity="bottom"
+                android:text="软件概要"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginLeft="10dp"
                 android:background="@color/text_content" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="22dp"
-                android:gravity="bottom"
-                android:text="其它设置" />
 
             <RelativeLayout
                 android:id="@+id/isupdate"
@@ -168,23 +213,30 @@
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginStart="21dp"
+                    android:layout_marginStart="19dp"
                     android:text="检查更新"
                     android:textColor="@color/text_content"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:layout_alignTop="@+id/iv1"
+                    android:layout_alignParentStart="true" />
 
                 <Button
                     android:id="@+id/updatecheck"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
-                    android:layout_alignBaseline="@+id/textView9"
-                    android:layout_alignBottom="@+id/textView9"
+                    android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Beta 1.0"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/textView9" />
 
                 <TextView
                     android:id="@+id/banbenhao"
@@ -213,24 +265,60 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginStart="22dp"
+                    android:layout_marginStart="19dp"
                     android:text="关于"
                     android:textColor="@color/text_content"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/textView26"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true" />
 
                 <Button
                     android:id="@+id/about"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:background="@android:color/transparent" />
+                    android:background="@android:color/transparent"
+                    android:layout_alignBaseline="@+id/textView26"
+                    android:layout_alignBottom="@+id/textView26"
+                    android:layout_alignParentStart="true" />
             </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginStart="18dp"
+                    android:text="更新说明"
+                    android:textColor="@color/text_content"
+                    android:textSize="18sp"
+                    android:id="@+id/textView24"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <Button
+                    android:id="@+id/news"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView24"
+                    android:layout_below="@+id/textView24"
+                    android:text="小伙子，想不想知道更新了一些什么东西啊" />
+            </RelativeLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -240,10 +328,12 @@
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="22dp"
                 android:gravity="bottom"
-                android:text="测试功能【Rarcher不保证他的稳定性，因为这是测试功能，如果通过将加入正式版本】"
+                android:text="开发者
+【Rarcher不保证他的稳定性，因为这是测试功能，如果通过将加入正式版本】"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp"
                 android:textStyle="bold" />
             <RelativeLayout
@@ -262,15 +352,24 @@
                 android:layout_marginStart="22dp"
                 android:text="更新测试"
                 android:textColor="@color/text_content"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:id="@+id/textView14" />
 
             <Button
                 android:id="@+id/test_uptade"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
+                android:background="@android:color/transparent"
                 android:layout_alignParentTop="true"
-                android:background="@android:color/transparent" />
+                android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="啧，不用看了，这个功能已经测试过了"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/textView14" />
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -288,15 +387,24 @@
                     android:layout_marginStart="22dp"
                     android:text="TabToast测试"
                     android:textColor="@color/text_content"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/textView17" />
 
                 <Button
                     android:id="@+id/test_toast"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:background="@android:color/transparent" />
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentTop="true" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="啧，这个开发组也测试过了23333"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/textView17" />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

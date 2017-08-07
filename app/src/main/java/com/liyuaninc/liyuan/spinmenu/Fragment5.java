@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.liyuaninc.liyuan.Login.LoginActivity;
 import com.liyuaninc.liyuan.R;
 import com.liyuaninc.liyuan.alltest;
 import com.liyuaninc.liyuan.apkupdate.UpdateVersionController;
@@ -27,6 +28,7 @@ public class Fragment5 extends Fragment {
     private Button test_update;
     private Button test_toast;
     private Button about;
+    private Button logout;
     private UpdateVersionController controller = null;
     @Override
     public void onAttach(Context context) {
@@ -47,6 +49,7 @@ public class Fragment5 extends Fragment {
         test_update = (Button)view.findViewById(R.id.test_uptade);
         test_toast = (Button)view.findViewById(R.id.test_toast);
         about = (Button)view.findViewById(R.id.about);
+        logout = (Button)view.findViewById(R.id.logout);
         return view;
 
     }
@@ -96,6 +99,14 @@ public class Fragment5 extends Fragment {
             }
         });
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
 
