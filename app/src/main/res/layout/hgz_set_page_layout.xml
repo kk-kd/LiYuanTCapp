@@ -317,17 +317,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
-                    android:layout_alignParentTop="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_below="@+id/textView24"
+                    android:layout_alignStart="@+id/textView24" />
 
                 <TextView
                     android:id="@+id/textView25"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/textView24"
-                    android:layout_below="@+id/textView24"
-                    android:text="小伙子，想不想知道更新了一些什么东西啊" />
+                    android:text="小伙子，想不想知道更新了一些什么东西啊"
+                    android:layout_alignBaseline="@+id/news"
+                    android:layout_alignBottom="@+id/news"
+                    android:layout_alignStart="@+id/news" />
             </RelativeLayout>
 
             <TextView
