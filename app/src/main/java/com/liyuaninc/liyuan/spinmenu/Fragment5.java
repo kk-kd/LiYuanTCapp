@@ -17,6 +17,7 @@ import com.liyuaninc.liyuan.R;
 import com.liyuaninc.liyuan.alltest;
 import com.liyuaninc.liyuan.apkupdate.UpdateVersionController;
 import com.liyuaninc.liyuan.toast_styles.TabToast;
+import com.liyuaninc.liyuan.toast_styles.TabToastAccess;
 
 import static com.liyuaninc.liyuan.R.id.controller;
 import static com.liyuaninc.liyuan.R.id.toast_test;
@@ -32,7 +33,10 @@ public class Fragment5 extends Fragment {
     private Button about;
     private Button news;
     private Button logout;
+    private int count=0;
     private UpdateVersionController controller = null;
+    private Button setting;
+    TabToastAccess tabToastAccess = new TabToastAccess();
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -54,6 +58,7 @@ public class Fragment5 extends Fragment {
         about = (Button)view.findViewById(R.id.about);
         logout = (Button)view.findViewById(R.id.logout);
         news = (Button)view.findViewById(R.id.news);
+        setting = (Button)view.findViewById(R.id.setting);
         return view;
 
     }
@@ -141,6 +146,23 @@ public class Fragment5 extends Fragment {
             }
         });
 
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count==0)
+                {
+                  tabToastAccess.setcolor("RED");
+                    count=1;
+                    TabToast.makeText(getContext(),"now RED");
+                }
+                else if (count==1)
+                {
+                    tabToastAccess.setcolor("BLACK");
+                    count=0;
+                    TabToast.makeText(getContext(),"now BLACK");
+                }
+            }
+        });
 
     }
 

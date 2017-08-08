@@ -23,7 +23,6 @@
         <activity android:name=".Login.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -34,11 +33,9 @@
             android:label="@string/title_activity_user" />
         <!-- android:name=".Login.LoginActivity"> -->
         <activity android:name=".Login.LoginActivity">
-
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             -->
@@ -50,7 +47,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Screanlock.Screanlock" />
         <activity
             android:name=".help.opmodehelp"
             android:screenOrientation="landscape" />
