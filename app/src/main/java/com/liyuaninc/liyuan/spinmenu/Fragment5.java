@@ -1,10 +1,12 @@
 package com.liyuaninc.liyuan.spinmenu;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +30,7 @@ public class Fragment5 extends Fragment {
     private Button test_update;
     private Button test_toast;
     private Button about;
+    private Button news;
     private Button logout;
     private UpdateVersionController controller = null;
     @Override
@@ -50,6 +53,7 @@ public class Fragment5 extends Fragment {
         test_toast = (Button)view.findViewById(R.id.test_toast);
         about = (Button)view.findViewById(R.id.about);
         logout = (Button)view.findViewById(R.id.logout);
+        news = (Button)view.findViewById(R.id.news);
         return view;
 
     }
@@ -95,7 +99,20 @@ public class Fragment5 extends Fragment {
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TabToast.makeText(getContext(),"恩，暂时没什么想说的，内测了再说吧");
+              //  TabToast.makeText(getContext(),"恩，暂时没什么想说的，内测了再说吧");
+                AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+                dialog.setTitle("关于梨园");
+                dialog.setCancelable(false);
+                dialog.setMessage("版本号：内测beta1.0\n" +
+                        "\n开发组成员：Rarcher，糖果，李白白，Ricky，杏儿\n" +
+                        "\n反馈QQ群：636085651[TCapp测试组]\n" +
+                        "\n加入我们：联系糖果[473485069]或者联系Rarcher[2553263392]或者联系李白白[1344856276]" );
+                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                dialog.show();
             }
         });
 
@@ -108,6 +125,21 @@ public class Fragment5 extends Fragment {
             }
         });
 
+        news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+                dialog.setTitle("更新");
+                dialog.setCancelable(false);
+                dialog.setMessage("更新了个蛇皮，老老实实看戏吧" );
+                dialog.setPositiveButton("辣鸡Rarcher，看戏去了", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                dialog.show();
+            }
+        });
 
 
     }

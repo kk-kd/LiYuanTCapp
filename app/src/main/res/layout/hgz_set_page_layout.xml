@@ -316,9 +316,9 @@
                     android:id="@+id/news"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
                     android:layout_alignParentBottom="true"
-                    android:layout_below="@+id/textView24"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentTop="true"
                     android:layout_alignStart="@+id/textView24" />
 
                 <TextView
