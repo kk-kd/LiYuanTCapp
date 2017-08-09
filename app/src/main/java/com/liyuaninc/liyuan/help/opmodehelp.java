@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.liyuaninc.liyuan.R;
@@ -44,7 +45,7 @@ public class opmodehelp extends AppCompatActivity {
     private Button left;
     private Button right;
     private Button down;
-    private Button change;
+    private ImageButton change;
     private EditText et1;
     private EditText et2;
     private EditText et3;
@@ -66,7 +67,7 @@ public class opmodehelp extends AppCompatActivity {
         down=(Button)findViewById(R.id.down);
         left=(Button)findViewById(R.id.left);
         right=(Button)findViewById(R.id.right);
-        change=(Button)findViewById(R.id.view);
+        change=(ImageButton)findViewById(R.id.view);
 
         firstinit("X");
         X.setOnClickListener(new View.OnClickListener() {
@@ -123,14 +124,10 @@ public class opmodehelp extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(opmodehelp.this,view.class);
                 startActivity(intent);
+                finish();
             }
         });
-
-
-
-
     }
-
     /*
     * dialog creat a dialog to show all settings
     *

@@ -151,7 +151,7 @@ public class Fragment5 extends Fragment {
             public void onClick(View v) {
                 if (count==0)
                 {
-                  tabToastAccess.setcolor("RED");
+                    tabToastAccess.setcolor("RED");
                     count=1;
                     TabToast.makeText(getContext(),"now RED");
                 }

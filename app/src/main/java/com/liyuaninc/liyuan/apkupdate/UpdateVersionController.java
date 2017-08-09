@@ -81,6 +81,7 @@ public class UpdateVersionController {
     private void checkVersionTask() {
         //网络加载获取app新版版本信息
         //这里不做请求直接赋值
+        //网络获取得到后替换掉字符串
         info = new AppUpdateInfo();
         info.setUrl("http://60.210.21.89/appdl.hicloud.com/dl/appdl/application/apk/dd/ddeabc7e64d64e4287340ffb89c592a8/com.hellotext.1309171635.apk?sign=baidu@baidu&wshc_tag=0&wsts_tag=58c7bde2&wsid_tag=7c5a47c8&wsiphost=ipdbm");
         info.setVercode(2);//每次更新都靠它
@@ -206,7 +207,7 @@ public class UpdateVersionController {
             InputStream is = conn.getInputStream();
 
             File file = new File(Environment.getExternalStorageDirectory().getPath()
-                    + "/blibao/merchant", "i_blibao_shop.apk");
+                    + "/LiYuan/Update/", "梨园.apk");
             //判断文件夹是否被创建
             if (!file.getParentFile().exists()) {
                 file.getParentFile().mkdirs();
