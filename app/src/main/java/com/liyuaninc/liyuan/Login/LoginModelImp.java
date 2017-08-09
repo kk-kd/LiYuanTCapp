@@ -56,7 +56,7 @@ public class LoginModelImp implements LoginModel {
                             EventBus.getDefault().post(new SuccessEvent());
                             Log.d("Result State:", "Success");
                             break;
-                        //TODO: add UsernameExistedEvent
+                        //
 //                    case ??:
 //                        EventBus.getDefault().post(new UsernameExistedEvent());
 //                        break;

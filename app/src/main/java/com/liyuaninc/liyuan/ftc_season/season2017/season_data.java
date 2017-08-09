@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class season_data extends AppCompatActivity {
-
+    //TODO:获得各个数据，2016和2017都需要类似的
     private List<datalist> datalists = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.liyuaninc.liyuan.R;
 
 public class RetrivePasswordActivity extends AppCompatActivity {
-
+    //TODO：忘记密码
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

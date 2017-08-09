@@ -24,6 +24,9 @@ import java.io.OutputStreamWriter;
 import java.io.RandomAccessFile;
 
 public class view extends AppCompatActivity {
+
+
+
     final static String head="package org.firstinspires.ftc.teamcode;\n" +
             "\n" +
             "import com.qualcomm.robotcore.eventloop.opmode.OpMode;\n" +
@@ -39,13 +42,6 @@ public class view extends AppCompatActivity {
             "    DcMotor c;\n" +
             "    DcMotor d;\n";
 
-    final static String init=" @Override\n" +
-            "    public void init() {\n" +
-            "\n" +
-            "        a=hardwareMap.dcMotor.get(\"a\");\n" +
-            "        b=hardwareMap.dcMotor.get(\"b\");\n" +
-            "        c=hardwareMap.dcMotor.get(\"c\");\n" +
-            "        d=hardwareMap.dcMotor.get(\"d\");";
     final static String loop="    }\n" +
             "\n" +
             "    @Override\n" +
@@ -151,6 +147,22 @@ public class view extends AppCompatActivity {
         initsettingdown("down");
         initsettingleft("left");
         initsettingright("right");
+        String namea = load("namea");
+        String nameb = load("nameb");
+        String namec = load("namec");
+        String named = load("named");
+        String namee = load("namee");
+        String namef = load("namef");
+        String nameg = load("nameg");
+        String nameh = load("nameh");
+
+        final  String init=" @Override\n" +
+                "    public void init() {\n" +
+                "\n" +
+                "        a=hardwareMap.dcMotor.get("+namea+");\n" +
+                "        b=hardwareMap.dcMotor.get("+nameb+");\n" +
+                "        c=hardwareMap.dcMotor.get("+namec+");\n" +
+                "        d=hardwareMap.dcMotor.get("+named+");";
 
        /* String afinal=gamepad1a+"\n"+Motor+"a="+avaluea+";\n"+Motor+"b="+avalueb+";\n"+ Motor+"c="+avaluec+";\n"+Motor+"d="+avalued+";\n"+ "}\n";
         String bfinal=gamepad1b+"\n"+Motor+"a="+bvaluea+";\n"+Motor+"b="+bvalueb+";\n"+ Motor+"c="+bvaluec+";\n"+Motor+"d="+bvalued+";\n"+ "}\n";
@@ -654,7 +666,7 @@ public class view extends AppCompatActivity {
             }
         }
     }
-    public String load(String theway){
+    public  String load(String theway){
         FileInputStream in =null;
         BufferedReader reader =null;
         StringBuilder content =new StringBuilder();

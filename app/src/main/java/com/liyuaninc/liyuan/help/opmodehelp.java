@@ -2,6 +2,7 @@ package com.liyuaninc.liyuan.help;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.liyuaninc.liyuan.R;
@@ -37,6 +39,7 @@ public class opmodehelp extends AppCompatActivity {
     String gvalue="";
     String hvalue="";
 
+
     private Button X;
     private Button Y;
     private Button A;
@@ -46,6 +49,26 @@ public class opmodehelp extends AppCompatActivity {
     private Button right;
     private Button down;
     private ImageButton change;
+    private ImageButton setting;
+    //dialog显示的名字
+    private TextView dianamea;
+    private TextView dianameb;
+    private TextView dianamec;
+    private TextView dianamed;
+    private TextView dianamee;
+    private TextView dianamef;
+    private TextView dianameg;
+    private TextView dianameh;
+    //用户设置的名字
+    private EditText aname;
+    private EditText bname;
+    private EditText cname;
+    private EditText dname;
+    private EditText ename;
+    private EditText fname;
+    private EditText gname;
+    private EditText hname;
+
     private EditText et1;
     private EditText et2;
     private EditText et3;
@@ -67,7 +90,9 @@ public class opmodehelp extends AppCompatActivity {
         down=(Button)findViewById(R.id.down);
         left=(Button)findViewById(R.id.left);
         right=(Button)findViewById(R.id.right);
+        setting=(ImageButton)findViewById(R.id.setting);
         change=(ImageButton)findViewById(R.id.view);
+
 
         firstinit("X");
         X.setOnClickListener(new View.OnClickListener() {
@@ -127,18 +152,14 @@ public class opmodehelp extends AppCompatActivity {
                 finish();
             }
         });
+
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogsetting();
+            }
+        });
     }
-    /*
-    * dialog creat a dialog to show all settings
-    *
-    * firstinit just make sure that none of the value is null
-    *
-    * init for making the user could see what they setting in the first time
-    *
-    * save means save the setting
-    *
-    * load means get the number which user have set just now
-    * */
     private void dialog(final String way) {
 
         LayoutInflater inflater=getLayoutInflater();
@@ -151,6 +172,14 @@ public class opmodehelp extends AppCompatActivity {
         et6 = (EditText)layout.findViewById(R.id.valuef);
         et7 = (EditText)layout.findViewById(R.id.valueg);
         et8 = (EditText)layout.findViewById(R.id.valueh);
+        dianamea = (TextView)layout.findViewById(R.id.dianamea);
+        dianameb = (TextView)layout.findViewById(R.id.dianameb);
+        dianamec = (TextView)layout.findViewById(R.id.dianamec);
+        dianamed = (TextView)layout.findViewById(R.id.dianamed);
+        dianamee = (TextView)layout.findViewById(R.id.dianamee);
+        dianamef = (TextView)layout.findViewById(R.id.dianamef);
+        dianameg = (TextView)layout.findViewById(R.id.dianameg);
+        dianameh = (TextView)layout.findViewById(R.id.dianameh);
 
 
 
@@ -212,8 +241,45 @@ public class opmodehelp extends AppCompatActivity {
 
 
                 .setNegativeButton(R.string.no, null).show();
+    }
+    private void dialogsetting()
+    {
+        LayoutInflater inflater=getLayoutInflater();
+        final View layout=inflater.inflate(R.layout.opmodehelpsetting, (ViewGroup)findViewById(R.id.dialogsetting));
+        aname = (EditText)layout.findViewById(R.id.aname);
+        bname = (EditText)layout.findViewById(R.id.bname);
+        cname = (EditText)layout.findViewById(R.id.cname);
+        dname = (EditText)layout.findViewById(R.id.dname);
+        ename = (EditText)layout.findViewById(R.id.ename);
+        fname = (EditText)layout.findViewById(R.id.fname);
+        gname = (EditText)layout.findViewById(R.id.gname);
+        hname = (EditText)layout.findViewById(R.id.hname);
+        new AlertDialog.Builder(this).
+                setTitle("请配置你的电机名字").
+                setCancelable(false).
+                setView(layout).
+                setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String namea = aname.getText().toString();
+                        String nameb = bname.getText().toString();
+                        String namec = cname.getText().toString();
+                        String named = dname.getText().toString();
+                        String namee = ename.getText().toString();
+                        String namef = fname.getText().toString();
+                        String nameg = gname.getText().toString();
+                        String nameh = hname.getText().toString();
+                        Save(namea,"namea");
+                        Save(nameb,"nameb");
+                        Save(namec,"namec");
+                        Save(named,"named");
+                        Save(namee,"namee");
+                        Save(namef,"namef");
+                        Save(nameg,"nameg");
+                        Save(nameh,"nameh");
 
-
+                    }
+                }).setNegativeButton(R.string.no, null).show();
     }
     public void firstinit(String way){
         Save(avalue,"a"+way);
@@ -223,6 +289,46 @@ public class opmodehelp extends AppCompatActivity {
         Toast.makeText(opmodehelp.this,"firstinit",LENGTH_SHORT).show();
     }
     public void init(String way){
+        String namea = load("namea");
+        String nameb = load("nameb");
+        String namec = load("namec");
+        String named = load("named");
+        String namee = load("namee");
+        String namef = load("namef");
+        String nameg = load("nameg");
+        String nameh = load("nameh");
+        if (namea!="")
+        {
+            dianamea.setText("Motor "+namea);
+        }
+        if (nameb!="")
+        {
+            dianameb.setText("Motor "+nameb);
+        }
+        if (namec!="")
+        {
+            dianamec.setText("Motor "+namec);
+        }
+        if (named!="")
+        {
+            dianamed.setText("Motor "+named);
+        }
+        if (namee!="")
+        {
+            dianamee.setText("Motor "+namee);
+        }
+        if (namef!="")
+        {
+            dianamef.setText("Motor "+namef);
+        }
+        if (nameg!="")
+        {
+            dianameg.setText("Motor "+nameg);
+        }
+        if (nameh!="")
+        {
+            dianameh.setText("Motor "+nameh);
+        }
 
         avalue= load("a"+way);
         bvalue=load("b"+way);

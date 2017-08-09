@@ -17,6 +17,7 @@ import java.util.List;
  * Created by Administrator on 2017/8/7.
  */
 public class programadapter extends ArrayAdapter<viewadapter> {
+    //TODO:这里是共享代码的模块，也需要服务器
     private int resourceID;
     public programadapter(Context contex, int textViewResourcedID,List<viewadapter> object){
         super(contex, textViewResourcedID, object);

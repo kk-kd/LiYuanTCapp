@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         finish();
     }
 
-    //TODO: Write the activity
+
     @OnClick(R.id.forgetPassword)
     @Override
     public void forgetPassword() {
@@ -196,7 +196,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     }
     /**
      * Set error message if username is invalid
-     * TODO: change the displaly message before beta testing
+     *
      * @param messageResId Message needs to be displayed
      */
     @Override
@@ -208,7 +208,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
     /**
      * Set error message if password is wrong or invalid
-     * TODO: change the displaly message before beta testing
+     *
      * @param messageResId Message needs to be displayed
      */
     @Override
@@ -222,7 +222,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
      * Display success message and connect to the main activity
      * @param successEvent eventbus:Event.SuccessEvent
      */
-    //TODO: connect to mainActivity
+    //
     @Subscribe(threadMode = ThreadMode.MAIN)
     @Override
     public void onSuccessEvent(SuccessEvent successEvent) {
@@ -296,7 +296,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
         @Override
         public void handleMessage(Message msg) {
-            // TODO Auto-generated method stub
+            //
             super.handleMessage(msg);
             isExit = false;
         }
