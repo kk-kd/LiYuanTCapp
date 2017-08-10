@@ -18,6 +18,7 @@ package com.liyuaninc.liyuan.toast_styles;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ import android.widget.Toast;
 public class TabToast {
 
    private static TabToastAccess tabToastAccess = new TabToastAccess();
+
     /**
      * Toast字体大小
      */
@@ -122,6 +124,8 @@ public class TabToast {
             mToast.setView(mInstance.layout);
         }
         mInstance.tv.setText(text);
+        String s = tabToastAccess.getcolor()+"";
+        Log.d("Tabtoast get color",s);
         mToast.show();
     }
 
