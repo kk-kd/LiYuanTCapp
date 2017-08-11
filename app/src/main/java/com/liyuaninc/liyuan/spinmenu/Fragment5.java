@@ -36,7 +36,7 @@ public class Fragment5 extends Fragment {
     private int count=0;
     private UpdateVersionController controller = null;
     private Button setting;
-    TabToastAccess tabToastAccess = new TabToastAccess();
+  //  TabToastAccess tabToastAccess = new TabToastAccess();
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -151,13 +151,13 @@ public class Fragment5 extends Fragment {
             public void onClick(View v) {
                 if (count==0)
                 {
-                    tabToastAccess.setcolor("RED");
+                   TabToast.tabToastAccess.setcolor("RED");
                     count=1;
                     TabToast.makeText(getContext(),"now RED");
                 }
                 else if (count==1)
                 {
-                    tabToastAccess.setcolor("BLACK");
+                   TabToast.tabToastAccess.setcolor("BLACK");
                     count=0;
                     TabToast.makeText(getContext(),"now BLACK");
                 }

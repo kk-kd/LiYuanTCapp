@@ -34,7 +34,7 @@ import android.widget.Toast;
  */
 public class TabToast {
 
-   private static TabToastAccess tabToastAccess = new TabToastAccess();
+   public static TabToastAccess tabToastAccess = new TabToastAccess();
 
     /**
      * Toast字体大小
