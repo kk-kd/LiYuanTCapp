@@ -43,7 +43,7 @@ public class TabToast {
     /**
      * Toast字体颜色
      */
-    /*private static final int DEFAULT_TEXT_COLOR = 0xffffffff;*/
+    private static final int DEFAULT_TEXT_COLOR = 0xffffffff;
     /**
      * Toast背景颜色
      */
@@ -111,7 +111,7 @@ public class TabToast {
             mInstance.tv.setLayoutParams(tvParams);
             mInstance.tv.setPadding(dp2px(5), dp2px(2), dp2px(5), dp2px(2));
             mInstance.tv.setGravity(Gravity.CENTER);
-            mInstance.tv.setTextColor(tabToastAccess.getcolor());
+            mInstance.tv.setTextColor(DEFAULT_TEXT_COLOR);
             mInstance.tv.setMaxLines(2);
             mInstance.tv.setEllipsize(TextUtils.TruncateAt.END);
             mInstance.tv.setBackgroundColor(DEFAULT_BG_COLOR);

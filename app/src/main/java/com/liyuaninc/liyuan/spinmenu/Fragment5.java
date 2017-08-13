@@ -16,10 +16,12 @@ import com.liyuaninc.liyuan.Login.LoginActivity;
 import com.liyuaninc.liyuan.R;
 import com.liyuaninc.liyuan.alltest;
 import com.liyuaninc.liyuan.apkupdate.UpdateVersionController;
+import com.liyuaninc.liyuan.others.Developer_application;
 import com.liyuaninc.liyuan.toast_styles.TabToast;
 import com.liyuaninc.liyuan.toast_styles.TabToastAccess;
 
 import static com.liyuaninc.liyuan.R.id.controller;
+import static com.liyuaninc.liyuan.R.id.fill;
 import static com.liyuaninc.liyuan.R.id.toast_test;
 
 /**
@@ -105,7 +107,7 @@ public class Fragment5 extends Fragment {
             @Override
             public void onClick(View v) {
               //  TabToast.makeText(getContext(),"恩，暂时没什么想说的，内测了再说吧");
-                AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+               /* AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
                 dialog.setTitle("关于梨园");
                 dialog.setCancelable(false);
                 dialog.setMessage("版本号：内测beta1.0\n" +
@@ -117,7 +119,9 @@ public class Fragment5 extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 });
-                dialog.show();
+                dialog.show();*/
+               Intent intent =new Intent(getContext(), Developer_application.class);
+                startActivity(intent);
             }
         });
 
