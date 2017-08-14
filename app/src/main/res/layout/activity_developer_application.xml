@@ -178,18 +178,20 @@
                 android:text="{" />
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" private FTC ftc  = new FTC();" />
+                android:text="  private FTC ftc  = new FTC();" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="  private Liyuan liyuan =new Liyuan();" />
+
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=" private Developer developer = new Developer();" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  private Developer developer = new Developer();" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -259,10 +261,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" liyuan.start(2017.4.28,Tang);" />  <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="liyuan.setfurture(FIRST.ftc);" />
+                android:text="  liyuan.start(2017.4.28,Tang);" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  liyuan.setfurture(FIRST.ftc);" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -303,7 +307,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="   Log.d(update);" />
+                android:text=" Log.d(update);" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -349,10 +353,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="{" />  <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="  ftc.remove(Rarcher);" />
+                android:text="{" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" ftc.remove(Rarcher);" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -385,7 +391,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="  ftc.remove(libaibai);" />  <TextView
+                android:text="ftc.remove(libaibai);" />  <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="   }" />
@@ -398,12 +404,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" ftc.Rarcher(FlyTiger_1121,programer);" />
+                android:text="   ftc.Rarcher(FlyTiger_1121,programer);" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="  ftc.Tang(AI_1330,programer);" />  <TextView
+                android:text="   ftc.Tang(AI_1330,programer);" />  <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="   ftc.llibaibai(树德_1377,programer);" />

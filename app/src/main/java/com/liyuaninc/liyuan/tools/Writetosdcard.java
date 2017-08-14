@@ -16,12 +16,11 @@ import java.io.RandomAccessFile;
 public class Writetosdcard {
     /**
  * 向sdcard中写入文件
- * @param filename 文件名
  * @param content 文件内容
  */
-    public void initData(String content) {
-        String filePath = "/sdcard/LiYuan/Help/";
-        String fileName ="FTCopmodehelp" ;
+    public void initData(String content,String path,String name) {
+        String filePath = path;
+        String fileName =" LiYuan_Teleop"+".java";
         writeTxtToFile(content, filePath, fileName);
     }
     // 将字符串写入到文本文件中

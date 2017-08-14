@@ -1,12 +1,17 @@
 package com.liyuaninc.liyuan.help;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Environment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +29,6 @@ import java.io.OutputStreamWriter;
 import java.io.RandomAccessFile;
 
 public class view extends AppCompatActivity {
-
 
 
     final static String head="package org.firstinspires.ftc.teamcode;\n" +
@@ -133,6 +137,8 @@ public class view extends AppCompatActivity {
     private Button robotcontroller;
     private Button savetosd;
     private TextView view;
+    private EditText setname;
+    private String name;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -159,10 +165,10 @@ public class view extends AppCompatActivity {
         final  String init=" @Override\n" +
                 "    public void init() {\n" +
                 "\n" +
-                "        a=hardwareMap.dcMotor.get("+namea+");\n" +
-                "        b=hardwareMap.dcMotor.get("+nameb+");\n" +
-                "        c=hardwareMap.dcMotor.get("+namec+");\n" +
-                "        d=hardwareMap.dcMotor.get("+named+");";
+                "        a=hardwareMap.dcMotor.get("+"\""+namea+"\""+");\n" +
+                "        b=hardwareMap.dcMotor.get("+"\""+nameb+"\""+");\n" +
+                "        c=hardwareMap.dcMotor.get("+"\""+namec+"\""+");\n" +
+                "        d=hardwareMap.dcMotor.get("+"\""+named+"\""+");";
 
        /* String afinal=gamepad1a+"\n"+Motor+"a="+avaluea+";\n"+Motor+"b="+avalueb+";\n"+ Motor+"c="+avaluec+";\n"+Motor+"d="+avalued+";\n"+ "}\n";
         String bfinal=gamepad1b+"\n"+Motor+"a="+bvaluea+";\n"+Motor+"b="+bvalueb+";\n"+ Motor+"c="+bvaluec+";\n"+Motor+"d="+bvalued+";\n"+ "}\n";
@@ -184,8 +190,6 @@ public class view extends AppCompatActivity {
         String rightfinal=checkr();
 
         final String finalprogram=head+head2+init+loop+afinal+bfinal+xfinal+yfinal+upfinal+downfinal+leftfinal+rightfinal+"\n}}";
-
-
 
         back=(Button)findViewById(R.id.back);
         view=(TextView)findViewById(R.id.viewprogramtext);
@@ -213,21 +217,8 @@ public class view extends AppCompatActivity {
         savetosd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+setname(finalprogram);
 
-                String en=Environment.getExternalStorageState();
-                //获取SDCard状态,如果SDCard插入了手机且为非写保护状态
-                if(en.equals(Environment.MEDIA_MOUNTED)){
-                    try {
-                       // saveToSDCard("FTCopmodehelp",finalprogram);
-                        initData(finalprogram);
-                        Toast.makeText(getApplicationContext(), "保存成功",Toast.LENGTH_SHORT).show();
-                    } catch (Exception e) {
-                        Toast.makeText(getApplicationContext(), "保存失败",Toast.LENGTH_SHORT).show();
-                    }
-                }else{
-                    //提示用户SDCard不存在或者为写保护状态
-                    Toast.makeText(getApplicationContext(), "SDCard不存在或者为写保护状态",Toast.LENGTH_SHORT).show();
-                }
 
              /*大封印术！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
               继续封印！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
@@ -250,6 +241,38 @@ public class view extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void setname(final String program)
+    {
+        LayoutInflater inflater=getLayoutInflater();
+        final View layout=inflater.inflate(R.layout.setname, (ViewGroup)findViewById(R.id.setthename));
+        setname = (EditText)layout.findViewById(R.id.setname);
+        new AlertDialog.Builder(this).
+                setTitle("请输入你的文件名").
+                setCancelable(true).
+                setView(layout).
+                setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                       name = setname.getText().toString();
+                        Save(name,"thename");
+                       String en=Environment.getExternalStorageState();
+                       //获取SDCard状态,如果SDCard插入了手机且为非写保护状态
+                      if(en.equals(Environment.MEDIA_MOUNTED)){
+                          try {
+                              initData(program);
+                             Toast.makeText(getApplicationContext(), "保存成功",Toast.LENGTH_SHORT).show();
+                         } catch (Exception e) {
+                              Toast.makeText(getApplicationContext(), "保存失败",Toast.LENGTH_SHORT).show();
+                            }
+                        }else{
+                           //提示用户SDCard不存在或者为写保护状态
+                            Toast.makeText(getApplicationContext(), "SDCard不存在或者为写保护状态",Toast.LENGTH_SHORT).show();
+                       }
+                    }
+                }).show();
+
     }
 
     public String checka()
@@ -733,8 +756,9 @@ public class view extends AppCompatActivity {
         Log.d("文件写入", "成功");
     }
     private void initData(String content) {
-        String filePath = "/sdcard/LiYuan/Help/";
-        String fileName ="FTCopmodehelp" ;
+        name = load("thename");
+        String filePath = "/sdcard/LiYuan/simulationHelp/"+name+"/";
+        String fileName =" LiYuan_Teleop"+".java";
         writeTxtToFile(content, filePath, fileName);
     }
     // 将字符串写入到文本文件中

@@ -362,46 +362,50 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:gravity="center_vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="22dp"
-                android:layout_marginStart="22dp"
-                android:text="更新测试"
-                android:textColor="@color/text_content"
-                android:textSize="18sp"
-                android:id="@+id/textView14" />
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginStart="22dp"
+                    android:text="更新测试"
+                    android:textColor="@color/text_content"
+                    android:textSize="18sp" />
 
-            <Button
-                android:id="@+id/test_uptade"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true" />
+                <Button
+                    android:id="@+id/test_uptade"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@android:color/transparent" />
 
                 <TextView
                     android:id="@+id/textView15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="啧，不用看了，这个功能已经测试过了"
                     android:layout_alignParentBottom="true"
-                    android:layout_alignStart="@+id/textView14" />
+                    android:layout_alignStart="@+id/textView14"
+                    android:text="啧，不用看了，这个功能已经测试过了" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginBottom="20dp"
+                android:layout_weight="5.10"
                 android:gravity="center_vertical">
 
                 <TextView
+                    android:id="@+id/textView17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -411,24 +415,23 @@
                     android:layout_marginStart="22dp"
                     android:text="TabToast测试"
                     android:textColor="@color/text_content"
-                    android:textSize="18sp"
-                    android:id="@+id/textView17" />
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/test_toast"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
-                    android:background="@android:color/transparent"
-                    android:layout_alignParentTop="true" />
+                    android:layout_below="@+id/textView17"
+                    android:background="@android:color/transparent" />
 
                 <TextView
                     android:id="@+id/textView18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="啧，这个开发组也测试过了23333"
                     android:layout_alignParentBottom="true"
-                    android:layout_alignStart="@+id/textView17" />
+                    android:layout_alignStart="@+id/textView17"
+                    android:text="啧，这个开发组也测试过了23333" />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

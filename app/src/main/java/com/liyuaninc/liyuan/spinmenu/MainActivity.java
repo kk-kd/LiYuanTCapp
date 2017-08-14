@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity  {
 
         // 设置页面标题
         List<String> hintStrList = new ArrayList<>();
-        hintStrList.add("更新说明");
+     //   hintStrList.add("更新说明");
         hintStrList.add("FTC赛季");
        // hintStrList.add("Rarcher看戏");
       //  hintStrList.add("ricky看戏");
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity  {
         spinMenu.setEnableGesture(true);
         // 设置页面适配器
         final List<Fragment> fragmentList = new ArrayList<>();
-        fragmentList.add(Fragment1.newInstance());
+      //  fragmentList.add(Fragment1.newInstance());
         fragmentList.add(Fragment2.newInstance());
        // fragmentList.add(Fragment3.newInstance());
       //  fragmentList.add(Fragment4.newInstance());

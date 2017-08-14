@@ -18,9 +18,7 @@ import com.liyuaninc.liyuan.help.opmodehelp;
  */
 public class Fragment7 extends Fragment {
     private Button goopmodehelp;
-    MainActivity activity = (MainActivity) getActivity();
-
-
+    private Button goopmodehelp2;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -41,12 +39,20 @@ public class Fragment7 extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         goopmodehelp=(Button) getView().findViewById(R.id.opmodehelp);
+        goopmodehelp2 = (Button) getView().findViewById(R.id.opmodehel2);
         goopmodehelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),opmodehelp.class);
                 startActivity(intent);
 
+            }
+        });
+        goopmodehelp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getActivity(),com.liyuaninc.liyuan.help.opmodeedit.opmode.class);
+                startActivity(intent2);
             }
         });
 
