@@ -2,6 +2,7 @@ package com.liyuaninc.liyuan.spinmenu;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ import com.liyuaninc.liyuan.program.programadapter;
  */
 public class Fragment6 extends Fragment {
 
+    private Button write;
     private ListView listView;
     private List<viewadapter> datalists = new ArrayList<>();
 
@@ -45,6 +48,7 @@ public class Fragment6 extends Fragment {
         initdata();
         programadapter programadapter = new programadapter(getContext(),R.layout.programlist,datalists);
         listView = (ListView)view.findViewById(R.id.listview);
+        write = (Button)view.findViewById(R.id.writecode);
         listView.setAdapter(programadapter);
 
         return view;
@@ -54,6 +58,18 @@ public class Fragment6 extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        write.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent  = new Intent(getContext(),com.liyuaninc.liyuan.writecode.writecode.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
         listView .setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -86,6 +102,24 @@ public class Fragment6 extends Fragment {
         viewadapter guize = new viewadapter("自动代码2.0",R.drawable.ic_app_set_background_1);
         datalists.add(guize);
         viewadapter paiming = new viewadapter("自动代码1.0",R.drawable.ic_app_set_background_1);
+        datalists.add(paiming);
+        viewadapter a = new viewadapter("手动——脉轮",R.drawable.ic_app_set_background_1);
+        datalists.add(a);
+        viewadapter b = new viewadapter("自动代码2.0",R.drawable.ic_app_set_background_1);
+        datalists.add(b);
+        viewadapter c = new viewadapter("自动代码1.0",R.drawable.ic_app_set_background_1);
+        datalists.add(c);
+        viewadapter d = new viewadapter("手动——脉轮",R.drawable.ic_app_set_background_1);
+        datalists.add(d);
+        viewadapter e = new viewadapter("自动代码2.0",R.drawable.ic_app_set_background_1);
+        datalists.add(guize);
+        viewadapter f = new viewadapter("自动代码1.0",R.drawable.ic_app_set_background_1);
+        datalists.add(paiming);
+        viewadapter s = new viewadapter("手动——脉轮",R.drawable.ic_app_set_background_1);
+        datalists.add(d);
+        viewadapter q = new viewadapter("自动代码2.0",R.drawable.ic_app_set_background_1);
+        datalists.add(guize);
+        viewadapter k = new viewadapter("自动代码1.0",R.drawable.ic_app_set_background_1);
         datalists.add(paiming);
     }
 
