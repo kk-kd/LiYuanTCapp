@@ -10,15 +10,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="321dp"
-            android:layout_height="match_parent"
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="OpMode代码版编程"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="点击最下方按钮完成编辑"
+            android:textAlignment="center" />
 
     </LinearLayout>
 

@@ -290,23 +290,23 @@ setname(finalprogram);
 
 
         if (avaluea!=""){
-            aa="\n"+Motor+"a="+avaluea+";";
+            aa="\n"+" a.setPower("+avaluea+");";
             afinal=afinal+aa;
         }
         else ;
         if (avalueb!=""){
-            ab="\n"+Motor+"b="+avalueb+";";
+            ab="\n"+" b.setPower("+avalueb+");";
             afinal=afinal+ab;
         }
         else ;
 
         if (avaluec!=""){
-            ac="\n"+Motor+"c="+avaluec+";";
+            ac="\n"+" c.setPower("+avaluec+");";
             afinal=afinal+ac;
         }
         else ;
         if (avalued!=""){
-            ad="\n"+Motor+"d="+avalued+";";
+            ad="\n"+" d.setPower("+avalued+");";
             afinal=afinal+ad;
         }
         else ;
@@ -347,23 +347,23 @@ setname(finalprogram);
 
 
         if (bvaluea!=""){
-            a="\n"+Motor+"a="+bvaluea+";";
+            a="\n"+" a.setPower("+bvaluea+");";
             bfinal=bfinal+a;
         }
         else ;
         if (bvalueb!=""){
-            b="\n"+Motor+"b="+bvalueb+";";
+            b="\n"+" b.setPower("+bvalueb+");";
             bfinal=bfinal+b;
         }
         else ;
 
         if (bvaluec!=""){
-            c="\n"+Motor+"c="+bvaluec+";";
+            c="\n"+" c.setPower("+bvaluec+");";
             bfinal=bfinal+c;
         }
         else ;
         if (bvalued!=""){
-            d="\n"+Motor+"d="+bvalued+";";
+            d="\n"+" d.setPower("+bvalued+");";
             bfinal=bfinal+d;
         }
         else ;
@@ -386,23 +386,23 @@ setname(finalprogram);
 
 
         if (xvaluea!=""){
-            aa="\n"+Motor+"a="+xvaluea+";";
+            aa="\n"+" a.setPower("+xvaluea+");";
             afinal=afinal+aa;
         }
         else ;
         if (xvalueb!=""){
-            ab="\n"+Motor+"b="+xvalueb+";";
+            ab="\n"+" b.setPower("+xvalueb+");";
             afinal=afinal+ab;
         }
         else ;
 
         if (xvaluec!=""){
-            ac="\n"+Motor+"c="+xvaluec+";";
+            ac="\n"+" c.setPower("+xvaluec+");";
             afinal=afinal+ac;
         }
         else ;
         if (xvalued!=""){
-            ad="\n"+Motor+"d="+xvalued+";";
+            ad="\n"+" d.setPower("+xvalued+");";
             afinal=afinal+ad;
         }
         else ;
@@ -426,23 +426,23 @@ setname(finalprogram);
 
 
         if (yvaluea!=""){
-            aa="\n"+Motor+"a="+yvaluea+";";
+            aa="\n"+" a.setPower("+yvaluea+");";
             afinal=afinal+aa;
         }
         else ;
         if (yvalueb!=""){
-            ab="\n"+Motor+"b="+yvalueb+";";
+            ab="\n"+" b.setPower("+yvalueb+");";
             afinal=afinal+ab;
         }
         else ;
 
         if (yvaluec!=""){
-            ac="\n"+Motor+"c="+yvaluec+";";
+            ac="\n"+" c.setPower("+yvaluec+");";
             afinal=afinal+ac;
         }
         else ;
         if (yvalued!=""){
-            ad="\n"+Motor+"d="+yvalued+";";
+            ad="\n"+" d.setPower("+yvalued+");";
             afinal=afinal+ad;
         }
         else ;
@@ -466,23 +466,23 @@ setname(finalprogram);
 
 
         if (upvaluea!=""){
-            aa="\n"+Motor+"a="+upvaluea+";";
+            aa="\n"+" a.setPower("+upvaluea+");";
             afinal=afinal+aa;
         }
         else ;
         if (upvalueb!=""){
-            ab="\n"+Motor+"b="+upvalueb+";";
+            ab="\n"+" b.setPower("+upvalueb+");";
             afinal=afinal+ab;
         }
         else ;
 
         if (upvaluec!=""){
-            ac="\n"+Motor+"c="+upvaluec+";";
+            ac="\n"+" c.setPower("+upvaluec+");";
             afinal=afinal+ac;
         }
         else ;
         if (upvalued!=""){
-            ad="\n"+Motor+"d="+upvalued+";";
+            ad="\n"+" d.setPower("+upvalued+");";
             afinal=afinal+ad;
         }
         else ;
@@ -506,23 +506,23 @@ setname(finalprogram);
 
 
         if (downvaluea!=""){
-            aa="\n"+Motor+"a="+downvaluea+";";
+            aa="\n"+" a.setPower("+downvaluea+");";
             afinal=afinal+aa;
         }
         else ;
         if (downvalueb!=""){
-            ab="\n"+Motor+"b="+downvalueb+";";
+            ab="\n"+"b.setPower("+downvalueb+");";
             afinal=afinal+ab;
         }
         else ;
 
         if (downvaluec!=""){
-            ac="\n"+Motor+"c="+downvaluec+";";
+            ac="\n"+"c.setPower("+downvaluec+");";
             afinal=afinal+ac;
         }
         else ;
         if (downvalued!=""){
-            ad="\n"+Motor+"d="+downvalued+";";
+            ad="\n"+"d.setPower("+downvalued+");";
             afinal=afinal+ad;
         }
         else ;
@@ -545,23 +545,23 @@ setname(finalprogram);
 
 
         if (leftvaluea!=""){
-            aa="\n"+Motor+"a="+leftvaluea+";";
+            aa="\n"+" a.setPower("+leftvaluea+");";
             afinal=afinal+aa;
         }
         else ;
         if (leftvalueb!=""){
-            ab="\n"+Motor+"b="+leftvalueb+";";
+            ab="\n"+" b.setPower("+leftvalueb+");";
             afinal=afinal+ab;
         }
         else ;
 
         if (leftvaluec!=""){
-            ac="\n"+Motor+"c="+leftvaluec+";";
+            ac="\n"+" c.setPower("+leftvaluec+");";
             afinal=afinal+ac;
         }
         else ;
         if (leftvalued!=""){
-            ad="\n"+Motor+"d="+leftvalued+";";
+            ad="\n"+" d.setPower("+leftvalued+");";
             afinal=afinal+ad;
         }
         else ;
@@ -584,23 +584,23 @@ setname(finalprogram);
 
 
         if (rightvaluea!=""){
-            aa="\n"+Motor+"a="+rightvaluea+";";
+            aa="\n"+" a.setPower("+rightvaluea+");";
             afinal=afinal+aa;
         }
         else ;
         if (rightvalueb!=""){
-            ab="\n"+Motor+"b="+rightvalueb+";";
+            ab="\n"+" b.setPower("+rightvalueb+");";
             afinal=afinal+ab;
         }
         else ;
 
         if (rightvaluec!=""){
-            ac="\n"+Motor+"c="+rightvaluec+";";
+            ac="\n"+" c.setPower("+rightvaluec+");";
             afinal=afinal+ac;
         }
         else ;
         if (rightvalued!=""){
-            ad="\n"+Motor+"d="+rightvalued+";";
+            ad="\n"+" d.setPower("+rightvalued+");";
             afinal=afinal+ad;
         }
         else ;

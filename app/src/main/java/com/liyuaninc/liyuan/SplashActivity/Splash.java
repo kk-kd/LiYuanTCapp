@@ -2,17 +2,19 @@ package com.liyuaninc.liyuan.SplashActivity;
 
 import android.app.Activity;
  import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
  import android.os.Handler;
+import android.view.View;
 import android.view.Window;
  import com.liyuaninc.liyuan.Login.LoginActivity;
  import com.liyuaninc.liyuan.R;
+import com.liyuaninc.liyuan.apkupdate.UpdateVersionController;
 
 public class Splash extends Activity {
    // private VideoView videoView;
     private final int SPLASH_DISPLAY_LENGHT = 3000;
     private Handler handler;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
