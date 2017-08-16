@@ -66,7 +66,7 @@ public class Fragment5 extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
+    public void onActivityCreated(final Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         if (null == controller) {
             controller = UpdateVersionController.getInstance(getContext());
@@ -139,21 +139,10 @@ public class Fragment5 extends Fragment {
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (count==0)
-                {
-                   TabToast.tabToastAccess.setcolor("RED");
-                    count=1;
-                    TabToast.makeText(getContext(),"now RED");
-                }
-                else if (count==1)
-                {
-                   TabToast.tabToastAccess.setcolor("BLACK");
-                    count=0;
-                    TabToast.makeText(getContext(),"now BLACK");
-                }
+             Intent intent = new Intent(getContext(),com.liyuaninc.liyuan.settings.settings.class);
+                startActivity(intent);
             }
         });
-
     }
 
     public static Fragment5 newInstance() {

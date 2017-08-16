@@ -58,7 +58,7 @@
             android:layout_height="75dp">
 
             <Button
-                android:id="@+id/changebackground"
+                android:id="@+id/changetoasttextcolor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
@@ -74,10 +74,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/changebackground"
-                android:layout_alignBottom="@+id/changebackground"
+                android:layout_alignBaseline="@+id/changetoasttextcolor"
+                android:layout_alignBottom="@+id/changetoasttextcolor"
                 android:layout_toEndOf="@+id/imageView15"
-                android:text="修改背景"
+                android:text="TabToast"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageView14"
                 android:layout_toEndOf="@+id/imageView15"
-                android:text="修改spinmenu背景图片" />
+                android:text="修改文字背景颜色" />
         </RelativeLayout>
 
     </LinearLayout>
