@@ -35,12 +35,12 @@ public class rarcherstart extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nowwords ="\n"+"<user>.input:"+editText.getText().toString();
+                nowwords ="\n"+"<user>.input:  "+editText.getText().toString();
                 tocompete = editText.getText().toString();
                 Log.d("tocompete",tocompete);
                 comrequest = status(tocompete);
                 editText.setText("");
-                all = all+nowwords+"\n"+"<Rarcher>.output"+comrequest;
+                all = all+nowwords+"\n"+"<Rarcher>.output:  "+comrequest;
                 code.setText(all);
             }
         });
@@ -52,7 +52,7 @@ public class rarcherstart extends AppCompatActivity {
         if (words.equals("run"))
         {
             request="正在启动...\n" +
-                    "请输入密码 password\n";
+                    "请输入密码 (password)\n";
         }
         else if (words.equals("flyt1121"))
         {
