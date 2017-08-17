@@ -65,16 +65,18 @@
         <activity android:name=".help.opmodeedit.opmode" />
         <activity android:name=".writecode.writecode" />
         <activity android:name=".settings.settings" />
-      <provider
-          android:name="android.support.v4.content.FileProvider"
-          android:authorities="com.example.cameraalbumtest.fileprovider"
-          android:exported="false"
-          android:grantUriPermissions="true">
-          <meta-data
-              android:name="android.support.FILE_PROVIDER_PATHS"
-              android:resource="@xml/file_paths"/>
-      </provider>
 
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.cameraalbumtest.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".settings.rarcher.rarcherstart"></activity>
     </application>
 
 </manifest>

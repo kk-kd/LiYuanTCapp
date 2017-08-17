@@ -61,15 +61,17 @@
                 android:id="@+id/changetoasttextcolor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
+                android:background="@android:color/transparent"
                 android:layout_alignParentTop="true"
-                android:background="@android:color/transparent" />
+                android:layout_alignParentStart="true" />
 
             <ImageView
                 android:id="@+id/imageView15"
                 android:layout_width="76dp"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/singledog" />
+                app:srcCompat="@drawable/singledog"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -98,6 +100,50 @@
                 android:text="修改文字背景颜色" />
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp">
+
+            <Button
+                android:id="@+id/rarcherstart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/singledog" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/rarcherstart"
+                android:layout_alignBottom="@+id/rarcherstart"
+                android:layout_toEndOf="@+id/imageView19"
+                android:text="Rarcehr"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="13dp"
+                app:srcCompat="@mipmap/black_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView18"
+                android:layout_toEndOf="@+id/imageView19"
+                android:text="进入Rarcher人格激活程序" />
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>
