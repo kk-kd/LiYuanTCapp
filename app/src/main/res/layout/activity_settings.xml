@@ -116,7 +116,7 @@
                 android:id="@+id/imageView19"
                 android:layout_width="76dp"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/singledog" />
+                app:srcCompat="@drawable/ic_launcher" />
 
             <TextView
                 android:layout_width="wrap_content"
