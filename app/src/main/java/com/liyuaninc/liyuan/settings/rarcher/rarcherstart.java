@@ -58,7 +58,8 @@ public class rarcherstart extends AppCompatActivity {
                 code.setText(all);
             }
         });
-        code.setOnTouchListener(new View.OnTouchListener() {
+        code.getParent().requestDisallowInterceptTouchEvent(true);
+        /*code.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -69,7 +70,7 @@ public class rarcherstart extends AppCompatActivity {
                 }
                 return false;
             }
-        });
+        });*/
 
     }
 

@@ -22,12 +22,12 @@
             <TextView
                 android:id="@+id/rarchercode"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="vertical"
-                android:fadeScrollbars="false"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:background="@color/common_google_signin_btn_text_dark_focused"
+                android:fadeScrollbars="false"
+                android:scrollbars="vertical"
                 android:textColor="@color/colorPrimary" />
         </LinearLayout>
     </ScrollView>
