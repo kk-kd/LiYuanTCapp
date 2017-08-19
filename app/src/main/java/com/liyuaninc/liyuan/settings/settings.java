@@ -45,7 +45,5 @@ TabToast.makeText(settings.this,"hello");
                 startActivity(intent);
             }
         });
-
-
     }
 }

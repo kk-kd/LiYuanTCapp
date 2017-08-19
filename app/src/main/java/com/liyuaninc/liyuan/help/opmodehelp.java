@@ -79,7 +79,6 @@ public class opmodehelp extends AppCompatActivity {
     private EditText et8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-       // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opmodehelp);
         X=(Button)findViewById(R.id.X);

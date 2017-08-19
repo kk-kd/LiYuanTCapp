@@ -12,7 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -53,6 +55,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @BindView(R.id.userpassword) EditText mPasswordView;
     public CheckBox mCheckBox;
     public ProgressDialog progressDialog;
+    private String forgetemil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,11 +138,26 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @OnClick(R.id.forgetPassword)
     @Override
     public void forgetPassword() {
-        Intent intent = new Intent(LoginActivity.this, RetrivePasswordActivity.class);
-        startActivity(intent);
-        finish();
+        forgetdialog();
     }
 
+    private void forgetdialog()
+    {
+        LayoutInflater inflater=getLayoutInflater();
+        final View layout=inflater.inflate(R.layout.forgotdialog, (ViewGroup)findViewById(R.id.forgot));
+        final EditText editText = (EditText)layout.findViewById(R.id.forgotemil);
+        new AlertDialog.Builder(this).
+                setTitle("忘记密码").
+                setCancelable(false).
+                setView(layout).
+                setPositiveButton("完成", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        forgetemil=editText.getText().toString();
+                        //TODO 连接数据库获取密码
+                    }
+                }).show();
+    }
     /**
      * Attempt to login when the login button is pressed
      * If there are errors, the errors are presented and no login will be made
