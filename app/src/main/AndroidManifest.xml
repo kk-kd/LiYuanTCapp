@@ -76,7 +76,9 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".settings.rarcher.rarcherstart"></activity>
+        <activity android:name=".settings.rarcher.rarcherstart" />
+        <activity android:name=".writecode.writecode2" />
+        <activity android:name=".writecode.codeinfo"></activity>
     </application>
 
 </manifest>

@@ -62,7 +62,7 @@ public class Fragment6 extends Fragment {
         write.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent  = new Intent(getContext(),com.liyuaninc.liyuan.writecode.writecode.class);
+                Intent intent  = new Intent(getContext(),com.liyuaninc.liyuan.writecode.writecode2.class);
                 startActivity(intent);
             }
         });
