@@ -63,7 +63,6 @@
         <activity android:name=".ftc_season.season2017.season_main_2017" />
         <activity android:name=".others.Developer_application" />
         <activity android:name=".help.opmodeedit.opmode" />
-        <activity android:name=".writecode.writecode" />
         <activity android:name=".settings.settings" />
 
         <provider

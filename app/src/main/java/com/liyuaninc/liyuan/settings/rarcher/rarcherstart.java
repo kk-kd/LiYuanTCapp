@@ -6,9 +6,11 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -78,7 +80,16 @@ public class rarcherstart extends AppCompatActivity {
                 code.setText(all);
             }
         });
-        code.getParent().requestDisallowInterceptTouchEvent(true);
+      editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+          @Override
+          public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+              if (actionId == EditorInfo.IME_ACTION_DONE) {
+                  // do something
+                  send.performClick();
+              }
+              return true;
+          }
+      });
 
     }
 
