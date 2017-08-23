@@ -2,6 +2,7 @@ package com.liyuaninc.liyuan.Register;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -9,7 +10,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -42,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
     private UpdateVersionController controller = null;
     private RegisterPresenter registerPresenter;
     boolean isExit;
+    private  ProgressDialog progressDialog;
     @BindView(R.id.register_email) EditText mEmailView;
     @BindView(R.id.register_name) EditText mUsernameView;
     @BindView(R.id.register_password) EditText mPasswordView;
@@ -87,11 +91,20 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
         String username = mUsernameView.getText().toString();
+        showdialog();
 
         registerPresenter.validCredentials(email, password, username);
 
     }
 
+    private void showdialog()
+    {
+        progressDialog = new ProgressDialog(RegisterActivity.this);
+        progressDialog.setTitle("注册中");
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+    }
     @Override
     public void showProgress(final boolean show) {
         int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
@@ -107,12 +120,14 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
 
     @Override
     public void setEmailError(int messageResId) {
+        progressDialog.cancel();
         mEmailView.setError(getString(messageResId));
         mEmailView.requestFocus();
     }
 
     @Override
     public void setPasswordError(int messageResId) {
+        progressDialog.cancel();
         mPasswordView.setError(getString(messageResId));
         mPasswordView.requestFocus();
     }
@@ -120,6 +135,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
     @OnClick(R.id.goLogin)
     @Override
     public void goLogin() {
+        progressDialog.cancel();
         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         finish();
     }
@@ -128,6 +144,8 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
     @Override
     public void onSuccessEvent(SuccessEvent successEvent) {
         Toast.makeText(this,"注册成功！",Toast.LENGTH_SHORT).show();
+        progressDialog.cancel();
+        Log.d("register","success");
         showProgress(false);
         goLogin();
     }
@@ -137,6 +155,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
     @Override
     public void onUsernameExistedEvent(UsernameExistedEvent usernameExistedEvent) {
         showProgress(false);
+        progressDialog.cancel();
         setEmailError(R.string.username_existed_error);
     }
 

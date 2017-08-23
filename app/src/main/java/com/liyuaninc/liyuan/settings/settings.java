@@ -21,7 +21,7 @@ public class settings extends AppCompatActivity {
     Button rarcehr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // 设置状态栏透明!!!!记得在setContentView之前
+       /* // 设置状态栏透明!!!!记得在setContentView之前
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -34,7 +34,7 @@ public class settings extends AppCompatActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.TRANSPARENT);
             window.setNavigationBarColor(Color.TRANSPARENT);
-        }
+        }*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 

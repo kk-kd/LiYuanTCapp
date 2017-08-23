@@ -51,8 +51,9 @@ public class RegisterModelImp implements RegisterModel {
 
                 final String theparam="uname="+username+"&upwd="+password+"&umail="+email;
                 String result = finalnet.sendPost(API,theparam);
+                Log.d("result",result);
                 switch (result){
-                    case "ok":
+                    case "ok\n":
                         EventBus.getDefault().post(new SuccessEvent());
                         Log.d("@@@@@@@@@!",result);
                         break;

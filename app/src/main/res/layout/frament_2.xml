@@ -42,9 +42,9 @@
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ftc" />
+                android:layout_width="101dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ftc2016" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -69,9 +69,9 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ftc" />
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ftc2017" />
 
             <TextView
                 android:layout_width="match_parent"
