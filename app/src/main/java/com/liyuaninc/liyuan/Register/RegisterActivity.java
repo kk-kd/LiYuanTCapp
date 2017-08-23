@@ -135,7 +135,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
     @OnClick(R.id.goLogin)
     @Override
     public void goLogin() {
-        progressDialog.cancel();
         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         finish();
     }

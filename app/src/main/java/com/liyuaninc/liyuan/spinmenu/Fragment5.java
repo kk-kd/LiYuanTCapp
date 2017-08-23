@@ -126,7 +126,7 @@ public class Fragment5 extends Fragment {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
                 dialog.setTitle("更新");
                 dialog.setCancelable(false);
-                dialog.setMessage("更新了个蛇皮，老老实实看戏吧" );
+                dialog.setMessage("修复了部分bug" );
                 dialog.setPositiveButton("辣鸡Rarcher，看戏去了", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
