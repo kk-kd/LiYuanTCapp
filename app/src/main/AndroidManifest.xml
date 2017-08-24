@@ -77,7 +77,12 @@
 
         <activity android:name=".settings.rarcher.rarcherstart" />
         <activity android:name=".writecode.writecode2" />
-        <activity android:name=".writecode.codeinfo"></activity>
+        <activity android:name=".writecode.codeinfo" />
+
+        <service
+            android:name=".server.timeout.timeout"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

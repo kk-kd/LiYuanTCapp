@@ -4,6 +4,7 @@ package com.liyuaninc.liyuan.Login;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
@@ -28,6 +29,7 @@ import com.liyuaninc.liyuan.Register.RegisterActivity;
 import com.liyuaninc.liyuan.RetrivePassword.RetrivePasswordActivity;
 
 import com.liyuaninc.liyuan.apkupdate.UpdateVersionController;
+import com.liyuaninc.liyuan.server.timeout.timeout;
 import com.liyuaninc.liyuan.spinmenu.MainActivity;
 import com.liyuaninc.liyuan.toast_styles.TabToast;
 
@@ -42,6 +44,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Calendar;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     public CheckBox mCheckBox;
     public ProgressDialog progressDialog;
     private String forgetemil;
-
+    private int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // hide title
@@ -76,6 +82,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         loadRemeberedPassword();
 
         loginPresenter = new LoginPresenterImp(this);
+
+
     }
 
     /**
@@ -96,6 +104,20 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
     }
 
+    private void starttimeout()
+    {
+        //开启计时服务
+        Intent intent = new Intent(this,timeout.class);
+        startService(intent);
+
+    }
+
+    private void stoptimeout()
+    {
+        //关闭计时服务
+        Intent intent = new Intent(this,timeout.class);
+        stopService(intent);
+    }
 
 
     /**
@@ -185,7 +207,24 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
        }
     */
+
+
+        timeoutcheck();
         loginPresenter.validCredentials(username,password);
+    }
+
+    private void timeoutcheck(){
+
+        if (count < 5) {
+            count=count++;
+        }
+        else if (count>=5)
+        {
+            count=5;
+            EventBus.getDefault().post(new CancelledEvent());
+        }
+
+
     }
 
     public void showLoginAnimation(boolean show,String a){
@@ -199,7 +238,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
             final AlertDialog.Builder progressDialog1=new AlertDialog.Builder(LoginActivity.this);
             progressDialog1.setTitle("唔，你的戏票有问题呐");
             progressDialog1.setIcon(R.drawable.rarcher);
-            progressDialog1.setMessage("仔细检查一下你的戏票吧");
+            progressDialog1.setMessage("仔细检查一下你的戏票和检票口吧");
             progressDialog1.setCancelable(false);
             progressDialog1.setPositiveButton("我再看看", new DialogInterface.OnClickListener() {
                 @Override
@@ -212,6 +251,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         Log.d("login statue",a);
         //Toast.makeText(LoginActivity.this,"bad"+a,Toast.LENGTH_SHORT).show();
     }
+
+
     /**
      * Set error message if username is invalid
      *
