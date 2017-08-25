@@ -9,16 +9,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.liyuaninc.liyuan.R;
 import com.liyuaninc.liyuan.help.opmodehelp;
+import com.liyuaninc.liyuan.helpview.help;
 
 /*
  */
 public class Fragment7 extends Fragment {
-    private Button goopmodehelp;
-    private Button goopmodehelp2;
+    RelativeLayout relativeLayout;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -32,30 +33,23 @@ public class Fragment7 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.frament_7, container, false);
+        View view = inflater.inflate(R.layout.frament_7, container, false);
+        relativeLayout= (RelativeLayout)view.findViewById(R.id.f7);
+
+        return view;
+
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        goopmodehelp=(Button) getView().findViewById(R.id.opmodehelp);
-        goopmodehelp2 = (Button) getView().findViewById(R.id.opmodehel2);
-        goopmodehelp.setOnClickListener(new View.OnClickListener() {
+        relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),opmodehelp.class);
+                Intent intent = new Intent(getActivity(),help.class);
                 startActivity(intent);
-
             }
         });
-        goopmodehelp2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent2 = new Intent(getActivity(),com.liyuaninc.liyuan.help.opmodeedit.opmode.class);
-                startActivity(intent2);
-            }
-        });
-
     }
 
     public static Fragment7 newInstance() {

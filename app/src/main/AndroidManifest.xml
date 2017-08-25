@@ -82,7 +82,12 @@
         <service
             android:name=".server.timeout.timeout"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity android:name=".news.ftcnews" />
+        <activity android:name=".set.set" />
+        <activity android:name=".share.share" />
+        <activity android:name=".helpview.help"></activity>
     </application>
 
 </manifest>
