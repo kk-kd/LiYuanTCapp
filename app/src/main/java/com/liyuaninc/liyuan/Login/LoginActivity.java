@@ -208,6 +208,14 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
        }
     */
 
+     /*
+     *
+     * 数据库没弄好的测试产品
+     *
+     * */
+        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+        startActivity(intent);
+        finish();
 
         timeoutcheck();
         loginPresenter.validCredentials(username,password);
