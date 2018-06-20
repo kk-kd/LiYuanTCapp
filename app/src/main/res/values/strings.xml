@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">梨园</string>
+    <string name="username">用户名：</string>
+    <string name="username_hint">请输入戏票编号</string>
+    <string name="password">密码</string>
+    <string name="password_hint">请输入座位号</string>
+    <string name="title_activity_usermain"> </string>
+
+    <string name="action_settings">Settings</string>
+    <string name="gotologin">离开梨园</string>
+    <string name="title_home">看戏区</string>
+    <string name="title_dashboard">演戏区</string>
+    <string name="title_notifications">看戏观众</string>
+
+    <!--String names below will be used in activity_register.xml-->
+    <string name="register_name_hint">请输入用户名</string>
+    <string name="register_email_hint">请输入邮箱地址</string>
+    <string name="register_password_hint">请输入密码</string>
+    <string name="register_button">提交</string>
+    <string name="title_activity_user">user</string>
+
+    <!--For Broadcast-->
+    <string name="password_invalid_error">你的密码不如 糖果 好(*≧▽≦*)</string>
+    <string name="username_invalid_error">你的用户名不如 糖果 好(′⌒`)</string>
+    <string name="username_empty_error">你用户名没输 糖果 啊。。。</string>
+    <string name="password_incorrect_error">你密码没输 糖果 啊。。。</string>
+    <string name="username_existed_error">你的用户名 糖果 注册过了：）</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
