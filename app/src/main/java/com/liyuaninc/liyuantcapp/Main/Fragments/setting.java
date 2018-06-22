@@ -37,8 +37,7 @@ public class setting extends Fragment {
         down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(),test.class);
-                startActivity(intent);
+              Toast.makeText(getContext(),"树状图设计者正在施工呐",Toast.LENGTH_SHORT).show();
             }
         });
 

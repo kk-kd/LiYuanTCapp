@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.liyuaninc.liyuantcapp.Main.Fragments.competitiondetails.result"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/nowpositon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBaseline="@+id/back"
+            android:layout_alignBottom="@+id/back"
+            android:layout_alignParentStart="true"
+            android:gravity="top|bottom"
+            android:text="喵喵喵"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/tocompetation"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/back_icon" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/detailsinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="details" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -3,6 +3,7 @@ package com.liyuaninc.liyuantcapp.Main.Fragments.competitiondetails;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,14 +12,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.liyuaninc.liyuantcapp.Main.MainActivity;
 import com.liyuaninc.liyuantcapp.R;
+import com.liyuaninc.liyuantcapp.localdatabase.information;
+
+import org.litepal.LitePal;
 
 public class notification extends AppCompatActivity {
 
     Button back;
     TextView textView;
     String flag;
+    String informations="";
     private String[] data2018 = { "北京（北京理工大学）", "重庆（重庆大学）", "上海（上海美国学校）", "西安（西安电子科技大学）",
             "南京（东南大学）", "深圳（深圳宝安科技馆）", "郑州（郑州大学）", "广州（华南理工大学）", "上海（上海师范大学）"};
     private String[] data2019={"抱歉，组委会暂未公布2019年比赛地点"};
@@ -29,6 +33,11 @@ public class notification extends AppCompatActivity {
         setContentView(R.layout.activity_notification);
         Intent intent = getIntent();
         flag = intent .getStringExtra("flag");
+        LitePal.getDatabase();
+        //local database
+
+
+
 
         textView = (TextView)findViewById(R.id.noticeinfo);
         back = (Button)findViewById(R.id.back);
@@ -44,6 +53,13 @@ public class notification extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 Toast.makeText(notification.this,data2018[position],Toast.LENGTH_SHORT).show();
+                    //get information from net db
+
+                        Intent intentf = new Intent(notification.this,result.class);
+                        intentf.putExtra("position",data2018[position]);
+                        intentf.putExtra("tag",flag);
+                        startActivity(intentf);
+
                     }
                 });
                 textView.setText("请选择地区（2017--2018）");
@@ -55,6 +71,11 @@ public class notification extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Toast.makeText(notification.this,data2019[position],Toast.LENGTH_SHORT).show();
+
+                        Intent intente = new Intent(notification.this,result.class);
+                        intente.putExtra("position",data2019[position]);
+                        intente.putExtra("tag",flag);
+                        startActivity(intente);
                     }
                 });
                 textView.setText("请选择地区（2018--2019）");
@@ -66,6 +87,11 @@ public class notification extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Toast.makeText(notification.this,data2018[position],Toast.LENGTH_SHORT).show();
+
+                        Intent intentd = new Intent(notification.this,result.class);
+                        intentd.putExtra("position",data2018[position]);
+                        intentd.putExtra("tag",flag);
+                        startActivity(intentd);
                     }
                 });
                 textView.setText("请选择地区（2017--2018）");
@@ -77,6 +103,11 @@ public class notification extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Toast.makeText(notification.this,data2019[position],Toast.LENGTH_SHORT).show();
+
+                        Intent intentc = new Intent(notification.this,result.class);
+                        intentc.putExtra("position",data2019[position]);
+                        intentc.putExtra("tag",flag);
+                        startActivity(intentc);
                     }
                 });
                 textView.setText("请选择地区（2018--2019）");
@@ -88,6 +119,11 @@ public class notification extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Toast.makeText(notification.this,data2018[position],Toast.LENGTH_SHORT).show();
+
+                        Intent intentb = new Intent(notification.this,result.class);
+                        intentb.putExtra("position",data2018[position]);
+                        intentb.putExtra("tag",flag);
+                        startActivity(intentb);
                     }
                 });
                 textView.setText("请选择地区（2017--2018）");
@@ -99,6 +135,11 @@ public class notification extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Toast.makeText(notification.this,data2019[position],Toast.LENGTH_SHORT).show();
+
+                        Intent intenta = new Intent(notification.this,result.class);
+                        intenta.putExtra("position",data2019[position]);
+                        intenta.putExtra("tag",flag);
+                        startActivity(intenta);
                     }
                 });
                 textView.setText("请选择地区（2018--2019）");
@@ -114,4 +155,8 @@ public class notification extends AppCompatActivity {
 
 
     }
+
+
+
+
 }

@@ -61,6 +61,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
 
         //store values
         String email = mEmailView.getText().toString();
+        Log.d("===========register", "attemptRegister: "+email);
         String password = mPasswordView.getText().toString();
         String username = mUsernameView.getText().toString();
         showdialog();
@@ -107,7 +108,8 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
     @OnClick(R.id.goLogin)
     @Override
     public void goLogin() {
-        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+       Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+        startActivity(intent);
         finish();
     }
 

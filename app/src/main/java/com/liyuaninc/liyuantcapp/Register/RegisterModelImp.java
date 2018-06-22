@@ -63,7 +63,6 @@ public class RegisterModelImp implements RegisterModel {
 //                        break;
                     default:
                         EventBus.getDefault().post(new CancelledEvent());
-
                         break;
                 }
             }

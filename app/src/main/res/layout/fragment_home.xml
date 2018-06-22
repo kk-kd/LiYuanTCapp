@@ -1,13 +1,20 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.liyuaninc.liyuantcapp.Main.Fragments.home">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="home" />
 
-</FrameLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="hello,讲真，Rarcher暂时还不知道这个界面用来干嘛，所以呢，欢迎大家提供思路，想要汉化发布？还是论坛的代码讨论？还是代码共享？或者都有，欢迎内测组们给我们提供更多的建议
+emm，，至于数据库，已经催数据库大佬开始对所有的数据库重写了，应该会在一两周内搞定，因此不要吐槽这个没有数据库的问题，谢谢。欢迎找bug并反馈给我们"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+</LinearLayout>

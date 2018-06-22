@@ -12,6 +12,7 @@
         android:required="true" />
 
     <application
+        android:name="org.litepal.LitePalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -29,7 +30,8 @@
         <activity android:name=".Main.MainActivity" />
         <activity android:name=".aboutus.aboutus" />
         <activity android:name=".test" />
-        <activity android:name=".Main.Fragments.competitiondetails.notification"></activity>
+        <activity android:name=".Main.Fragments.competitiondetails.notification" />
+        <activity android:name=".Main.Fragments.competitiondetails.result"></activity>
     </application>
 
 </manifest>
