@@ -2,6 +2,7 @@ package com.liyuaninc.liyuantcapp.Main.Fragments;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
@@ -16,6 +17,7 @@ import com.liyuaninc.liyuantcapp.Main.Fragments.competationbean.GroupBean;
 
 import com.liyuaninc.liyuantcapp.Main.Fragments.competationbean.ItemBean;
 import com.liyuaninc.liyuantcapp.Main.Fragments.competationbean.season_Adapter;
+import com.liyuaninc.liyuantcapp.Main.Fragments.competitiondetails.notification;
 import com.liyuaninc.liyuantcapp.R;
 
 import java.util.ArrayList;
@@ -64,22 +66,40 @@ public class competition extends Fragment {
                   case 0://2018赛季
                       switch (childPos)
                       {
-                          case 0:
+                          case 0: String data = "2018notice";
+                              Intent intent = new Intent(getContext(),notification.class);
+                              intent.putExtra("flag",data);
+                              startActivity(intent);
                               break;
-                          case 1:
+                          case 1:String data4 = "2018team";
+                              Intent intent4 = new Intent(getContext(),notification.class);
+                              intent4.putExtra("flag",data4);
+                              startActivity(intent4);
                               break;
-                          case 2:
+                          case 2:String data3 = "2018up";
+                              Intent intent3 = new Intent(getContext(),notification.class);
+                              intent3.putExtra("flag",data3);
+                              startActivity(intent3);
                               break;
                       }
                       break;
                   case 1://2019赛季
                       switch (childPos)
                       {
-                          case 0:
+                          case 0: String data = "2019notice";
+                              Intent intent = new Intent(getContext(),notification.class);
+                              intent.putExtra("flag",data);
+                              startActivity(intent);
                               break;
-                          case 1:
+                          case 1:String data1 = "2019team";
+                              Intent intent1 = new Intent(getContext(),notification.class);
+                              intent1.putExtra("flag",data1);
+                              startActivity(intent1);
                               break;
-                          case 2:
+                          case 2:String data2 = "2019up";
+                              Intent intent2 = new Intent(getContext(),notification.class);
+                              intent2.putExtra("flag",data2);
+                              startActivity(intent2);
                               break;
                       }
                       break;
@@ -98,8 +118,8 @@ public class competition extends Fragment {
         childList = new ArrayList();
 
 
-        groupList.add(new GroupBean("2018赛季"));
-        groupList.add(new GroupBean("2019赛季"));
+        groupList.add(new GroupBean("2017--2018赛季"));
+        groupList.add(new GroupBean("2018--2019赛季"));
 
 
 

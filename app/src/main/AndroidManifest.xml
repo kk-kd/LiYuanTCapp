@@ -28,7 +28,8 @@
         <activity android:name=".Register.RegisterActivity" />
         <activity android:name=".Main.MainActivity" />
         <activity android:name=".aboutus.aboutus" />
-        <activity android:name=".test"></activity>
+        <activity android:name=".test" />
+        <activity android:name=".Main.Fragments.competitiondetails.notification"></activity>
     </application>
 
 </manifest>
