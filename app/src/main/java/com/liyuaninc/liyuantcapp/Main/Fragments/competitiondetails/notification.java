@@ -71,7 +71,7 @@ public class notification extends AppCompatActivity {
                 textView.setText("请选择地区（2017--2018）");
                 break;
             case "2019team":
-                ArrayAdapter<String> adapter2019t = new ArrayAdapter<>(notification.this, android.R.layout.simple_list_item_1, data2018);
+                ArrayAdapter<String> adapter2019t = new ArrayAdapter<>(notification.this, android.R.layout.simple_list_item_1, data2019);
                 listView.setAdapter(adapter2019t);
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
@@ -93,7 +93,7 @@ public class notification extends AppCompatActivity {
                 textView.setText("请选择地区（2017--2018）");
                 break;
             case "2019up":
-                ArrayAdapter<String> adapter2019u = new ArrayAdapter<>(notification.this, android.R.layout.simple_list_item_1, data2018);
+                ArrayAdapter<String> adapter2019u = new ArrayAdapter<>(notification.this, android.R.layout.simple_list_item_1, data2019);
                 listView.setAdapter(adapter2019u);
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override

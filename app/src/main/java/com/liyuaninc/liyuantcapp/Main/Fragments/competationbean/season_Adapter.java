@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.liyuaninc.liyuantcapp.R;
@@ -132,6 +133,14 @@ public class season_Adapter implements ExpandableListAdapter {
         TextView textView = (TextView) view.findViewById(R.id.view_title);
         //为TextView设置text，这里就填我们读取到的groupBean对象中的部门名称变量
         textView.setText(groupBean.getTitle());
+        //设置头像
+        ImageView imageView = (ImageView)view.findViewById(R.id.touxiang);
+        switch (groupPosition)
+        {
+            case 0: imageView.setImageResource(R.drawable.ftc2017);
+                break;
+            case 1:imageView.setImageResource(R.drawable.ftc);
+        }
 
         //设置完成，把view返回给ExpandableList
         return view;
