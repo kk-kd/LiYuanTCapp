@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.liyuaninc.liyuantcapp.R;
 import com.liyuaninc.liyuantcapp.aboutus.aboutus;
+import com.liyuaninc.liyuantcapp.test;
 
 public class setting extends Fragment {
 
@@ -36,7 +37,8 @@ public class setting extends Fragment {
         down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(),"downland",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getContext(),test.class);
+                startActivity(intent);
             }
         });
 
