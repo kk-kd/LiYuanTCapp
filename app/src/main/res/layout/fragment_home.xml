@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="hello,讲真，Rarcher暂时还不知道这个界面用来干嘛，所以呢，欢迎大家提供思路，想要汉化发布？还是论坛的代码讨论？还是代码共享？或者都有，欢迎内测组们给我们提供更多的建议
-emm，，至于数据库，已经催数据库大佬开始对所有的数据库重写了，应该会在一两周内搞定，因此不要吐槽这个没有数据库的问题，谢谢。欢迎找bug并反馈给我们"
+emm，，至于数据库，已经催数据库大佬开始对所有的数据库重写了，应该会在一两周内搞定，因此不要吐槽这个没有数据库的问题，注册暂时有一点bug，我们已经知晓，正在尽力修复谢谢。欢迎找bug并反馈给我们\n
+\n\n\n2018.6.25更新：解决了register界面无法注册的问题，现在注册界面已经开放"
         android:textAlignment="textStart"
         android:textSize="18sp"
         android:textStyle="bold" />

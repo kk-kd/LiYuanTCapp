@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.liyuaninc.liyuantcapp.R;
 import com.liyuaninc.liyuantcapp.aboutus.aboutus;
-import com.liyuaninc.liyuantcapp.test;
 
 public class setting extends Fragment {
 
