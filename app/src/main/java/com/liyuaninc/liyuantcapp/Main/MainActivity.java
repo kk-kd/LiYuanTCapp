@@ -1,9 +1,14 @@
 package com.liyuaninc.liyuantcapp.Main;
 
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.liyuaninc.liyuantcapp.Main.Fragments.competition;
 import com.liyuaninc.liyuantcapp.Main.Fragments.home;
@@ -24,10 +29,12 @@ public class MainActivity extends AppCompatActivity {
             setting.class};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
+            super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_clip);
         initTabHost();
     }
+
     private void initTabHost() {
         //展开样式数组
         Drawable[] drawables = new Drawable[] { ContextCompat.getDrawable(this, R.drawable.rb_discovery_click),

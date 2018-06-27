@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context="com.liyuaninc.liyuantcapp.Main.Fragments.setting">
 
     <!-- TODO: Update blank fragment layout -->
@@ -18,7 +19,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/picshow"
                 android:layout_width="match_parent"
                 android:layout_height="234dp"
                 app:srcCompat="@drawable/dialog" />
