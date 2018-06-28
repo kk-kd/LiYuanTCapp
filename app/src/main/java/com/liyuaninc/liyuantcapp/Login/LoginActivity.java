@@ -239,6 +239,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     public void onPasswrodErrorEvent(PasswordErrorEvent passwordErrorEvent) {
         showLoginAnimation(false,"password wrong");
         setPasswordError(R.string.password_incorrect_error);
+
+
     }
 
     /**
