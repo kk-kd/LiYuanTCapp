@@ -2,6 +2,7 @@ package com.liyuaninc.liyuantcapp.Main.Fragments.settingpic;
 
 import android.Manifest;
 import android.annotation.TargetApi;
+import android.app.ProgressDialog;
 import android.content.ContentUris;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -20,6 +21,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
+import com.liyuaninc.liyuantcapp.Dialogs.loadingdialog;
 import com.liyuaninc.liyuantcapp.Main.MainActivity;
 import com.liyuaninc.liyuantcapp.R;
 
@@ -40,7 +42,7 @@ public class emptyactivity extends AppCompatActivity {
         setContentView(R.layout.activity_emptyactivity);
 
         Intent intent = getIntent();
-        result = intent.getIntExtra("openAlbum",0);
+        result = intent.getIntExtra("empty",0);
 
         switch (result) {
             case 0:
@@ -52,11 +54,16 @@ public class emptyactivity extends AppCompatActivity {
                 } else {
                     openAlbum();
                 }
+                break;
+            case 2:
+                final loadingdialog selfDialog;
+                selfDialog = new loadingdialog(emptyactivity.this);
+                selfDialog.setTitle("提示");
+                selfDialog.setMessage("确定退出应用?",getPackageName());
+                selfDialog.show();
+                break;
         }
         //重写onKeyDown方法,对按键(不一定是返回按键)监听
-
-
-
     }
 
 

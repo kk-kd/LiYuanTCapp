@@ -71,7 +71,6 @@ public class notification extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Toast.makeText(notification.this,data2019[position],Toast.LENGTH_SHORT).show();
-
                         Intent intente = new Intent(notification.this,result.class);
                         intente.putExtra("position",data2019[position]);
                         intente.putExtra("tag",flag);

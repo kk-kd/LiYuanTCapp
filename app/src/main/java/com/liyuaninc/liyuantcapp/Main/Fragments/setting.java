@@ -29,6 +29,7 @@ public class setting extends Fragment {
     private ImageView pic;
     private TextView down;
     private  TextView about;
+    private  TextView setting;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class setting extends Fragment {
         down = (TextView) view.findViewById(R.id.downland);
         about = (TextView)view.findViewById(R.id.aboutus);
         pic = (ImageView)view.findViewById(R.id.picshow);
+        setting = (TextView)view.findViewById(R.id.setting);
         Bitmap bitmap = getLoacalBitmap("/sdcard/LiYuan/Userspic/head_portrait.jpg"); //从本地取图片(在cdcard中获取)  //
         if (bitmap==null)
         {
@@ -53,11 +55,21 @@ public class setting extends Fragment {
                 pic .setImageBitmap(bitmap); //设置Bitmap
             }
 
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),emptyactivity.class);
+                intent.putExtra("empty",2);
+                startActivity(intent);
+                MainActivity activity=(MainActivity)getActivity();
+                activity.finish();
+            }
+        });
         pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),emptyactivity.class);
-                intent.putExtra("openAlbum",1);
+                intent.putExtra("empty",1);
                 startActivity(intent);
                 MainActivity activity=(MainActivity)getActivity();
                 activity.finish();

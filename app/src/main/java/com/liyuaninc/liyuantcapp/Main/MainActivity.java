@@ -32,8 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
             super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_clip);
+
         initTabHost();
     }
+
 
     private void initTabHost() {
         //展开样式数组

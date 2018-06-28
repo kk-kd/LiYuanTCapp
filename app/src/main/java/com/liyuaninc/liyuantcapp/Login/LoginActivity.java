@@ -18,8 +18,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.liyuaninc.liyuantcapp.Dialogs.loadingdialog;
 import com.liyuaninc.liyuantcapp.Login.Event.PasswordErrorEvent;
 import com.liyuaninc.liyuantcapp.Login.Event.SuccessEvent;
+import com.liyuaninc.liyuantcapp.Main.Fragments.settingpic.emptyactivity;
 import com.liyuaninc.liyuantcapp.Main.MainActivity;
 import com.liyuaninc.liyuantcapp.R;
 import com.liyuaninc.liyuantcapp.Register.Event.CancelledEvent;
@@ -50,6 +52,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @BindView(R.id.userpassword) EditText mPasswordView;
     public CheckBox mCheckBox;
     public ProgressDialog progressDialog;
+    private loadingdialog selfDialog;
+
 
 
     @Override
@@ -144,12 +148,17 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         String username = mUsernameView.getText().toString();
         String password = mPasswordView.getText().toString();
 
-        progressDialog = new ProgressDialog(LoginActivity.this);
+
+        selfDialog = new loadingdialog(LoginActivity.this);
+        selfDialog.setTitle("登录中");
+        selfDialog.setMessage("确定退出应用?",getPackageName());
+        selfDialog.show();
+      /*  progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setTitle("正在检票...");
         progressDialog.setIcon(R.drawable.dialog);
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(true);
-        progressDialog.show();
+        progressDialog.show();*/
  /*   if (password.length()<=6){
            showloginanimation=false;
            showLoginAnimation(showloginanimation,"lenghlow");
@@ -163,10 +172,10 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
         if(show) {
            // Toast.makeText(LoginActivity.this,"well"+a,Toast.LENGTH_SHORT).show();
-            progressDialog.dismiss();
+            selfDialog.dismiss();
         }
         else {
-            progressDialog.dismiss();
+            selfDialog.dismiss();
             final AlertDialog.Builder progressDialog1=new AlertDialog.Builder(LoginActivity.this);
             progressDialog1.setTitle("唔，你的戏票有问题呐");
             progressDialog1.setIcon(R.drawable.dialog);
