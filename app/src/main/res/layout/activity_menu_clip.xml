@@ -16,7 +16,7 @@
         android:layout_height="1dp"
         android:background="@drawable/dialog"/>
 
-    <com.liyuaninc.liyuantcapp.Main.library.XFragmentTabHost
+    <com.liyuaninc.liyuantcapp.activities.main.library.XFragmentTabHost
         android:id="@android:id/tabhost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -25,5 +25,5 @@
             android:id="@android:id/tabcontent"
             android:layout_width="0dp"
             android:layout_height="0dp"/>
-    </com.liyuaninc.liyuantcapp.Main.library.XFragmentTabHost>
+    </com.liyuaninc.liyuantcapp.activities.main.library.XFragmentTabHost>
 </LinearLayout>

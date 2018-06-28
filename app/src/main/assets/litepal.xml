@@ -3,6 +3,6 @@
     <dbname value = "information"></dbname>
     <version value = "1"></version>
     <list>
-        <mapping class = "com.liyuaninc.liyuantcapp.localdatabase.information"></mapping>
+        <mapping class="com.liyuaninc.liyuantcapp.db.local.Information"></mapping>
     </list>
 </litepal>

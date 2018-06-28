@@ -17,20 +17,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Splash.Splash">
+        <activity android:name=".activities.splash.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login.LoginActivity" />
-        <activity android:name=".Register.RegisterActivity" />
-        <activity android:name=".Main.MainActivity" />
-        <activity android:name=".aboutus.aboutus" />
-        <activity android:name=".Main.Fragments.competitiondetails.notification" />
-        <activity android:name=".Main.Fragments.competitiondetails.result" />
-        <activity android:name=".Main.Fragments.settingpic.emptyactivity"></activity>
+        <activity android:name=".mvp.login.LoginActivity"/>
+        <activity android:name=".mvp.register.RegisterActivity"/>
+        <activity android:name=".activities.main.MainActivity"/>
+        <activity android:name=".activities.about.AboutUs"/>
+        <activity android:name=".activities.main.fragments.competation.details.Notification"/>
+        <activity android:name=".activities.main.fragments.competation.details.Result"/>
+        <activity android:name=".activities.main.fragments.settingpic.EmptyActivity"/>
     </application>
 
 </manifest>
