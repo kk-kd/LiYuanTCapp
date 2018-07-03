@@ -10,8 +10,53 @@ import android.widget.Toast;
 
 import com.liyuaninc.liyuantcapp.R;
 
+/**
+ *
+ * ━━━━━━神兽出没━━━━━━
+ * 　　　┏┓　　　┏┓
+ * 　　┏┛┻━━━┛┻┓
+ * 　　┃　　　　　　　┃
+ * 　　┃　　　━　　　┃
+ * 　　┃　┳┛　┗┳　┃
+ * 　　┃　　　　　　　┃
+ * 　　┃　　　┻　　　┃
+ * 　　┃　　　　　　　┃
+ * 　　┗━┓　　　┏━┛Code is far away from bug with the animal protecting
+ * 　　　　┃　　　┃    神兽保佑,代码无bug
+ * 　　　　┃　　　┃
+ * 　　　　┃　　　┗━━━┓
+ * 　　　　┃　　　　　　　┣┓
+ * 　　　　┃　　　　　　　┏┛
+ * 　　　　┗┓┓┏━┳┓┏┛
+ * 　　　　　┃┫┫　┃┫┫
+ * 　　　　　┗┻┛　┗┻┛
+ *
+ * ━━━━━━感觉萌萌哒━━━━━━
+ */
 public class AboutUs extends AppCompatActivity {
-
+    private String cnm = "/**\n" +
+            " *\n" +
+            " * ━━━━━━神兽出没━━━━━━ \n" +
+            " * 　　　┏┓　　　┏┓ \n" +
+            " * 　　┏┛┻━━━┛┻┓ \n" +
+            " * 　　┃　　　　　　　┃ \n" +
+            " * 　　┃　　　━　　　┃ \n" +
+            " * 　　┃　┳┛　┗┳　┃ \n" +
+            " * 　　┃　　　　　　　┃ \n" +
+            " * 　　┃　　　┻　　　┃ \n" +
+            " * 　　┃　　　　　　　┃ \n" +
+            " * 　　┗━┓　　　┏━┛\n" +
+            " * 　　　　┃　　　┃    \n" +
+            " * 　　　　┃　　　┃ \n" +
+            " * 　　　　┃　　　┗━━━┓ \n" +
+            " * 　　　　┃　　　　　　　┣┓ \n" +
+            " * 　　　　┃　　　　　　　┏┛ \n" +
+            " * 　　　　┗┓┓┏━┳┓┏┛ \n" +
+            " * 　　　　　┃┫┫　┃┫┫ \n" +
+            " * 　　　　　┗┻┛　┗┻┛ \n" +
+            " *\n" +
+            " * ━━━━━━感觉萌萌哒━━━━━━ \n" +
+            " */";
     private ImageView back;
     private TextView details;
     private ImageView eggs;
@@ -47,8 +92,10 @@ public class AboutUs extends AppCompatActivity {
                             System.arraycopy(mHints, 1, mHints, 0, mHints.length - 1);
                               //获得当前系统已经启动的时间
                                mHints[mHints.length - 1] = SystemClock.uptimeMillis();
-                             if(SystemClock.uptimeMillis()-mHints[0]<=2000)
-                                  Toast.makeText(getApplicationContext(),"恭喜触发彩蛋，彩蛋内容还没想好", Toast.LENGTH_SHORT).show();
+                             if(SystemClock.uptimeMillis()-mHints[0]<=2000){
+                            Toast.makeText(getApplicationContext(),cnm,Toast.LENGTH_LONG).show();
+                             }
+
                            }
                    });
     }

@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.liyuaninc.liyuantcapp.R;
 import com.liyuaninc.liyuantcapp.activities.main.MainActivity;
 import com.liyuaninc.liyuantcapp.components.dialogs.LoadingDialog;
+import com.liyuaninc.liyuantcapp.utils.Paintbase;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -57,11 +58,7 @@ public class EmptyActivity extends AppCompatActivity {
                 }
                 break;
             case 2:
-	            final LoadingDialog selfDialog;
-	            selfDialog = new LoadingDialog(EmptyActivity.this);
-                selfDialog.setTitle("提示");
-                selfDialog.setMessage("确定退出应用?",getPackageName());
-                selfDialog.show();
+                setContentView(new Paintbase(this));
                 break;
         }
         //重写onKeyDown方法,对按键(不一定是返回按键)监听

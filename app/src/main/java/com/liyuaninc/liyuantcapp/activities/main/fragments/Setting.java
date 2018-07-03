@@ -3,6 +3,8 @@ package com.liyuaninc.liyuantcapp.activities.main.fragments;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -26,6 +28,11 @@ public class Setting extends Fragment {
     private TextView down;
     private  TextView about;
     private  TextView setting;
+
+    // paint and canvas
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +51,6 @@ public class Setting extends Fragment {
         Bitmap bitmap = getLoacalBitmap("/sdcard/LiYuan/Userspic/head_portrait.jpg"); //从本地取图片(在cdcard中获取)  //
         if (bitmap==null)
         {
-
         }
         else
             {
@@ -54,13 +60,16 @@ public class Setting extends Fragment {
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-	            Intent intent = new Intent(getActivity(), EmptyActivity.class);
+                Intent intent = new Intent(getActivity(), EmptyActivity.class);
                 intent.putExtra("empty",2);
                 startActivity(intent);
                 MainActivity activity=(MainActivity)getActivity();
                 activity.finish();
+
             }
         });
+
+
         pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,4 +116,19 @@ public class Setting extends Fragment {
             e.printStackTrace();
             return null;
         }
-}}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+}
+
